@@ -20,7 +20,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <MantineProvider withGlobalStyles withNormalizeCSS>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          globalStyles: (theme) => ({
+            section: {
+              padding: "3rem 0",
+            },
+          }),
+        }}
+      >
         <body className={nunito.className} suppressHydrationWarning={true}>
           <Header />
           <main>{children}</main>
