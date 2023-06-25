@@ -4,6 +4,7 @@ import { MantineProvider } from "@mantine/core";
 import "./globals.css";
 import { Nunito } from "next/font/google";
 import Header from "@/components/client/Header/Header";
+import Footer from "@/components/client/Footer/Footer";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <body className={nunito.className} suppressHydrationWarning={true}>
           <Header />
           <main>{children}</main>
+          <Footer />
         </body>
       </MantineProvider>
     </html>
