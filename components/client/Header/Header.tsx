@@ -11,6 +11,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
+import routes from "@/routes/routes";
 
 const HEADER_HEIGHT = rem(60);
 
@@ -79,52 +80,24 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const links = [
-  {
-    id: 1,
-    label: "Home",
-    href: "/",
-  },
-  {
-    id: 2,
-    label: "Best Selling",
-    href: "/best-selling",
-  },
-  {
-    id: 3,
-    label: "Products",
-    href: "/products",
-  },
-  {
-    id: 4,
-    label: "Events",
-    href: "/events",
-  },
-  {
-    id: 5,
-    label: "FAQ",
-    href: "/faq",
-  },
-];
-
 const Header = () => {
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].id);
+  const [active, setActive] = useState(routes[0].id);
   const { classes, cx } = useStyles();
 
-  const items = links.map((link) => (
+  const items = routes.map((route) => (
     <Link
-      key={link.id}
-      href={link.href}
+      key={route.id}
+      href={route.href}
       className={cx(classes.link, {
-        [classes.linkActive]: active === link.id,
+        [classes.linkActive]: active === route.id,
       })}
       onClick={() => {
-        setActive(link.id);
+        setActive(route.id);
         close();
       }}
     >
-      {link.label}
+      {route.label}
     </Link>
   ));
 
