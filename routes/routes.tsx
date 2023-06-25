@@ -1,4 +1,4 @@
-const routes = [
+const routes: routesInterface[] = [
   {
     id: 1,
     label: "Home",
