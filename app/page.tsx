@@ -13,6 +13,7 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
+import SubscribeUs from "@/ui/SubscribeUs";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -231,6 +232,7 @@ const HomePage = () => {
           </Box>
         </Container>
       </Box>
+      <SubscribeUs />
     </>
   );
 };
