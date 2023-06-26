@@ -1,13 +1,15 @@
 import { ProductProps } from "@/libs/types/types";
 import { Badge, Box, Card, Group, Rating, Text, Title } from "@mantine/core";
 import Image from "next/image";
-import Link from "next/link";
+
+const ProductsCard = ({ data }: any) => {
+  const { category, price, rating, sold, title, src, id } = data;
 
 const ProductsCard = ({ data }: { data: ProductProps }): JSX.Element => {
   const { category, price, rating, sold, title, src, id } = data;
-  console.log(data);
+  console.log(data)
   return (
-    <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
+    
       <Card withBorder>
         <Card.Section>
           <Image
@@ -38,7 +40,7 @@ const ProductsCard = ({ data }: { data: ProductProps }): JSX.Element => {
           </Text>
         </Box>
       </Card>
-    </Link>
+    
   );
 };
 
