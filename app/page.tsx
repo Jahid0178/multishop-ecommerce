@@ -16,7 +16,6 @@ import {
 import Link from "next/link";
 import SubscribeUs from "@/ui/SubscribeUs";
 
-
 const useStyles = createStyles((theme) => ({
   root: {
     backgroundColor: "#11284b",
@@ -105,10 +104,10 @@ const HomePage = () => {
             <div className={classes.inner}>
               <div className={classes.content}>
                 <Title className={classes.title}>
-                  A{" "}
+                  A
                   <Text component="span" inherit>
                     fully featured
-                  </Text>{" "}
+                  </Text>
                   React components library
                 </Title>
 
@@ -124,8 +123,6 @@ const HomePage = () => {
                       variant="gradient"
                       size="xl"
                       className={classes.control}
-                      component="a"
-                      href="/products"
                     >
                       Shop Now
                     </Button>{" "}
@@ -136,8 +133,6 @@ const HomePage = () => {
                       variant="gradient"
                       size="xl"
                       className={classes.control}
-                      component="a"
-                      href="/"
                     >
                       Get Started
                     </Button>
