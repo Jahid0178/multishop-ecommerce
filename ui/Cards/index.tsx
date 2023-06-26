@@ -4,8 +4,9 @@ import Link from "next/link";
 
 const ProductsCard = ({ data }: any) => {
   const { category, price, rating, sold, title, src, id } = data;
+
   return (
-    <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
+    <Link style={{ textDecoration: "none" }} href={`products/${id}`}>
       <Card withBorder>
         <Card.Section>
           <Image
