@@ -13,6 +13,7 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
+import Link from "next/link";
 import SubscribeUs from "@/ui/SubscribeUs";
 
 const useStyles = createStyles((theme) => ({
@@ -103,10 +104,10 @@ const HomePage = () => {
             <div className={classes.inner}>
               <div className={classes.content}>
                 <Title className={classes.title}>
-                  A{" "}
+                  A
                   <Text component="span" inherit>
                     fully featured
-                  </Text>{" "}
+                  </Text>
                   React components library
                 </Title>
 
@@ -117,20 +118,25 @@ const HomePage = () => {
                 </Text>
 
                 <Group mt={50}>
-                  <Button
-                    variant="gradient"
-                    size="xl"
-                    className={classes.control}
-                  >
-                    Shop Now
-                  </Button>
-                  <Button
-                    variant="gradient"
-                    size="xl"
-                    className={classes.control}
-                  >
-                    Products
-                  </Button>
+                  <Link href="/products">
+                    <Button
+                      variant="gradient"
+                      size="xl"
+                      className={classes.control}
+                    >
+                      Shop Now
+                    </Button>{" "}
+                  </Link>
+
+                  <Link href="/">
+                    <Button
+                      variant="gradient"
+                      size="xl"
+                      className={classes.control}
+                    >
+                      Get Started
+                    </Button>
+                  </Link>
                 </Group>
               </div>
             </div>

@@ -12,13 +12,15 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import routes from "@/routes/routes";
+import TopNavbar from "./TopNavbar";
 
 const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "relative",
-    zIndex: 1,
+    position: "sticky",
+    top: 0,
+    zIndex: 50,
     backgroundColor: "#3321C8",
   },
 
@@ -102,27 +104,34 @@ const Header = () => {
   ));
 
   return (
-    <MantineHeader height={HEADER_HEIGHT} className={classes.root}>
-      <Container className={classes.header} size="lg">
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          className={classes.burger}
-          size="sm"
-          color="#fff"
-        />
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
-              {items}
-            </Paper>
-          )}
-        </Transition>
-      </Container>
-    </MantineHeader>
+    <>
+      <TopNavbar />
+      <MantineHeader height={HEADER_HEIGHT} className={classes.root}>
+        <Container className={classes.header} size="lg">
+          <Group spacing={5} className={classes.links}>
+            {items}
+          </Group>
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            className={classes.burger}
+            size="sm"
+            color="#fff"
+          />
+          <Transition
+            transition="pop-top-right"
+            duration={200}
+            mounted={opened}
+          >
+            {(styles) => (
+              <Paper className={classes.dropdown} withBorder style={styles}>
+                {items}
+              </Paper>
+            )}
+          </Transition>
+        </Container>
+      </MantineHeader>
+    </>
   );
 };
 
