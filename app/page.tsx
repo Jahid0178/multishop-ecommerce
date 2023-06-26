@@ -13,6 +13,7 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -116,20 +117,29 @@ const HomePage = () => {
                 </Text>
 
                 <Group mt={50}>
-                  <Button
-                    variant="gradient"
-                    size="xl"
-                    className={classes.control}
-                  >
-                    Shop Now
-                  </Button>
-                  <Button
-                    variant="gradient"
-                    size="xl"
-                    className={classes.control}
-                  >
-                    Products
-                  </Button>
+                  <Link href="/products">
+                    <Button
+                      variant="gradient"
+                      size="xl"
+                      className={classes.control}
+                      component="a"
+                      href="/products"
+                    >
+                      Shop Now
+                    </Button>{" "}
+                  </Link>
+
+                  <Link href="/">
+                    <Button
+                      variant="gradient"
+                      size="xl"
+                      className={classes.control}
+                      component="a"
+                      href="/"
+                    >
+                      Get Started
+                    </Button>
+                  </Link>
                 </Group>
               </div>
             </div>
