@@ -1,6 +1,6 @@
 "use client";
 
-import ProductsCard from "@/components/Cards/ProductsCard";
+import ProductsCard from "@/ui/Cards";
 import { productsData } from "@/data/data";
 import { Box, Container, Grid, Title } from "@mantine/core";
 

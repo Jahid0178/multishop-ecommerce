@@ -3,8 +3,8 @@
 import { MantineProvider } from "@mantine/core";
 import "./globals.css";
 import { Nunito } from "next/font/google";
-import Header from "@/components/client/Header/Header";
-import Footer from "@/components/client/Footer/Footer";
+import Header from "@/ui/Header";
+import Footer from "@/ui/Footer";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
