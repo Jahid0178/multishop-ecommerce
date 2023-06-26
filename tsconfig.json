@@ -22,7 +22,11 @@
     "paths": {
       "@/*": ["./*"],
       "@/libs/*": ["./libs/*"],
+<<<<<<< HEAD
       "@/ui/*": ["./ui/*"]
+=======
+      "@/ui*": ["./ui/*"]
+>>>>>>> b371f0322c673e743da9a3b01cca1e4343600efd
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
