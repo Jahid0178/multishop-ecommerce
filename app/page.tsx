@@ -1,7 +1,7 @@
 "use client";
 
-import ProductsCard from "@/ui/Cards";
 import { productsData } from "@/data/data";
+import ProductsCard from "@/ui/Cards";
 import { Box, Container, Grid, Title } from "@mantine/core";
 
 const HomePage = () => {
