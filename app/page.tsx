@@ -84,6 +84,12 @@ const useStyles = createStyles((theme) => ({
       width: "100%",
     },
   },
+
+  pageTitle: {
+    backgroundColor: theme.white,
+    padding: theme.spacing.lg,
+    borderRadius: theme.radius.sm,
+  },
 }));
 
 const HomePage = () => {
@@ -134,7 +140,9 @@ const HomePage = () => {
       <Box component="section">
         <Container size="lg">
           <Box component="div">
-            <Title order={2}>New Company Products</Title>
+            <Title order={2} className={classes.pageTitle}>
+              New Company Products
+            </Title>
             <Box component="div" mt={20}>
               <Grid>
                 {productsData.map((product) => (
@@ -151,7 +159,66 @@ const HomePage = () => {
       <Box component="section">
         <Container size="lg">
           <Box component="div">
-            <Title order={2}>Old Company Products</Title>
+            <Title order={2} className={classes.pageTitle}>
+              Old Company Products
+            </Title>
+            <Box component="div" mt={20}>
+              <Grid>
+                {productsData.map((product) => (
+                  <Grid.Col key={product.id} span={12} md={6} lg={3}>
+                    <ProductsCard data={product} />
+                  </Grid.Col>
+                ))}
+              </Grid>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+
+      <Box component="section">
+        <Container size="lg">
+          <Box component="div">
+            <Title order={2} className={classes.pageTitle}>
+              New Public Business Products
+            </Title>
+            <Box component="div" mt={20}>
+              <Grid>
+                {productsData.map((product) => (
+                  <Grid.Col key={product.id} span={12} md={6} lg={3}>
+                    <ProductsCard data={product} />
+                  </Grid.Col>
+                ))}
+              </Grid>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+
+      <Box component="section">
+        <Container size="lg">
+          <Box component="div">
+            <Title order={2} className={classes.pageTitle}>
+              Old Public Business Products
+            </Title>
+            <Box component="div" mt={20}>
+              <Grid>
+                {productsData.map((product) => (
+                  <Grid.Col key={product.id} span={12} md={6} lg={3}>
+                    <ProductsCard data={product} />
+                  </Grid.Col>
+                ))}
+              </Grid>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+
+      <Box component="section">
+        <Container size="lg">
+          <Box component="div">
+            <Title order={2} className={classes.pageTitle}>
+              Old Public Products
+            </Title>
             <Box component="div" mt={20}>
               <Grid>
                 {productsData.map((product) => (
