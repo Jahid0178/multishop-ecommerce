@@ -7,3 +7,8 @@ export type ProductProps = {
   sold: number;
   src: string;
 };
+
+export type FaqTpes = {
+  title: string;
+  data: { faqTitle: string; faqDescription: string; value: string }[];
+};
