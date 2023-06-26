@@ -10,10 +10,12 @@ import {
   Grid,
   Title,
   List,
+  Box,
 } from "@mantine/core";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import Link from "next/link";
+import ScrollTop from "@/components/common/Buttons/ScrollTop/ScrollTop";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -80,7 +82,8 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container size="lg">
-        <div>
+        <ScrollTop />
+        <Box component="div">
           <Grid>
             <Grid.Col span={12} md={6} lg={3}>
               Logo
@@ -174,7 +177,7 @@ const Footer = () => {
               </List>
             </Grid.Col>
           </Grid>
-        </div>
+        </Box>
       </Container>
       <Container size="lg" className={classes.footerBottom}>
         <Text color="dimmed" size="sm">
