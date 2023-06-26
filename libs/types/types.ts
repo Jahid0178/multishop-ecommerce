@@ -1,3 +1,4 @@
+import React, { InputHTMLAttributes } from "react";
 export type ProductProps = {
   id: number;
   title: string;

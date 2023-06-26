@@ -14,6 +14,8 @@ import {
   rem,
 } from "@mantine/core";
 import Link from "next/link";
+import SubscribeUs from "@/ui/SubscribeUs";
+
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -241,6 +243,7 @@ const HomePage = () => {
           </Box>
         </Container>
       </Box>
+      <SubscribeUs />
     </>
   );
 };
