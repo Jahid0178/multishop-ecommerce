@@ -5,6 +5,9 @@ const nextConfig = {
       {
         hostname: "www.istorebangladesh.com",
       },
+      {
+        hostname: "m.media-amazon.com",
+      },
     ],
   },
 };

@@ -20,6 +20,9 @@ export default function RootLayout({
         withNormalizeCSS
         theme={{
           globalStyles: (theme) => ({
+            body: {
+              backgroundColor: "#EDF2FD",
+            },
             section: {
               padding: "3rem 0",
             },

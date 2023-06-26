@@ -1,4 +1,4 @@
-import { Badge, Box, Card, Rating, Text, Title } from "@mantine/core";
+import { Badge, Box, Card, Group, Rating, Text, Title } from "@mantine/core";
 import Image from "next/image";
 
 const ProductsCard = ({ data }: any) => {
@@ -18,7 +18,10 @@ const ProductsCard = ({ data }: any) => {
       <Title order={4} my={10}>
         {title}
       </Title>
-      <Rating value={rating} fractions={2} />
+      <Group>
+        <Rating value={rating} fractions={2} readOnly />
+        <Text component="p">{rating}</Text>
+      </Group>
       <Box
         component="div"
         sx={{ display: "flex", justifyContent: "space-between" }}
