@@ -1,3 +1,5 @@
+import { routesInterface } from "@/libs/interface/interface";
+
 const routes: routesInterface[] = [
   {
     id: 1,
