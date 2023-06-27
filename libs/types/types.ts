@@ -23,3 +23,13 @@ export type AuthData = {
   password?: any;
   endPoint: string;
 };
+
+export type FilterDataProps = {
+  id: number;
+  title: string;
+  category: string;
+  rating: number;
+  price: string;
+  sold: number;
+  src: string;
+}[];
