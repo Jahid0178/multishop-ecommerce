@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import ProductsCard from "@/ui/Cards";
 import { productsData } from "@/data/data";
 import {
@@ -15,6 +16,8 @@ import {
 } from "@mantine/core";
 import Link from "next/link";
 import SubscribeUs from "@/ui/SubscribeUs";
+import ContactModal from "@/ui/Modals/ContactModal";
+import { useDisclosure } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -95,7 +98,10 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const HomePage = () => {
+  const [modalActive, setModalActive] = useState(false);
+  const [opened, { open, close }] = useDisclosure(false);
   const { classes } = useStyles();
+  console.log(modalActive);
   return (
     <>
       <Box component="section" py={0}>
@@ -128,15 +134,14 @@ const HomePage = () => {
                     </Button>{" "}
                   </Link>
 
-                  <Link href="/">
-                    <Button
-                      variant="gradient"
-                      size="xl"
-                      className={classes.control}
-                    >
-                      Get Started
-                    </Button>
-                  </Link>
+                  <Button
+                    variant="gradient"
+                    size="xl"
+                    className={classes.control}
+                    onClick={open}
+                  >
+                    Contact Us
+                  </Button>
                 </Group>
               </div>
             </div>
@@ -239,6 +244,7 @@ const HomePage = () => {
         </Container>
       </Box>
       <SubscribeUs />
+      {opened && <ContactModal opened={opened} close={close} />}
     </>
   );
 };
