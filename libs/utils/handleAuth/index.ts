@@ -1,15 +1,26 @@
 import { AuthData } from "@/libs/types/types";
 
-const handleAuth = async ({ name, email, password }: AuthData) => {
+const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
   let data: any = {};
   if (name === undefined) {
-    (data.email = email), (data.password = password);
+    if (password === undefined) {
+      data.email = email;
+    } else {
+      data.email = email;
+      data.password = password;
+    }
+  } else if (password === undefined) {
+    data.name = name;
+    data.email = email;
   } else {
     data.name = name;
-    (data.email = email), (data.password = password);
+    data.email = email;
+    data.password = password;
   }
+
+  console.log(data);
   try {
-    const response = await fetch("http://localhost:3000/api/auth", {
+    const response = await fetch(`http://localhost:3000/api/auth/${endPoint}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

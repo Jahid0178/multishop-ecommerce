@@ -20,5 +20,6 @@ export type SignUpProps = {
 export type AuthData = {
   name?: any;
   email: any;
-  password: any;
+  password?: any;
+  endPoint: string;
 };

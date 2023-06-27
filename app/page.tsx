@@ -18,6 +18,7 @@ import Link from "next/link";
 import SubscribeUs from "@/ui/SubscribeUs";
 import ContactModal from "@/ui/Modals/ContactModal";
 import { useDisclosure } from "@mantine/hooks";
+import store from "@/redux/store";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -98,6 +99,7 @@ const HomePage = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const { classes } = useStyles();
   console.log(modalActive);
+
   return (
     <>
       <Box component="section" py={0}>

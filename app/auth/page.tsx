@@ -1,6 +1,6 @@
 "use client";
 
-import Auth from "@/ui/Form";
+import Auth from "@/ui/Auth";
 import {
   Box,
   Container,
@@ -24,12 +24,13 @@ const SignUpPage = () => {
               <Box
                 sx={{
                   backgroundImage: `url('https://www.koder.top/demo/authfy/demo/images/computer-1867758_1920-min.jpg')`,
-                  height: "80vh",
+                  height: "90vh",
                   width: "100%",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
                   //   marginTop: "-10px",
+                  borderRadius: "5px",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",

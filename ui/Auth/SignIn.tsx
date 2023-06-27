@@ -12,7 +12,10 @@ import { useHover } from "@mantine/hooks";
 
 import { useForm } from "@mantine/form";
 import handleAuth from "@/libs/utils/handleAuth";
-const SignIn = ({ isSignUp }: { isSignUp: () => void }) => {
+const SignIn: React.FC<{
+  isSignUp: () => void;
+  isForgottenPassword: () => void;
+}> = ({ isSignUp, isForgottenPassword }) => {
   const { hovered, ref } = useHover();
   const form = useForm({
     initialValues: {
@@ -75,7 +78,11 @@ const SignIn = ({ isSignUp }: { isSignUp: () => void }) => {
         </Text>
       </Box>
       <Box mx="auto">
-        <form onSubmit={form.onSubmit(handleAuth)}>
+        <form
+          onSubmit={form.onSubmit(({ email, password }) => {
+            handleAuth({ email, name, endPoint: "signIn" });
+          })}
+        >
           <TextInput
             mt="sm"
             label="Email"
@@ -96,6 +103,7 @@ const SignIn = ({ isSignUp }: { isSignUp: () => void }) => {
           >
             <Checkbox sx={{ color: "#959595" }} label="Remember me" />
             <Text
+              onClick={isForgottenPassword}
               style={{
                 cursor: "pointer",
                 color: "#549CF9",
