@@ -17,11 +17,6 @@ const ContactModal = ({ opened, close }: any) => {
     },
   });
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    form.onSubmit((values) => console.log(values));
-  };
-
   return (
     <Modal
       opened={opened}
@@ -30,7 +25,7 @@ const ContactModal = ({ opened, close }: any) => {
       centered
       overlayProps={{ blur: 3 }}
     >
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={form.onSubmit((values) => console.log(values))}>
         <TextInput
           placeholder="Enter Your Name"
           type="text"
