@@ -2,7 +2,6 @@
 
 import { Button, Modal, Space, TextInput, Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { FormEvent } from "react";
 
 const ContactModal = ({ opened, close }: any) => {
   const form = useForm({

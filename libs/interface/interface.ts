@@ -1,6 +1,6 @@
 import { CSSProperties, ChangeEvent } from "react";
 
-interface routesInterface {
+export interface routesInterface {
   id: number | string;
   label: string;
   href: string;

@@ -19,8 +19,6 @@ import SubscribeUs from "@/ui/SubscribeUs";
 import Brand from "@/ui/Brand";
 import ContactModal from "@/ui/Modals/ContactModal";
 import { useDisclosure } from "@mantine/hooks";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
 
 
 const useStyles = createStyles((theme) => ({
@@ -98,10 +96,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const HomePage = () => {
-  const [modalActive, setModalActive] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
-  // const {}=
-
   const { classes } = useStyles();
   return (
     <>
