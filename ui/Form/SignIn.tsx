@@ -11,12 +11,13 @@ import {
 import { useHover } from "@mantine/hooks";
 
 import { useForm } from "@mantine/form";
+import handleAuth from "@/libs/utils/handleAuth";
 const SignIn = ({ isSignUp }: { isSignUp: () => void }) => {
   const { hovered, ref } = useHover();
   const form = useForm({
     initialValues: {
       email: "",
-      password: "secret",
+      password: "",
     },
 
     // functions will be used to validate values at corresponding key
@@ -74,7 +75,7 @@ const SignIn = ({ isSignUp }: { isSignUp: () => void }) => {
         </Text>
       </Box>
       <Box mx="auto">
-        <form onSubmit={form.onSubmit(console.log)}>
+        <form onSubmit={form.onSubmit(handleAuth)}>
           <TextInput
             mt="sm"
             label="Email"

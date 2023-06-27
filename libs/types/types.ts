@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes, MouseEventHandler } from "react";
 export type ProductProps = {
   id: number;
   title: string;
@@ -12,4 +12,13 @@ export type ProductProps = {
 export type FaqTpes = {
   title: string;
   data: { faqTitle: string; faqDescription: string; value: string }[];
+};
+export type SignUpProps = {
+  onClick?: MouseEventHandler<HTMLDivElement>;
+};
+
+export type AuthData = {
+  name?: any;
+  email: any;
+  password: any;
 };

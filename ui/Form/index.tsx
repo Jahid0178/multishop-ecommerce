@@ -30,7 +30,7 @@ const Auth = () => {
           {formTransition((styles, item) =>
             item ? (
               <animated.div style={styles}>
-                <SignUp isSignUp={toggleForm} />
+                <SignUp onClick={toggleForm} />
               </animated.div>
             ) : (
               <animated.div style={styles}>
