@@ -14,6 +14,10 @@ import {
 import Link from "next/link";
 import { BsFillArrowRightCircleFill, BsHeart, BsCart } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/redux/store";
+import { openShoppingCartOpen } from "@/redux/shoppingCartSlice";
+import CartBox from "../CartBox";
 
 const useStyles = createStyles((theme) => ({
   topNavContainer: {
@@ -31,6 +35,8 @@ const useStyles = createStyles((theme) => ({
 
 const TopNavbar = () => {
   const { classes } = useStyles();
+  const { isCartOpen } = useSelector((state: RootState) => state.shoppingCart);
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <Header height={rem(60)} className={classes.topNavContainer}>
@@ -87,13 +93,18 @@ const TopNavbar = () => {
           </Box>
           <Flex gap={20}>
             <BsHeart size={25} cursor="pointer" />
-            <BsCart size={25} cursor="pointer" />
+            <BsCart
+              onClick={() => dispatch(openShoppingCartOpen())}
+              size={25}
+              cursor="pointer"
+            />
             <Link href="/auth" style={{ color: "#000" }}>
               <BiUserCircle size={25} cursor="pointer" />
             </Link>
           </Flex>
         </Box>
       </Container>
+      <CartBox isOpen={isCartOpen} />
     </Header>
   );
 };

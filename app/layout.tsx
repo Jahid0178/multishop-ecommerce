@@ -7,7 +7,10 @@ import Footer from "@/ui/Footer";
 import Header from "@/ui/Header";
 import { useSpring } from "@react-spring/web";
 import { useState } from "react";
-
+import { Provider, useDispatch } from "react-redux";
+import { AppProps } from "next/app";
+import store, { AppDispatch } from "@/redux/store";
+import { openShoppingCartOpen } from "@/redux/shoppingCartSlice";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -24,6 +27,7 @@ export default function RootLayout({
   const handleToggleCart = () => {
     setIsOpen(!isOpen);
   };
+  // openShoppingCartOpen
 
   return (
     <html lang="en">
@@ -42,9 +46,11 @@ export default function RootLayout({
         }}
       >
         <body className={nunito.className} suppressHydrationWarning={true}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <Provider store={store}>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </Provider>
         </body>
       </MantineProvider>
     </html>
