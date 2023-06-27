@@ -9,7 +9,7 @@ import {
   Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import React, { MouseEventHandler, useEffect, useState } from "react";
+import React from "react";
 
 const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
   const form = useForm({
@@ -55,7 +55,11 @@ const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
         </Text>
       </Box>
       <Box mx="auto">
-        <form onSubmit={form.onSubmit(handleAuth)}>
+        <form
+          onSubmit={form.onSubmit(({ name, email, password }) => {
+            handleAuth({ name, email, password, endPoint: "signUp" });
+          })}
+        >
           <TextInput
             label="Name"
             placeholder="Name"
