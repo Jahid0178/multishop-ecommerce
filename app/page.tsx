@@ -84,10 +84,6 @@ const useStyles = createStyles((theme) => ({
     paddingRight: rem(50),
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontSize: rem(22),
-
-    [theme.fn.smallerThan("md")]: {
-      width: "100%",
-    },
   },
 
   pageTitle: {
