@@ -18,7 +18,7 @@ import { productsData } from "@/data/data";
 import { FilterDataProps } from "@/libs/types/types";
 
 const ProductDetailsPage = ({ params }: any) => {
-  const [cartItems, setCartItems] = useState(0);
+  const [cartItems, setCartItems] = useState<number>(0);
   const [filteredData, setFilteredData] = useState<FilterDataProps>([]);
   const { productId } = params;
 
@@ -47,7 +47,7 @@ const ProductDetailsPage = ({ params }: any) => {
 
   const {
     price = "",
-    src = "",
+    src = "/",
     title = "",
   } = filteredData.length > 0 ? filteredData[0] : {};
 
