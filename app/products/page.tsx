@@ -15,7 +15,7 @@ const ProductsPage = () => {
           <Grid.Col span={12} md={9}>
             <Grid>
               {productsData.map((product) => (
-                <Grid.Col span={6} md={4} key={product.id}>
+                <Grid.Col span={12} md={4} key={product.id}>
                   <ProductsCard data={product} />
                 </Grid.Col>
               ))}
