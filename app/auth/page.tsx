@@ -24,7 +24,7 @@ const SignUpPage = () => {
               <Box
                 sx={{
                   backgroundImage: `url('https://www.koder.top/demo/authfy/demo/images/computer-1867758_1920-min.jpg')`,
-                  height: "70vh",
+                  height: "80vh",
                   width: "100%",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",

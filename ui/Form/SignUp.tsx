@@ -1,3 +1,5 @@
+import { SignUpProps } from "@/libs/types/types";
+import handleAuth from "@/libs/utils/handleAuth";
 import {
   Box,
   Button,
@@ -7,15 +9,15 @@ import {
   Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import React, { useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 
-const SignUp = ({ isSignUp }: { isSignUp: () => void }) => {
+const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
   const form = useForm({
     initialValues: {
       name: "",
       email: "",
-      password: "secret",
-      confirmPassword: "sevret",
+      password: "",
+      confirmPassword: "",
     },
 
     // functions will be used to validate values at corresponding key
@@ -27,6 +29,7 @@ const SignUp = ({ isSignUp }: { isSignUp: () => void }) => {
         value !== values.password ? "Passwords did not match" : null,
     },
   });
+
   return (
     <Card>
       <Box mx="auto">
@@ -52,7 +55,7 @@ const SignUp = ({ isSignUp }: { isSignUp: () => void }) => {
         </Text>
       </Box>
       <Box mx="auto">
-        <form onSubmit={form.onSubmit(console.log)}>
+        <form onSubmit={form.onSubmit(handleAuth)}>
           <TextInput
             label="Name"
             placeholder="Name"
@@ -100,7 +103,7 @@ const SignUp = ({ isSignUp }: { isSignUp: () => void }) => {
           </Button>
         </form>
         <Text
-          onClick={isSignUp}
+          onClick={onClick}
           style={{
             color: "#6382FE",
             fontWeight: "600",
