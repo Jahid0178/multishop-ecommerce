@@ -3,6 +3,7 @@ import { animated, useSpring } from "@react-spring/web";
 import { productsData } from "@/data/data";
 import { usePagination } from "@mantine/hooks";
 import Paginate from "./Paginate";
+import Pagination from "./Paginate";
 
 interface CartBoxProps {
   isOpen: boolean;
@@ -15,19 +16,7 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
 
   return (
     <animated.div className="cart-box" style={cartAnimation}>
-      {/* Your cart contents go here */}
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem
-        accusantium repellendus eius. Quae consectetur rerum enim nemo quos
-        magnam laborum cumque doloribus nostrum reiciendis sint fugit excepturi
-        facilis officiis maiores tempore recusandae ratione in, numquam quia
-        suscipit tenetur. Iure enim quia fugiat modi natus fugit repellat minus
-        rem unde velit voluptas, necessitatibus blanditiis est maiores, non vel
-        id autem sit, dolores ullam ut magnam mollitia neque. Repellat officiis
-        velit ea, rem, ad fuga, nisi maxime esse suscipit vitae cumque eius
-        magnam nemo voluptas. Ut, fugit? Harum consectetur ab, cum voluptates
-        quia accusantium esse, minus unde, magni quaerat pariatur sed assumenda.
-      </p>{" "}
+      <Pagination totalItems={20} itemsPerPage={5} />
     </animated.div>
   );
 };
