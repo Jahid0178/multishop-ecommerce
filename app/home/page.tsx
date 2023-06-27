@@ -97,7 +97,6 @@ const HomePage = () => {
   const [modalActive, setModalActive] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const { classes } = useStyles();
-  console.log(modalActive);
   return (
     <>
       <Box component="section" py={0}>

@@ -5,7 +5,6 @@ import Link from "next/link";
 
 const ProductsCard = ({ data }: { data: ProductProps }): JSX.Element => {
   const { category, price, rating, sold, title, src, id } = data;
-  console.log(data);
   return (
     <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
       <Card withBorder>
