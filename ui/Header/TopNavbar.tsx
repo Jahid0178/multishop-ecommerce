@@ -11,6 +11,7 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
+import Link from "next/link";
 import { BsFillArrowRightCircleFill, BsHeart, BsCart } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
 
@@ -87,7 +88,9 @@ const TopNavbar = () => {
           <Flex gap={20}>
             <BsHeart size={25} cursor="pointer" />
             <BsCart size={25} cursor="pointer" />
-            <BiUserCircle size={25} cursor="pointer" />
+            <Link href="/auth" style={{ color: "#000" }}>
+              <BiUserCircle size={25} cursor="pointer" />
+            </Link>
           </Flex>
         </Box>
       </Container>
