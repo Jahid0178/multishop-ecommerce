@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   ActionIcon,
@@ -14,10 +14,20 @@ import {
   Title,
 } from "@mantine/core";
 import { BsBagFill } from "react-icons/bs";
+import { productsData } from "@/data/data";
+import { FilterDataProps } from "@/libs/types/types";
 
 const ProductDetailsPage = ({ params }: any) => {
   const [cartItems, setCartItems] = useState(0);
+  const [filteredData, setFilteredData] = useState<FilterDataProps>([]);
   const { productId } = params;
+
+  useEffect(() => {
+    const filteredProducts = productsData.filter(
+      (product) => product.id == productId
+    );
+    setFilteredData(filteredProducts);
+  }, [productId]);
 
   const handleIncrease = () => {
     setCartItems((prevItems) => prevItems + 1);
@@ -35,17 +45,22 @@ const ProductDetailsPage = ({ params }: any) => {
     }
   };
 
+  const {
+    price = "",
+    src = "",
+    title = "",
+  } = filteredData.length > 0 ? filteredData[0] : {};
+
   return (
     <Box component="section">
       <Container size="lg">
         <Grid>
           <Grid.Col span={12} md={6}>
-            <Image src="/" alt="Product Image" width={550} height={480} />
+            <Image src={src} alt={title} width={550} height={480} />
           </Grid.Col>
           <Grid.Col span={12} md={6}>
             <Title order={3} mb={15}>
-              MacBook pro M2 chipset 256gb ssd 8gb ram space gray color with
-              apple 1 year warranty
+              {title}
             </Title>
             <Text mb={10}>
               Product details are a crucial part of any eCommerce website or
@@ -62,7 +77,7 @@ const ProductDetailsPage = ({ params }: any) => {
             </Text>
             <Group mb={10}>
               <Text component="span" fw="bold">
-                $1049
+                ${price}
               </Text>
               <Text component="span" fw="bold" color="red">
                 $1099
