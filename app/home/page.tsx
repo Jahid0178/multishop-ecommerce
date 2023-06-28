@@ -19,7 +19,8 @@ import SubscribeUs from "@/ui/SubscribeUs";
 import Brand from "@/ui/Brand";
 import ContactModal from "@/ui/Modals/ContactModal";
 import { useDisclosure } from "@mantine/hooks";
-
+import CompanyProducts from "@/ui/CompanyProducts";
+import { products } from "@/libs/Data";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -144,7 +145,8 @@ const HomePage = () => {
           </Container>
         </div>
       </Box>
-
+      <CompanyProducts products={products} />
+      {/* 
       <Box component="section">
         <Container size="lg">
           <Box component="div">
@@ -238,7 +240,7 @@ const HomePage = () => {
             </Box>
           </Box>
         </Container>
-      </Box>
+      </Box> */}
       <Brand />
       <SubscribeUs />
       {opened && <ContactModal opened={opened} close={close} />}
