@@ -4,7 +4,7 @@ export type ProductProps = {
   title: string;
   category: string;
   rating: number;
-  price: string;
+  price: number;
   sold: number;
   src: string;
 };
