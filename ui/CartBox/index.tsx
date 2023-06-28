@@ -36,7 +36,6 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
   const cartAnimation = useSpring({
     transform: isOpen ? "translateX(0%)" : "translateX(100%)",
   });
-  // console.log("data from cart box", data);
   const handleDelete = (id: number) => {
     dispatch(removeByID(id));
   };
@@ -68,8 +67,6 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
                 <NumberInput
                   hideControls
                   value={data.quantity}
-                  // onChange={(val) => setValue(val)}
-                  // handlersRef={handlers}
                   max={10}
                   min={0}
                   step={2}
@@ -80,7 +77,6 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
                   onClick={() => dispatch(decreaseById(1))}
                   size={22}
                   variant="default"
-                  // onClick={handleDecncrement}
                 >
                   –
                 </ActionIcon>

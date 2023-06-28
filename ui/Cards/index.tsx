@@ -10,7 +10,9 @@ const ProductsCard = ({ data }: { data: ProductProps }): JSX.Element => {
       <Card withBorder>
         <Card.Section>
           <Image
-            src={src}
+            src={
+              "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
+            }
             alt={title}
             width={550}
             height={480}

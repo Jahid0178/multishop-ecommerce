@@ -10,12 +10,12 @@ export type ProductProps = {
   src: string;
 };
 export type ProductType = {
-  quantity: number | "" | undefined;
+  quantity: number;
   id: number;
   title: string;
   category: string;
   rating: number;
-  price: string;
+  price: number;
   sold: number;
   src: string;
 };

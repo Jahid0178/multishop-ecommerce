@@ -8,6 +8,9 @@ const nextConfig = {
       {
         hostname: "m.media-amazon.com",
       },
+      {
+        hostname: "img.freepik.comimg.freepik.com",
+      },
     ],
   },
 };
