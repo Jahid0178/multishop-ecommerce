@@ -8,12 +8,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 import { Box, Image, Title } from "@mantine/core";
+import BrandSlid from "../BrandSlide";
 // import Image from "next/image";
+
 
 const Brand = () => {
   return (
     <Box>
-      <Title order={1} align="center" mb={10}>hello brand</Title>
+      {/* <Title order={1} align="center" mb={10}>hello brand</Title> */}
       <Swiper
         spaceBetween={30}
         // centeredSlides={true}
@@ -30,6 +32,7 @@ const Brand = () => {
         slidesPerView={5}
         // loop={true}
       >
+        
         <SwiperSlide>
           <Image
             src="https://logos-world.net/wp-content/uploads/2020/04/Sony-Logo.png"
