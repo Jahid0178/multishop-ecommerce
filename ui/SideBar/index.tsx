@@ -3,11 +3,9 @@ import { Card, Image, Text, Badge, Button, Group, Title, Divider, Input, Select,
 import { IconChevronDown, IconSearch } from "@tabler/icons-react";
 
 const Sidebar = () => {
-    const marks = [
-        { value: 20, label: '20%' },
-        { value: 50, label: '50%' },
-        { value: 80, label: '80%' },
-    ];
+    // dumy tags 
+    const tags = ["bag", "Medacia", "lion", "t shirt", "wemen", "kids", "Bathroom", "toys"];
+    
     return (
         <Card shadow="sm" padding="lg" radius="md" withBorder>
             <Title order={4}>
@@ -45,14 +43,11 @@ const Sidebar = () => {
                 TAGS
             </Title>
             <Flex gap="md" wrap="wrap">
-                <Button size='xs' variant="outline" color="gray" radius="xl">bag</Button>
-                <Button size='xs' variant="outline" color="gray" radius="xl">Medacia</Button>
-                <Button size='xs' variant="outline" color="gray" radius="xl">lion</Button>
-                <Button size='xs' variant="outline" color="gray" radius="xl">t shirt</Button>
-                <Button size='xs' variant="outline" color="gray" radius="xl">wemen</Button>
-                <Button size='xs' variant="outline" color="gray" radius="xl">kids</Button>
-                <Button size='xs' variant="outline" color="gray" radius="xl">Bathroom</Button>
-                <Button size='xs' variant="outline" color="gray" radius="xl">toys</Button>
+                {
+                    tags.map(tag => (
+                        <Button size='xs' variant="outline" color="gray" radius="xl">{tag}</Button>
+                    ))
+                }
             </Flex>
 
             {/* price  */}
@@ -60,8 +55,9 @@ const Sidebar = () => {
                 PRICE
             </Title>
             <Text mb={5}>Price : $527-$736</Text>
-            <RangeSlider defaultValue={[20, 80]} mb={10} />
+            <RangeSlider defaultValue={[200, 800]} mb={10} />
 
+            {/* reset and apply button  */}
             <Flex justify={'space-between'}>
                 <Button variant="outline" color="red">
                     RESET RESULT
