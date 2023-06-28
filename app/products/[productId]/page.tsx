@@ -16,28 +16,29 @@ import {
 import { BsBagFill } from "react-icons/bs";
 import { productsData } from "@/data/data";
 import { FilterDataProps } from "@/libs/types/types";
+import {
+  addItemToCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "@/redux/shoppingCartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 const ProductDetailsPage = ({ params }: any) => {
+  const { cartItems: items } = useSelector(
+    (state: RootState) => state.shoppingCart
+  );
+
   const [cartItems, setCartItems] = useState<number>(0);
   const [filteredData, setFilteredData] = useState<FilterDataProps>([]);
   const { productId } = params;
-
+  const dispatch = useDispatch();
   useEffect(() => {
     const filteredProducts = productsData.filter(
       (product) => product.id == productId
     );
     setFilteredData(filteredProducts);
   }, [productId]);
-
-  const handleIncrease = () => {
-    setCartItems((prevItems) => prevItems + 1);
-  };
-
-  const handleDecrease = () => {
-    if (cartItems > 0) {
-      setCartItems((prevItems) => prevItems - 1);
-    }
-  };
 
   const handleInputChange = (value: number | "") => {
     if (typeof value === "number") {
@@ -49,8 +50,18 @@ const ProductDetailsPage = ({ params }: any) => {
     price = "",
     src = "/",
     title = "",
+    id,
   } = filteredData.length > 0 ? filteredData[0] : {};
+  // console.log(filteredData);
+  const handleIncrease = () => {
+    dispatch(increaseQuantity(String(id)));
+    setCartItems((prevItems) => prevItems + 1);
+  };
 
+  const handleDecrease = () => {
+    dispatch(decreaseQuantity(id));
+  };
+  console.log("items log by page ", items);
   return (
     <Box component="section">
       <Container size="lg">
@@ -103,7 +114,12 @@ const ProductDetailsPage = ({ params }: any) => {
               </ActionIcon>
             </Group>
             <Box component="div" mt={10}>
-              <Button rightIcon={<BsBagFill size={20} />}>Add To Cart</Button>
+              <Button
+                onClick={() => dispatch(addItemToCart(filteredData))}
+                rightIcon={<BsBagFill size={20} />}
+              >
+                Add To Cart
+              </Button>
             </Box>
           </Grid.Col>
         </Grid>

@@ -8,6 +8,15 @@ export type ProductProps = {
   sold: number;
   src: string;
 };
+export type ProductType = {
+  id: number;
+  title: string;
+  category: string;
+  rating: number;
+  price: string;
+  sold: number;
+  src: string;
+};
 
 export type FaqTpes = {
   title: string;
@@ -29,7 +38,7 @@ export type FilterDataProps = {
   title: string;
   category: string;
   rating: number;
-  price: string;
+  price: number;
   sold: number;
   src: string;
 }[];
