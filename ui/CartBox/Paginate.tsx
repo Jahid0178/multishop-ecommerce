@@ -26,7 +26,7 @@ const PaginationD: React.FC<PaginationProps> = ({
   itemsPerPage,
   state,
 }) => {
-  const { cartItems } = useSelector((state: RootState) => state.shoppingCart);
+  const { items } = useSelector((state: RootState) => state.shoppingCart);
   const [currentPage, setCurrentPage] = React.useState(1);
   const totalPage = Math.ceil(paginateData.length / itemsPerPage);
   const handlePageChange = (page: number) => {
@@ -36,11 +36,10 @@ const PaginationD: React.FC<PaginationProps> = ({
   const indexOfFirst = indexOfLast - itemsPerPage;
 
   const data = React.useCallback(() => {
-    const data = cartItems.slice(indexOfFirst, indexOfLast);
+    const data = items.slice(indexOfFirst, indexOfLast);
     state(data);
-  }, [cartItems, indexOfFirst, indexOfLast, state]);
+  }, [items, indexOfFirst, indexOfLast, state]);
 
-  // console.log(ooo());
   React.useEffect(() => {
     data();
   }, [data]);
