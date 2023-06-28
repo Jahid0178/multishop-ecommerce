@@ -1,5 +1,9 @@
-import React from "react";
-import { useSpring, animated } from "@react-spring/web";
+import React, { useState } from "react";
+import { animated, useSpring } from "@react-spring/web";
+import { productsData } from "@/data/data";
+import { usePagination } from "@mantine/hooks";
+import Paginate from "./Paginate";
+import Pagination from "./Paginate";
 
 interface CartBoxProps {
   isOpen: boolean;
@@ -12,12 +16,7 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
 
   return (
     <animated.div className="cart-box" style={cartAnimation}>
-      {/* Your cart contents go here */}
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ipsum
-        aliquid adipisci quod quo illum soluta sed quia ex! Voluptatem nobis
-        odio eaque, inventore perspiciatis omnis cumque cum
-      </p>
+      <Pagination totalItems={20} itemsPerPage={5} />
     </animated.div>
   );
 };

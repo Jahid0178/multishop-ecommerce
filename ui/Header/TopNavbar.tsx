@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
 import { openShoppingCartOpen } from "@/redux/shoppingCartSlice";
 import CartBox from "../CartBox";
+import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   topNavContainer: {
@@ -104,6 +105,8 @@ const TopNavbar = () => {
           </Flex>
         </Box>
       </Container>
+      {/* Display the products on the current page */}
+
       <CartBox isOpen={isCartOpen} />
     </Header>
   );
