@@ -16,8 +16,10 @@ import {
 } from "@mantine/core";
 import Link from "next/link";
 import SubscribeUs from "@/ui/SubscribeUs";
+import Brand from "@/ui/Brand";
 import ContactModal from "@/ui/Modals/ContactModal";
 import { useDisclosure } from "@mantine/hooks";
+
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -237,6 +239,7 @@ const HomePage = () => {
           </Box>
         </Container>
       </Box>
+      <Brand />
       <SubscribeUs />
       {opened && <ContactModal opened={opened} close={close} />}
     </>

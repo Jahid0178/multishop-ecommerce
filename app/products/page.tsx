@@ -2,6 +2,7 @@
 
 import { productsData } from "@/data/data";
 import ProductsCard from "@/ui/Cards";
+import Sidebar from "@/ui/SideBar";
 import { Box, Container, Grid } from "@mantine/core";
 
 const ProductsPage = () => {
@@ -10,7 +11,7 @@ const ProductsPage = () => {
       <Container size="lg">
         <Grid>
           <Grid.Col span={12} md={3}>
-            Sidebar Section
+            <Sidebar />
           </Grid.Col>
           <Grid.Col span={12} md={9}>
             <Grid>
