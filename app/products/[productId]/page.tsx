@@ -15,30 +15,33 @@ import {
 } from "@mantine/core";
 import { BsBagFill } from "react-icons/bs";
 import { productsData } from "@/data/data";
-import { FilterDataProps } from "@/libs/types/types";
+import { ProductType } from "@/libs/types/types";
 import {
-  addItemToCart,
-  increaseQuantity,
-  decreaseQuantity,
+  addItem,
+  increaseById,
+  decreaseById,
+  clearCart,
 } from "@/redux/shoppingCartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
+import { AppDispatch, RootState } from "@/redux/store";
 
 const ProductDetailsPage = ({ params }: any) => {
-  const { cartItems: items } = useSelector(
-    (state: RootState) => state.shoppingCart
-  );
+  const { items } = useSelector((state: RootState) => state.shoppingCart);
 
   const [cartItems, setCartItems] = useState<number>(0);
-  const [filteredData, setFilteredData] = useState<FilterDataProps>([]);
+  const [filteredData, setFilteredData] = useState<ProductType>();
   const { productId } = params;
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    const filteredProducts = productsData.filter(
+    const filteredProducts = productsData.find(
       (product) => product.id == productId
     );
     setFilteredData(filteredProducts);
-  }, [productId]);
+  }, [productId, filteredData]);
+  if (!filteredData) {
+    return;
+  }
+  const { id, price, src, title } = filteredData;
 
   const handleInputChange = (value: number | "") => {
     if (typeof value === "number") {
@@ -46,22 +49,19 @@ const ProductDetailsPage = ({ params }: any) => {
     }
   };
 
-  const {
-    price = "",
-    src = "/",
-    title = "",
-    id,
-  } = filteredData.length > 0 ? filteredData[0] : {};
-  // console.log(filteredData);
   const handleIncrease = () => {
-    dispatch(increaseQuantity(String(id)));
+    dispatch(increaseById(id));
     setCartItems((prevItems) => prevItems + 1);
   };
 
   const handleDecrease = () => {
-    dispatch(decreaseQuantity(id));
+    dispatch(decreaseById(id));
   };
-  console.log("items log by page ", items);
+  const handleAddTocart = () => {
+    dispatch(addItem(filteredData));
+
+    // dispatch(addItem({ ...filteredData, quantity: 1 }));
+  };
   return (
     <Box component="section">
       <Container size="lg">
@@ -115,7 +115,7 @@ const ProductDetailsPage = ({ params }: any) => {
             </Group>
             <Box component="div" mt={10}>
               <Button
-                onClick={() => dispatch(addItemToCart(filteredData))}
+                onClick={handleAddTocart}
                 rightIcon={<BsBagFill size={20} />}
               >
                 Add To Cart

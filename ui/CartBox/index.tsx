@@ -6,6 +6,7 @@ import { usePagination } from "@mantine/hooks";
 import Paginate from "./Paginate";
 import Pagination from "./Paginate";
 import { ProductType } from "@/libs/types/types";
+import { IconTrash } from "@tabler/icons-react";
 import {
   ActionIcon,
   Grid,
@@ -15,7 +16,15 @@ import {
   Image,
 } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseQuantity } from "@/redux/shoppingCartSlice";
+import {
+  addItem,
+  removeByID,
+  increaseById,
+  decreaseById,
+  increaseProductQuantity,
+  decreaseProductQuantity,
+  clearCart,
+} from "@/redux/shoppingCartSlice";
 import { RootState } from "@/redux/store";
 interface CartBoxProps {
   isOpen: boolean;
@@ -27,7 +36,10 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
   const cartAnimation = useSpring({
     transform: isOpen ? "translateX(0%)" : "translateX(100%)",
   });
-
+  // console.log("data from cart box", data);
+  const handleDelete = (id: number) => {
+    dispatch(removeByID(id));
+  };
   return (
     <animated.div className="cart-box" style={cartAnimation}>
       <Grid>
@@ -45,25 +57,27 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
                   padding: "4px 9px",
                 }}
               >
-                {data.title.slice(0, 16)}
+                {/* {data.title.slice(0, 16)} */}
                 <ActionIcon
                   size={22}
                   variant="default"
-                  onClick={() => dispatch(increaseQuantity(1))}
+                  onClick={() => dispatch(increaseById(1))}
                 >
                   +
                 </ActionIcon>
                 <NumberInput
                   hideControls
-                  // value={value}
+                  value={data.quantity}
                   // onChange={(val) => setValue(val)}
                   // handlersRef={handlers}
                   max={10}
                   min={0}
                   step={2}
-                  styles={{ input: { width: rem(54), textAlign: "center" } }}
+                  disabled
+                  styles={{ input: { width: rem(34), textAlign: "center" } }}
                 />
                 <ActionIcon
+                  onClick={() => dispatch(decreaseById(1))}
                   size={22}
                   variant="default"
                   // onClick={handleDecncrement}
@@ -72,10 +86,17 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
                 </ActionIcon>
                 <Image
                   style={{ border: "2px solid green" }}
-                  width={80}
-                  height={80}
+                  width={50}
+                  height={50}
                   fit="contain"
                   src={data.src}
+                />
+                <IconTrash
+                  onClick={() => handleDelete(data.id)}
+                  style={{ cursor: "pointer" }}
+                  size={20}
+                  strokeWidth={2}
+                  color={"red"}
                 />
               </Paper>
             </Grid.Col>

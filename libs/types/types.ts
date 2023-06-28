@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes, MouseEventHandler } from "react";
+
 export type ProductProps = {
   id: number;
   title: string;
@@ -9,6 +10,7 @@ export type ProductProps = {
   src: string;
 };
 export type ProductType = {
+  quantity: number | "" | undefined;
   id: number;
   title: string;
   category: string;
