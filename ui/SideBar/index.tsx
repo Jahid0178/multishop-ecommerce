@@ -55,7 +55,7 @@ const Sidebar = () => {
                 PRICE
             </Title>
             <Text mb={5}>Price : $527-$736</Text>
-            <RangeSlider defaultValue={[200, 800]} mb={10} />
+            <RangeSlider defaultValue={[20, 80]} mb={10} />
 
             {/* reset and apply button  */}
             <Flex justify={'space-between'}>
