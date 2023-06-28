@@ -255,6 +255,7 @@ export const productsData = [
   },
 ];
 
+// Brand data
 export const brandsData = [
   {
     id: 1,
@@ -289,3 +290,24 @@ export const brandsData = [
     brandLogo: "https://www.vectorlogo.zone/logos/apple/apple-ar21.png"
   },
 ];
+
+// Product Categories Data 
+export const categories = [
+  {
+    id: 1,
+    categori: "All"
+  },
+  {
+    id: 2,
+    categori: "Apple inc."
+  },
+  {
+    id: 3,
+    categori: "React"
+  },
+  {
+    id: 4,
+    categori: "vue"
+  },
+];
+

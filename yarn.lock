@@ -497,6 +497,19 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tabler/icons-react@^2.23.0":
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-2.23.0.tgz#c342ee171f289d8a18b6cd972bdc38181373bf28"
+  integrity sha512-+H4mC1EZVCzCRhnPwZEVTI0veVCJuAKlopeCnRlfsYcmzgJm6Ye234c4A2qrLPQoi1Y29uN9+kqCyuYW007jPg==
+  dependencies:
+    "@tabler/icons" "2.23.0"
+    prop-types "^15.7.2"
+
+"@tabler/icons@2.23.0":
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-2.23.0.tgz#8741d0bb6bd40696266489c3eb59f4c0c8c92f8d"
+  integrity sha512-dU54aBwaxG0H+jQ4BdrqtYFN5L7PZevvlnzyL6XeOZgfDS3+sVNCtuG3JmpTEqQSwGLYC1IEwogPGA/Iit2bOA==
+
 "@types/hoist-non-react-statics@^3.3.0", "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
@@ -2224,7 +2237,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==

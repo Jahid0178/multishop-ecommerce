@@ -1,49 +1,75 @@
-import { Card, Image, Text, Badge, Button, Group, Title, Divider, Input, Select } from '@mantine/core';
-// import { IconSearch } from "@tabler/icons-react";
+import { categories } from '@/data/data';
+import { Card, Image, Text, Badge, Button, Group, Title, Divider, Input, Select, Flex, RangeSlider, Box } from '@mantine/core';
+import { IconChevronDown, IconSearch } from "@tabler/icons-react";
 
 const Sidebar = () => {
+    const marks = [
+        { value: 20, label: '20%' },
+        { value: 50, label: '50%' },
+        { value: 80, label: '80%' },
+    ];
     return (
         <Card shadow="sm" padding="lg" radius="md" withBorder>
             <Title order={4}>
                 SHOP BY
             </Title>
             <Divider size="xs" my={10} />
+
+            {/* search  */}
             <Title order={6} >
                 SEARCH
             </Title>
             <Input
-                // icon={<IconSearch size={18} />}
+                icon={<IconSearch size={18} color="#3A3E43" />}
                 my={5}
-                placeholder="Search"
+                placeholder="Search..."
                 radius="sm"
+                type='search'
             />
-            <Title order={6} mt={10}>
+
+            {/* Categories  */}
+            <Title order={6} mt={10} mb={5}>
                 CATEGORIES
             </Title>
             <Select
-                label="Your favorite framework/library"
-                placeholder="Pick one"
-                // rightSection={<IconChevronDown size="1rem" />}
+                defaultValue="All"
+                allowDeselect
+                rightSection={<IconChevronDown size="1rem" />}
                 rightSectionWidth={30}
                 styles={{ rightSection: { pointerEvents: 'none' } }}
-                data={['React', 'Angular', 'Svelte', 'Vue']}
+                data={categories.map(category => category.categori)}
             />
 
-            <Group position="apart" mt="md" mb="xs">
-                <Text weight={500}>Norway Fjord Adventures</Text>
-                <Badge color="pink" variant="light">
-                    On Sale
-                </Badge>
-            </Group>
+            {/* Tags  */}
+            <Title order={6} mt={20} mb={10}>
+                TAGS
+            </Title>
+            <Flex gap="md" wrap="wrap">
+                <Button size='xs' variant="outline" color="gray" radius="xl">bag</Button>
+                <Button size='xs' variant="outline" color="gray" radius="xl">Medacia</Button>
+                <Button size='xs' variant="outline" color="gray" radius="xl">lion</Button>
+                <Button size='xs' variant="outline" color="gray" radius="xl">t shirt</Button>
+                <Button size='xs' variant="outline" color="gray" radius="xl">wemen</Button>
+                <Button size='xs' variant="outline" color="gray" radius="xl">kids</Button>
+                <Button size='xs' variant="outline" color="gray" radius="xl">Bathroom</Button>
+                <Button size='xs' variant="outline" color="gray" radius="xl">toys</Button>
+            </Flex>
 
-            <Text size="sm" color="dimmed">
-                With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-                activities on and around the fjords of Norway
-            </Text>
+            {/* price  */}
+            <Title order={6} mt={30} mb={10}>
+                PRICE
+            </Title>
+            <Text mb={5}>Price : $527-$736</Text>
+            <RangeSlider defaultValue={[20, 80]} mb={10} />
 
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-                Book classic tour now
-            </Button>
+            <Flex justify={'space-between'}>
+                <Button variant="outline" color="red">
+                    RESET RESULT
+                </Button>
+                <Button>
+                    APPLY
+                </Button>
+            </Flex>
         </Card>
     );
 }

@@ -14,7 +14,7 @@ import BrandSlid from "../BrandSlide";
 
 const Brand = () => {
   return (
-    <Box>
+    <Box mb={20}>
       {/* <Title order={1} align="center" mb={10}>hello brand</Title> */}
       <Swiper
         spaceBetween={30}
