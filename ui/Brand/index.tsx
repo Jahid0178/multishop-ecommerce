@@ -1,19 +1,18 @@
 import React from "react";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 // import { , Pagination, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
+import "swiper/css";
 
-import { Card, Container, Image, } from "@mantine/core";
+import { Card, Container, Image } from "@mantine/core";
 import { brandsData } from "@/data/data";
-
 
 const Brand = () => {
   //  responsive breakpoints for brand section in home page
-  const breakpoints = ({
+  const breakpoints = {
     // when window width is >= 480px
     480: {
       width: 480,
@@ -39,11 +38,11 @@ const Brand = () => {
       width: 1440,
       slidesPerView: 5,
     },
-  })
+  };
 
   return (
-    <Container size="lg" mb={20} px="auto">
-      <Card py={30}>
+    <div>
+      <Card py={70} my={20}>
         <Swiper
           spaceBetween={30}
           autoplay={{
@@ -58,26 +57,22 @@ const Brand = () => {
           className="mySwiper"
           breakpoints={breakpoints}
         >
-
           {/* slides  */}
-          {
-            brandsData.map(slide => (
-              <SwiperSlide key={slide.id}>
-                <Image
-                  src={slide.brandLogo}
-                  alt="Sony brand logo"
-                  maw={240}
-                  mx="auto"
-                  height={53}
-                  width={120}
-                />
-              </SwiperSlide>
-            ))
-          }
-          
+          {brandsData.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <Image
+                src={slide.brandLogo}
+                alt="Sony brand logo"
+                maw={240}
+                mx="auto"
+                height={53}
+                width={120}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Card>
-    </Container>
+    </div>
   );
 };
 

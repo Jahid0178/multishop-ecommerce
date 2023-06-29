@@ -14,7 +14,6 @@ import {
   Title,
 } from "@mantine/core";
 import { BsBagFill } from "react-icons/bs";
-import { productsData } from "@/data/data";
 import { ProductType } from "@/libs/types/types";
 import {
   addItem,
@@ -24,6 +23,7 @@ import {
 } from "@/redux/shoppingCartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
+import { products } from "@/libs/Data";
 
 const ProductDetailsPage = ({ params }: any) => {
   const { items } = useSelector((state: RootState) => state.shoppingCart);
@@ -33,7 +33,7 @@ const ProductDetailsPage = ({ params }: any) => {
   const { productId } = params;
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    const filteredProducts = productsData.find(
+    const filteredProducts = products.find(
       (product) => product.id == productId
     );
     setFilteredData(filteredProducts);

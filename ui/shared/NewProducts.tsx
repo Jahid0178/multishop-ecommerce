@@ -27,7 +27,7 @@ const NewompanyProducts: React.FC<Iprops> = ({ data, title }) => {
             sold: number;
             src: string;
           }) => (
-            <Grid.Col span={12} md={4} key={product.id}>
+            <Grid.Col span={12} md={3} key={product.id}>
               <ProductsCard data={product} />
             </Grid.Col>
           )

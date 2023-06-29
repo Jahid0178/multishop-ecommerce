@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import ProductsCard from "@/ui/Cards";
-import { productsData } from "@/data/data";
 import {
   Box,
   Button,
