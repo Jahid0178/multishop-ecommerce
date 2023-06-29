@@ -5,8 +5,9 @@ import usePaginate from "@/libs/hooks/usePaginate";
 import { CompanyProductTypes } from "@/libs/interface/interface";
 interface Iprops {
   data: CompanyProductTypes[] | undefined;
+  title: string;
 }
-const NewompanyProducts: React.FC<Iprops> = ({ data }) => {
+const NewompanyProducts: React.FC<Iprops> = ({ data, title }) => {
   const pagination = usePaginate({
     data: data,
     itemsPerPage: 5,
@@ -14,9 +15,7 @@ const NewompanyProducts: React.FC<Iprops> = ({ data }) => {
   const { paginateData, handlePageChange, totalPage } = pagination;
   return (
     <div>
-      <h1 style={{ textAlign: "center", margin: "2px 0px" }}>
-        New Company product
-      </h1>
+      <h1 style={{ textAlign: "center", margin: "2px 0px" }}>{title}</h1>
       <Grid>
         {paginateData?.map(
           (product: {
@@ -28,7 +27,7 @@ const NewompanyProducts: React.FC<Iprops> = ({ data }) => {
             sold: number;
             src: string;
           }) => (
-            <Grid.Col span={12} md={4} key={product.id}>
+            <Grid.Col span={12} md={3} key={product.id}>
               <ProductsCard data={product} />
             </Grid.Col>
           )

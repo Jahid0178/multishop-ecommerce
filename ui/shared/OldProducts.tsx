@@ -5,8 +5,9 @@ import { Box, Grid, Pagination } from "@mantine/core";
 import ProductsCard from "../Cards";
 interface Iprops {
   data: CompanyProductTypes[] | undefined;
+  title: string;
 }
-const OldCompanyProducts: React.FC<Iprops> = ({ data }) => {
+const OldProducts: React.FC<Iprops> = ({ data, title }) => {
   const pagination = usePaginate({
     data: data,
     itemsPerPage: 5,
@@ -15,9 +16,7 @@ const OldCompanyProducts: React.FC<Iprops> = ({ data }) => {
   return (
     <div>
       <div>
-        <h1 style={{ textAlign: "center", margin: "2px 0px" }}>
-          Old Company product
-        </h1>
+        <h1 style={{ textAlign: "center", margin: "2px 0px" }}>{title}</h1>
         <Grid>
           {paginateData?.map(
             (product: {
@@ -29,7 +28,7 @@ const OldCompanyProducts: React.FC<Iprops> = ({ data }) => {
               sold: number;
               src: string;
             }) => (
-              <Grid.Col span={12} md={4} key={product.id}>
+              <Grid.Col span={12} md={3} key={product.id}>
                 <ProductsCard data={product} />
               </Grid.Col>
             )
@@ -45,4 +44,4 @@ const OldCompanyProducts: React.FC<Iprops> = ({ data }) => {
   );
 };
 
-export default OldCompanyProducts;
+export default OldProducts;

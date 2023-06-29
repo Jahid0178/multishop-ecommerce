@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import ProductsCard from "@/ui/Cards";
-import { productsData } from "@/data/data";
 import {
   Box,
   Button,
@@ -21,6 +18,7 @@ import ContactModal from "@/ui/Modals/ContactModal";
 import { useDisclosure } from "@mantine/hooks";
 import CompanyProducts from "@/ui/CompanyProducts";
 import { products } from "@/libs/Data";
+import PublicProducts from "@/ui/PublicProducts";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -146,6 +144,7 @@ const HomePage = () => {
         </div>
       </Box>
       <CompanyProducts products={products} />
+      <PublicProducts products={products} />
       {/* 
       <Box component="section">
         <Container size="lg">

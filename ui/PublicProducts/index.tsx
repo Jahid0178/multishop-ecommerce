@@ -1,24 +1,22 @@
 import { CompanyProductTypes } from "@/libs/interface/interface";
-import { getNewAndOldCompanyProducts } from "@/libs/utils";
-import { Box, Container, Grid, Pagination } from "@mantine/core";
+import { getNewAndOldPublicProducts } from "@/libs/utils";
 import React from "react";
-import ProductsCard from "../Cards";
-import usePaginate from "@/libs/hooks/usePaginate";
 import NewProducts from "../shared/NewProducts";
 import OldProducts from "../shared/OldProducts";
+import { Container } from "@mantine/core";
 interface CompanyProductsProps {
   products: CompanyProductTypes[];
 }
-const CompanyProducts: React.FC<CompanyProductsProps> = ({ products }) => {
+const PublicProducts: React.FC<CompanyProductsProps> = ({ products }) => {
   const [newProducts, setNewProducts] = React.useState<CompanyProductTypes[]>();
   const [paginate, setPaginate] = React.useState([]);
   const [oldProducts, setOldProducts] = React.useState<CompanyProductTypes[]>();
 
   React.useEffect(() => {
-    const data = getNewAndOldCompanyProducts(products);
-    const { newCompanyProducts, oldCompanyProducts } = data;
-    setNewProducts(newCompanyProducts);
-    setOldProducts(oldCompanyProducts);
+    const data = getNewAndOldPublicProducts(products);
+    const { oldPublicProducts, newPublicProducts } = data;
+    setNewProducts(newPublicProducts);
+    setOldProducts(oldPublicProducts);
   }, [products]);
   return (
     <Container size="xl">
@@ -30,12 +28,12 @@ const CompanyProducts: React.FC<CompanyProductsProps> = ({ products }) => {
           margin: "2px 0px",
         }}
       >
-        Company product
+        Public product
       </h1>
-      <NewProducts title="New Company product" data={newProducts} />
-      <OldProducts title="Old Company product" data={oldProducts} />
+      <NewProducts title="New Public product" data={newProducts} />
+      <OldProducts title="Old Public product" data={oldProducts} />
     </Container>
   );
 };
 
-export default CompanyProducts;
+export default PublicProducts;
