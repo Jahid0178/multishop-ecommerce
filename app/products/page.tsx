@@ -1,6 +1,7 @@
 "use client";
 
 import { productsData } from "@/data/data";
+import { products } from "@/libs/Data";
 import ProductsCard from "@/ui/Cards";
 import Sidebar from "@/ui/SideBar";
 import { Box, Container, Grid } from "@mantine/core";
@@ -15,8 +16,8 @@ const ProductsPage = () => {
           </Grid.Col>
           <Grid.Col span={12} md={9}>
             <Grid>
-              {productsData.map((product) => (
-                <Grid.Col span={12} md={4} key={product.id}>
+              {products.map((product, index) => (
+                <Grid.Col span={12} md={4} key={index}>
                   <ProductsCard data={product} />
                 </Grid.Col>
               ))}

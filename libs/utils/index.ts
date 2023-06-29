@@ -30,7 +30,6 @@ export const getNewAndOldCompanyProducts = (
   newCompanyProducts: CompanyProductTypes[];
   oldCompanyProducts: CompanyProductTypes[];
 } => {
-  // console.log()
   const currentDate: Date = new Date();
   const thresholdInDays: number = 30;
   const newCompanyProducts: CompanyProductTypes[] = [];
