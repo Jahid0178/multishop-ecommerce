@@ -19,7 +19,7 @@ import { RootState } from "@/redux/store";
 interface PaginationProps {
   totalItems: number;
   itemsPerPage: number;
-  state: React.Dispatch<React.SetStateAction<ProductType[]>>;
+  state: React.Dispatch<React.SetStateAction<ProductType[] | undefined>>;
 }
 const PaginationD: React.FC<PaginationProps> = ({
   totalItems,

@@ -39,6 +39,9 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
   const handleDelete = (id: number) => {
     dispatch(removeByID(id));
   };
+  if (!data) {
+    return <h1>hello</h1>;
+  }
   return (
     <animated.div className="cart-box" style={cartAnimation}>
       <Grid>

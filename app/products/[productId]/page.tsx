@@ -59,15 +59,20 @@ const ProductDetailsPage = ({ params }: any) => {
   };
   const handleAddTocart = () => {
     dispatch(addItem(filteredData));
-
-    // dispatch(addItem({ ...filteredData, quantity: 1 }));
   };
   return (
     <Box component="section">
       <Container size="lg">
         <Grid>
           <Grid.Col span={12} md={6}>
-            <Image src={src} alt={title} width={550} height={480} />
+            <Image
+              src={
+                "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
+              }
+              alt={title}
+              width={550}
+              height={480}
+            />
           </Grid.Col>
           <Grid.Col span={12} md={6}>
             <Title order={3} mb={15}>
