@@ -2,8 +2,7 @@ import { CompanyProductTypes } from "@/libs/interface/interface";
 import { getNewAndOldCompanyProducts } from "@/libs/utils";
 import { Box, Container, Grid, Pagination } from "@mantine/core";
 import React from "react";
-import ProductsCard from "../Cards";
-import usePaginate from "@/libs/hooks/usePaginate";
+
 import NewProducts from "../shared/NewProducts";
 import OldProducts from "../shared/OldProducts";
 interface CompanyProductsProps {
