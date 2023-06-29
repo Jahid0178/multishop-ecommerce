@@ -1,15 +1,7 @@
 "use client";
 
 import Auth from "@/ui/Auth";
-import {
-  Box,
-  Container,
-  Grid,
-  BackgroundImage,
-  Center,
-  Text,
-  MediaQuery,
-} from "@mantine/core";
+import { Box, Container, Grid, Text, MediaQuery } from "@mantine/core";
 
 const SignUpPage = () => {
   return (

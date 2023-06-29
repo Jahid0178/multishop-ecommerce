@@ -22,10 +22,9 @@ const shoppingCartSlice = createSlice({
     openShoppingCartOpen: (state) => {
       state.isCartOpen = !state.isCartOpen;
     },
-    addItem: (state, action: PayloadAction<CartItem>) => {
+    addItem: (state, action: PayloadAction<ProductType>) => {
       const { id } = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
-
       if (existingItem) {
         existingItem.quantity += 1;
       } else {

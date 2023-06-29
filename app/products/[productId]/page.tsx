@@ -15,12 +15,7 @@ import {
 } from "@mantine/core";
 import { BsBagFill } from "react-icons/bs";
 import { ProductType } from "@/libs/types/types";
-import {
-  addItem,
-  increaseById,
-  decreaseById,
-  clearCart,
-} from "@/redux/shoppingCartSlice";
+import { addItem, increaseById, decreaseById } from "@/redux/shoppingCartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
 import { products } from "@/libs/Data";
