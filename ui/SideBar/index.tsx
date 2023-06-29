@@ -1,73 +1,131 @@
-import { categories } from '@/data/data';
-import { Card, Image, Text, Badge, Button, Group, Title, Divider, Input, Select, Flex, RangeSlider, Box } from '@mantine/core';
+/* eslint-disable react/jsx-key */
+import { categories } from "@/data/data";
+import useSetQueryParams from "@/libs/hooks/setQueryParams";
+import {
+  Card,
+  Text,
+  Badge,
+  Button,
+  Group,
+  Title,
+  Divider,
+  Input,
+  Select,
+  Flex,
+  RangeSlider,
+  Slider,
+} from "@mantine/core";
 import { IconChevronDown, IconSearch } from "@tabler/icons-react";
-
+import React from "react";
 const Sidebar = () => {
-    // dumy tags 
-    const tags = ["bag", "Medacia", "lion", "t shirt", "wemen", "kids", "Bathroom", "toys"];
-    
-    return (
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
-            <Title order={4}>
-                SHOP BY
-            </Title>
-            <Divider size="xs" my={10} />
+  const [category, setCategory] = React.useState<string>("");
+  const [value, setValue] = React.useState(40);
+  const [tagsValue, setTagsValue] = React.useState<string[]>([]);
+  const [rangeValue, setRangeValue] = React.useState<[number, number]>([
+    0, 800,
+  ]);
+  // const [];
+  useSetQueryParams({
+    category,
+    priceRange: rangeValue,
+    tags: tagsValue,
+    brand: "lllll",
+  });
+  // dumy tags
+  console.log("range value", tagsValue);
+  const tags = [
+    "bag",
+    "Medacia",
+    "lion",
+    "t shirt",
+    "wemen",
+    "kids",
+    "Bathroom",
+    "toys",
+  ];
 
-            {/* search  */}
-            <Title order={6} >
-                SEARCH
-            </Title>
-            <Input
-                icon={<IconSearch size={18} color="#3A3E43" />}
-                my={5}
-                placeholder="Search..."
-                radius="sm"
-                type='search'
-            />
+  console.log(category);
+  return (
+    <Card shadow="sm" padding="lg" radius="md" withBorder>
+      <Title order={4}>SHOP BY</Title>
+      <Divider size="xs" my={10} />
 
-            {/* Categories  */}
-            <Title order={6} mt={10} mb={5}>
-                CATEGORIES
-            </Title>
-            <Select
-                defaultValue="All"
-                allowDeselect
-                rightSection={<IconChevronDown size="1rem" />}
-                rightSectionWidth={30}
-                styles={{ rightSection: { pointerEvents: 'none' } }}
-                data={categories.map(category => category.categori)}
-            />
+      {/* search  */}
+      <Title order={6}>SEARCH</Title>
+      <Input
+        icon={<IconSearch size={18} color="#3A3E43" />}
+        my={5}
+        placeholder="Search..."
+        radius="sm"
+        type="search"
+      />
 
-            {/* Tags  */}
-            <Title order={6} mt={20} mb={10}>
-                TAGS
-            </Title>
-            <Flex gap="md" wrap="wrap">
-                {
-                    tags.map(tag => (
-                        <Button size='xs' variant="outline" color="gray" radius="xl">{tag}</Button>
-                    ))
-                }
-            </Flex>
+      {/* Categories  */}
+      <Title order={6} mt={10} mb={5}>
+        CATEGORIES
+      </Title>
+      <Select
+        label="Your favorite framework/library"
+        placeholder="Pick one"
+        // onSearchChange={handleclick}
+        dropdownPosition="bottom"
+        allowDeselect
+        rightSection={<IconChevronDown size="1rem" />}
+        rightSectionWidth={30}
+        styles={{ rightSection: { pointerEvents: "none" } }}
+        data={categories.map((category) => {
+          return category.categori;
+        })}
+      />
 
-            {/* price  */}
-            <Title order={6} mt={30} mb={10}>
-                PRICE
-            </Title>
-            <Text mb={5}>Price : $527-$736</Text>
-            <RangeSlider defaultValue={[20, 80]} mb={10} />
+      {/* Tags  */}
+      <Title order={6} mt={20} mb={10}>
+        TAGS
+      </Title>
+      <Flex gap="md" wrap="wrap">
+        {tags.map((tag, index) => (
+          <Button
+            onClick={() => {
+              const check = tagsValue.includes(tag);
+              if (!check) {
+                setTagsValue((prev) => [...prev, tag]);
+              }
+            }}
+            key={index}
+            size="xs"
+            variant="outline"
+            color="gray"
+            radius="xl"
+          >
+            {tag}
+          </Button>
+        ))}
+      </Flex>
 
-            {/* reset and apply button  */}
-            <Flex justify={'space-between'}>
-                <Button variant="outline" color="red">
-                    RESET RESULT
-                </Button>
-                <Button>
-                    APPLY
-                </Button>
-            </Flex>
-        </Card>
-    );
-}
+      {/* price  */}
+      <Title order={6} mt={30} mb={10}>
+        PRICE
+      </Title>
+      <Text mb={5}>Price : $527-$736</Text>
+      <>
+        <RangeSlider
+          min={0}
+          max={2000}
+          defaultChecked
+          value={rangeValue}
+          onChange={setRangeValue}
+        />
+      </>
+
+      {/* reset and apply button  */}
+      <Flex justify={"space-between"}>
+        <Button variant="outline" color="red">
+          RESET RESULT
+        </Button>
+        <Button>APPLY</Button>
+      </Flex>
+    </Card>
+  );
+};
 
 export default Sidebar;
