@@ -1,6 +1,5 @@
 "use client";
 
-import { productsData } from "@/data/data";
 import { products } from "@/libs/Data";
 import ProductsCard from "@/ui/Cards";
 import Sidebar from "@/ui/SideBar";

@@ -1,17 +1,17 @@
-import React from "react";
 import {
   Box,
   Button,
   Card,
-  PasswordInput,
-  TextInput,
-  Text,
   Checkbox,
+  PasswordInput,
+  Text,
+  TextInput,
 } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
+import React from "react";
 
-import { useForm } from "@mantine/form";
 import handleAuth from "@/libs/utils/handleAuth";
+import { useForm } from "@mantine/form";
 const SignIn: React.FC<{
   isSignUp: () => void;
   isForgottenPassword: () => void;
