@@ -1,16 +1,14 @@
 "use client";
 
-import { MantineProvider } from "@mantine/core";
-import "./globals.css";
-import { Nunito } from "next/font/google";
+import store from "@/redux/store";
 import Footer from "@/ui/Footer";
 import Header from "@/ui/Header";
+import { MantineProvider } from "@mantine/core";
 import { useSpring } from "@react-spring/web";
+import { Nunito } from "next/font/google";
 import { useState } from "react";
-import { Provider, useDispatch } from "react-redux";
-import { AppProps } from "next/app";
-import store, { AppDispatch } from "@/redux/store";
-import { openShoppingCartOpen } from "@/redux/shoppingCartSlice";
+import { Provider } from "react-redux";
+import "./globals.css";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export default function RootLayout({
