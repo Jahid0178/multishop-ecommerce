@@ -1,10 +1,13 @@
 "use client";
 
+import { openShoppingCartOpen } from "@/redux/shoppingCartSlice";
+import { AppDispatch, RootState } from "@/redux/store";
 import {
   Box,
   Container,
   Flex,
   Header,
+  Indicator,
   Select,
   Text,
   TextInput,
@@ -12,13 +15,11 @@ import {
   rem,
 } from "@mantine/core";
 import Link from "next/link";
-import { BsFillArrowRightCircleFill, BsHeart, BsCart } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
+import { BsCart, BsFillArrowRightCircleFill, BsHeart } from "react-icons/bs";
+import { MdOutlineMessage } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/redux/store";
-import { openShoppingCartOpen } from "@/redux/shoppingCartSlice";
 import CartBox from "../CartBox";
-import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   topNavContainer: {
@@ -92,13 +93,20 @@ const TopNavbar = () => {
               />
             </Flex>
           </Box>
-          <Flex gap={20}>
-            <BsHeart size={25} cursor="pointer" />
-            <BsCart
-              onClick={() => dispatch(openShoppingCartOpen())}
-              size={25}
-              cursor="pointer"
-            />
+          <Flex gap={30} align="center">
+            <Indicator label={25} size={20} color="green" lh={0}>
+              <MdOutlineMessage size={25} cursor="pointer" />
+            </Indicator>
+            <Indicator label={0} size={25} color="green" lh={0}>
+              <BsHeart size={25} cursor="pointer" />
+            </Indicator>
+            <Indicator label={0} size={25} color="green" lh={0}>
+              <BsCart
+                onClick={() => dispatch(openShoppingCartOpen())}
+                size={25}
+                cursor="pointer"
+              />
+            </Indicator>
             <Link href="/auth" style={{ color: "#000" }}>
               <BiUserCircle size={25} cursor="pointer" />
             </Link>
