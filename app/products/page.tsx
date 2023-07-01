@@ -1,9 +1,9 @@
 'use client'
 import { products } from "@/libs/Data";
+import usePaginate from "@/libs/hooks/usePaginate";
 import ProductsCard from "@/ui/Cards";
 import Sidebar from "@/ui/SideBar";
 import { Box, Container, Grid, Pagination } from "@mantine/core";
-import usePaginate from "../../libs/hooks/usePaginate";
 
 
 
@@ -28,7 +28,7 @@ const ProductsPage = () => {
                   <ProductsCard data={product} />
                 </Grid.Col>
               ))}
-              <Box mt={20}>
+              <Box mt={40}>
                 <Pagination
                   total={totalPage}
                   onChange={handlePageChange}
