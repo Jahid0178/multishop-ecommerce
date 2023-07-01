@@ -2,18 +2,15 @@
 import { categories } from "@/data/data";
 import useSetQueryParams, { SearchQuery } from "@/libs/hooks/setQueryParams";
 import {
-  Card,
-  Text,
-  Badge,
   Button,
-  Group,
-  Title,
+  Card,
   Divider,
-  Input,
-  Select,
   Flex,
+  Input,
   RangeSlider,
-  Slider,
+  Select,
+  Text,
+  Title
 } from "@mantine/core";
 import { IconChevronDown, IconSearch } from "@tabler/icons-react";
 import React from "react";
@@ -109,11 +106,12 @@ const Sidebar = () => {
           defaultChecked
           value={rangeValue}
           onChange={setRangeValue}
+          mt={10}
         />
       </>
 
       {/* reset and apply button  */}
-      <Flex justify={"space-between"}>
+      <Flex justify={"space-between"} mt={20}>
         <Button variant="outline" color="red">
           RESET RESULT
         </Button>
