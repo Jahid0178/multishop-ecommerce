@@ -95,7 +95,8 @@ const useStyles = createStyles((theme) => ({
     borderRadius: theme.radius.sm,
   },
 }));
-
+console.log('process.env.GOOGLE_CLIENT_ID', process.env.GOOGLE_CLIENT_ID)
+console.log('clientSecret', process.env.GOOGLE_ClIENT_SECRET)
 const HomePage = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const { classes } = useStyles();

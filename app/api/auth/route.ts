@@ -1,9 +1,18 @@
-import { NextResponse } from "next/server";
-//CLIENT ID= 843449219022-6kpuj8k0p4bo3lqnmhv4hmsdqq006e1r.apps.googleusercontent.com
-//CLIENT SECRET= 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
+import { NextApiRequest, NextApiResponse } from "next";
+import { connectDB } from "../../../libs/db";
 
-//PROJECT LINK https://console.cloud.google.com/apis/credentials?project=junaid012
-export async function GET() {
-  // Do whatever you want
-  return NextResponse.json({ message: "Hello World" }, { status: 200 });
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method === "GET") {
+    console.log("called");
+    try {
+      await connectDB();
+
+      res.status(201).json({ message: "User created successfully" });
+    } catch (error) {
+      res.status(500).json({ message: "Server error" });
+    }
+  }
 }

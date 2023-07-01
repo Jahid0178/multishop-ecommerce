@@ -1,4 +1,5 @@
 import { AuthData } from "@/libs/types/types";
+import bcrypt from "bcrypt";
 
 const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
   let data: any = {};
@@ -40,3 +41,19 @@ const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
   }
 };
 export default handleAuth;
+
+//PASSWORD HASH
+
+// const saltRounds = 10;
+
+export const hashPassword = async (password: string, saltRounds: number) => {
+  const salt = await bcrypt.genSalt(saltRounds);
+  return await bcrypt.hash(password, salt);
+};
+
+export const comparePassword = async (
+  password: string,
+  hashedPassword: string
+) => {
+  return await bcrypt.compare(password, hashedPassword);
+};
