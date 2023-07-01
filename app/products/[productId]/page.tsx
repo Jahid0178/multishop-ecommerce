@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { products } from "@/libs/Data";
+import { ProductType } from "@/libs/types/types";
+import { addItem, decreaseById, increaseById } from "@/redux/shoppingCartSlice";
+import { AppDispatch, RootState } from "@/redux/store";
 import {
   ActionIcon,
   Box,
@@ -12,15 +14,22 @@ import {
   NumberInput,
   Text,
   Title,
+  createStyles,
 } from "@mantine/core";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { BsBagFill } from "react-icons/bs";
-import { ProductType } from "@/libs/types/types";
-import { addItem, increaseById, decreaseById } from "@/redux/shoppingCartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/redux/store";
-import { products } from "@/libs/Data";
+
+// custom style 
+const useStyles = createStyles((theme) => ({
+  relative: {
+    position: "relative",
+  },
+}));
 
 const ProductDetailsPage = ({ params }: any) => {
+  const { classes } = useStyles();
   const { items } = useSelector((state: RootState) => state.shoppingCart);
 
   const [cartItems, setCartItems] = useState<number>(0);
@@ -55,18 +64,21 @@ const ProductDetailsPage = ({ params }: any) => {
   const handleAddTocart = () => {
     dispatch(addItem(filteredData));
   };
+
+
   return (
     <Box component="section">
       <Container size="lg">
         <Grid>
-          <Grid.Col span={12} md={6}>
+          <Grid.Col span={12} md={6} h={417} className={classes.relative}>
             <Image
               src={
                 "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
               }
               alt={title}
-              width={550}
-              height={480}
+              // width={550}
+              // height={480}
+              fill={true}
             />
           </Grid.Col>
           <Grid.Col span={12} md={6}>
