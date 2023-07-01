@@ -20,11 +20,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "@types/react-redux": "^7.1.25",
-<<<<<<< HEAD
     "country-list": "^2.3.0",
-=======
-    "axios": "^1.4.0",
->>>>>>> 0623b1370f907a53843fc9be07e652bdf5e74e75
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",
