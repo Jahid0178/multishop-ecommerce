@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { categories } from "@/data/data";
-import useSetQueryParams from "@/libs/hooks/setQueryParams";
+import useSetQueryParams, { SearchQuery } from "@/libs/hooks/setQueryParams";
 import {
   Card,
   Text,
@@ -25,12 +25,7 @@ const Sidebar = () => {
     0, 800,
   ]);
   // const [];
-  useSetQueryParams({
-    category,
-    priceRange: rangeValue,
-    tags: tagsValue,
-    brand: "lllll",
-  });
+  const { query, setQuery } = useSetQueryParams<SearchQuery>();
   // dumy tags
   console.log("range value", tagsValue);
   const tags = [
@@ -122,7 +117,18 @@ const Sidebar = () => {
         <Button variant="outline" color="red">
           RESET RESULT
         </Button>
-        <Button>APPLY</Button>
+        <Button
+          onClick={() => {
+            setQuery({
+              priceRange: [0, 200],
+              tags: ["hdbdhbdh", "nqdbxqbuh", "jqojdiq"],
+              category: "vcgvcgwv ",
+              brand: "nbxhjbjh",
+            });
+          }}
+        >
+          APPLY
+        </Button>
       </Flex>
     </Card>
   );
