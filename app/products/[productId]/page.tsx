@@ -10,14 +10,9 @@ import {
   Button,
   Card,
   Container,
-  Divider,
-  Flex,
   Grid,
   Group,
   NumberInput,
-  Pagination,
-  Progress,
-  Rating,
   Tabs,
   Text,
   Title,
@@ -29,6 +24,7 @@ import { useEffect, useState } from "react";
 import { BsBagFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import ContactModal from "../../../ui/Modals/ContactModal";
+import ReviewsTab from "./ReviewsTab";
 
 // custom style 
 const useStyles = createStyles((theme) => ({
@@ -37,7 +33,11 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+
+
 const ProductDetailsPage = ({ params }: any) => {
+
+
   const [opened, { open, close }] = useDisclosure(false);
 
   const { classes } = useStyles();
@@ -181,149 +181,7 @@ const ProductDetailsPage = ({ params }: any) => {
               </Tabs.Panel> */}
 
               <Tabs.Panel value="riviews" pt="xs">
-                <Grid align="center">
-                  <Grid.Col span={12} md={5}>
-                    <Title size="3rem" ta={"center"}>
-                      4.9
-                    </Title>
-                    <Rating defaultValue={4.9} size="xl" mx="auto" />
-                    <Title order={3} ta={"center"}>
-                      Rated 5 out of 1 Rating
-                    </Title>
-                  </Grid.Col>
-                  <Grid.Col span={12} md={7}>
-
-                    {/* rating progress start  */}
-                    <Flex
-                      mih={50}
-                      gap="md"
-                      justify="space-between"
-                      align="center"
-                      direction="row"
-                      wrap="wrap"
-                    >
-                      <Text>
-                        5 STARS
-                      </Text>
-                      <Text>
-                        60%
-                      </Text>
-                    </Flex>
-                    <Progress color="yellow" size="sm" value={60} animate />
-
-                    <Flex
-                      mih={50}
-                      gap="md"
-                      justify="space-between"
-                      align="center"
-                      direction="row"
-                      wrap="wrap"
-                    >
-                      <Text>
-                        4 STARS
-                      </Text>
-                      <Text>
-                        40%
-                      </Text>
-                    </Flex>
-                    <Progress color="yellow" size="sm" value={40} animate />
-
-                    <Flex
-                      mih={50}
-                      gap="md"
-                      justify="space-between"
-                      align="center"
-                      direction="row"
-                      wrap="wrap"
-                    >
-                      <Text>
-                        3 STARS
-                      </Text>
-                      <Text>
-                        10%
-                      </Text>
-                    </Flex>
-                    <Progress color="yellow" size="sm" value={10} animate />
-
-                    <Flex
-                      mih={50}
-                      gap="md"
-                      justify="space-between"
-                      align="center"
-                      direction="row"
-                      wrap="wrap"
-                    >
-                      <Text>
-                        2 STARS
-                      </Text>
-                      <Text>
-                        5%
-                      </Text>
-                    </Flex>
-                    <Progress color="yellow" size="sm" value={5} animate />
-
-                    <Flex
-                      mih={50}
-                      gap="md"
-                      justify="space-between"
-                      align="center"
-                      direction="row"
-                      wrap="wrap"
-                    >
-                      <Text>
-                        1 STARS
-                      </Text>
-                      <Text>
-                        0%
-                      </Text>
-                    </Flex>
-                    <Progress color="yellow" size="sm" value={0} animate />
-                    {/* rating progress end  */}
-
-                  </Grid.Col>
-                </Grid>
-
-                <Divider my="sm" variant="dotted" />
-                <Text>
-                  Product Reviews
-                </Text>
-
-                {/* Product Reviews start */}
-                <Divider my="sm" variant="dashed" />
-                <Flex justify={"space-between"}>
-                  <Rating defaultValue={4.9} size="sm" />
-                  <Text>
-                    10 Mar 2022
-                  </Text>
-                </Flex>
-                <Text size={"xs"} mb={5}>
-                  by Dr.Shamsuzzoha S
-                </Text>
-                <Text>
-                  ইনফ্রারেড ডিটেকটর টি ভালোই কাজ করে। তবে সার্কিট টি অনেক হালকা মানের, তাই এর স্থায়িত্ব নিয়ে আমি সন্দিহান।আশা করছি দারাজ সামনে ইনফ্রারেড সিকিউরিটি র উপর আরও উন্নত এবং স্থায়িত্ব সম্পন্ন ভালো ডিভাইস এর পসার নিয়ে আসবে।
-                </Text>
-                <Divider my="sm" variant="dashed" />
-
-                <Divider my="sm" variant="dashed" />
-                <Flex justify={"space-between"}>
-                  <Rating defaultValue={4.9} size="sm" />
-                  <Text>
-                    10 Mar 2022
-                  </Text>
-                </Flex>
-                <Text size={"xs"} mb={5}>
-                  by Dr.Shamsuzzoha S
-                </Text>
-                <Text>
-                  ইনফ্রারেড ডিটেকটর টি ভালোই কাজ করে। তবে সার্কিট টি অনেক হালকা মানের, তাই এর স্থায়িত্ব নিয়ে আমি সন্দিহান।আশা করছি দারাজ সামনে ইনফ্রারেড সিকিউরিটি র উপর আরও উন্নত এবং স্থায়িত্ব সম্পন্ন ভালো ডিভাইস এর পসার নিয়ে আসবে।
-                </Text>
-                <Divider my="sm" variant="dashed" />
-                <Flex justify={"end"} mb={10}>
-                  <Pagination mr={0} total={5} />
-                </Flex>
-                {/* Product Reviews end */}
-
-
+                <ReviewsTab />
               </Tabs.Panel>
             </Tabs>
           </Card>
