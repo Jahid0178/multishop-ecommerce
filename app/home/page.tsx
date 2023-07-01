@@ -1,5 +1,11 @@
 "use client";
 
+import { products } from "@/libs/Data";
+import Brand from "@/ui/Brand";
+import CompanyProducts from "@/ui/CompanyProducts";
+import ContactModal from "@/ui/Modals/ContactModal";
+import PublicProducts from "@/ui/PublicProducts";
+import SubscribeUs from "@/ui/SubscribeUs";
 import {
   Box,
   Button,
@@ -9,16 +15,12 @@ import {
   Text,
   Title,
   createStyles,
-  rem,
+  rem
 } from "@mantine/core";
-import Link from "next/link";
-import SubscribeUs from "@/ui/SubscribeUs";
-import Brand from "@/ui/Brand";
-import ContactModal from "@/ui/Modals/ContactModal";
 import { useDisclosure } from "@mantine/hooks";
-import CompanyProducts from "@/ui/CompanyProducts";
-import { products } from "@/libs/Data";
-import PublicProducts from "@/ui/PublicProducts";
+import Link from "next/link";
+import { sellPreviewData } from "../../data/data";
+import SellPreviewCard from "../../ui/SellPreviewCard/SellPreviewCard";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -145,7 +147,7 @@ const HomePage = () => {
       </Box>
       <CompanyProducts products={products} />
       <PublicProducts products={products} />
-      {/* 
+      {/*
       <Box component="section">
         <Container size="lg">
           <Box component="div">
@@ -241,6 +243,21 @@ const HomePage = () => {
         </Container>
       </Box> */}
       <Brand />
+      {/* Sell Preview Section */}
+      <Box component="section">
+        <Container size="lg">
+          <Grid>
+            {sellPreviewData.map((sellPreview) => {
+              const { title } = sellPreview;
+              return (
+                <Grid.Col key={title} span={12} md={4}>
+                  <SellPreviewCard data={sellPreview} />
+                </Grid.Col>
+              )
+            })}
+          </Grid>
+        </Container>
+      </Box>
       <SubscribeUs />
       {opened && <ContactModal opened={opened} close={close} />}
     </>

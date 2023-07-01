@@ -1,14 +1,13 @@
-import React from "react";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 // import { , Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 
-import { Card, Container, Image } from "@mantine/core";
 import { brandsData } from "@/data/data";
+import { Card, Image } from "@mantine/core";
 
 const Brand = () => {
   //  responsive breakpoints for brand section in home page

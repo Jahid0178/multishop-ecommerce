@@ -316,3 +316,21 @@ export const categories = [
     categori: "vue",
   },
 ];
+
+export const sellPreviewData = [
+  {
+    title: "Public Product",
+    totalProduct: 2000,
+    totalSellProduct: 580,
+  },
+  {
+    title: "Old Product",
+    totalProduct: 1000,
+    totalSellProduct: 980,
+  },
+  {
+    title: "New Product",
+    totalProduct: 1200,
+    totalSellProduct: 1080,
+  },
+]
