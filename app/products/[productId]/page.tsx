@@ -8,18 +8,27 @@ import {
   ActionIcon,
   Box,
   Button,
+  Card,
   Container,
+  Divider,
+  Flex,
   Grid,
   Group,
   NumberInput,
+  Pagination,
+  Progress,
+  Rating,
+  Tabs,
   Text,
   Title,
-  createStyles,
+  createStyles
 } from "@mantine/core";
+import { useDisclosure } from '@mantine/hooks';
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { BsBagFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
+import ContactModal from "../../../ui/Modals/ContactModal";
 
 // custom style 
 const useStyles = createStyles((theme) => ({
@@ -29,6 +38,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const ProductDetailsPage = ({ params }: any) => {
+  const [opened, { open, close }] = useDisclosure(false);
+
   const { classes } = useStyles();
   const { items } = useSelector((state: RootState) => state.shoppingCart);
 
@@ -65,78 +76,260 @@ const ProductDetailsPage = ({ params }: any) => {
     dispatch(addItem(filteredData));
   };
 
-
   return (
-    <Box component="section">
-      <Container size="lg">
-        <Grid>
-          <Grid.Col span={12} md={6} h={417} className={classes.relative}>
-            <Image
-              src={
-                "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
-              }
-              alt={title}
-              // width={550}
-              // height={480}
-              fill={true}
-            />
-          </Grid.Col>
-          <Grid.Col span={12} md={6}>
-            <Title order={3} mb={15}>
-              {title}
-            </Title>
-            <Text mb={10}>
-              Product details are a crucial part of any eCommerce website or
-              online marketplace. These details help the potential customers to
-              make an informed decision about the product they are interested in
-              buying. A well-written product description can also be a powerful
-              marketing tool that can help to increase sales.Product details
-              typically include information about the product&apos;s features,
-              specifications, dimensions, weight, materials, and other relevant
-              information that can help customers to understand the product
-              better. The product details section should also include
-              high-quality images and videos of the product, as well as customer
-              reviews and ratings.
-            </Text>
-            <Group mb={10}>
-              <Text component="span" fw="bold">
-                ${price}
-              </Text>
-              <Text component="span" fw="bold" color="red">
-                $1099
-              </Text>
-            </Group>
-            <Group align="middle" spacing={5}>
-              <ActionIcon size={42} variant="default" onClick={handleDecrease}>
-                –
-              </ActionIcon>
-
-              <NumberInput
-                hideControls={true}
-                value={cartItems}
-                onChange={handleInputChange}
-                min={0}
-                step={1}
-                size="md"
-                style={{ width: 100, textAlign: "center" }}
+    <>
+      {/* Product View Section  */}
+      <Box component="section" pb={20}>
+        <Container size="lg">
+          <Grid>
+            <Grid.Col span={12} md={6} h={417} className={classes.relative}>
+              <Image
+                src={
+                  "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
+                }
+                alt={title}
+                // width={550}
+                // height={480}
+                fill={true}
               />
+            </Grid.Col>
+            <Grid.Col span={12} md={6}>
+              <Title order={3} mb={15}>
+                {title}
+              </Title>
+              <Text mb={10}>
+                Product details are a crucial part of any eCommerce website or
+                online marketplace. These details help the potential customers to
+                make an informed decision about the product they are interested in
+                buying. A well-written product description can also be a powerful
+                marketing tool that can help to increase sales.Product details
+                typically include information about the product&apos;s features,
+                specifications, dimensions, weight, materials, and other relevant
+                information that can help customers to understand the product
+                better. The product details section should also include
+                high-quality images and videos of the product, as well as customer
+                reviews and ratings.
+              </Text>
+              <Group mb={10}>
+                <Text component="span" fw="bold">
+                  ${price}
+                </Text>
+                <Text component="span" fw="bold" color="red">
+                  $1099
+                </Text>
+              </Group>
+              <Group align="middle" spacing={5}>
+                <ActionIcon size={42} variant="default" onClick={handleDecrease}>
+                  –
+                </ActionIcon>
 
-              <ActionIcon size={42} variant="default" onClick={handleIncrease}>
-                +
-              </ActionIcon>
-            </Group>
-            <Box component="div" mt={10}>
-              <Button
-                onClick={handleAddTocart}
-                rightIcon={<BsBagFill size={20} />}
-              >
-                Add To Cart
-              </Button>
-            </Box>
-          </Grid.Col>
-        </Grid>
-      </Container>
-    </Box>
+                <NumberInput
+                  hideControls={true}
+                  value={cartItems}
+                  onChange={handleInputChange}
+                  min={0}
+                  step={1}
+                  size="md"
+                  style={{ width: 100, textAlign: "center" }}
+                />
+
+                <ActionIcon size={42} variant="default" onClick={handleIncrease}>
+                  +
+                </ActionIcon>
+              </Group>
+              <Box component="div" mt={10}>
+                <Button
+                  onClick={handleAddTocart}
+                  rightIcon={<BsBagFill size={20} />}
+                  mr={10}
+                >
+                  Add To Cart
+                </Button>
+                <Button onClick={open}>
+                  Send Message
+                </Button>
+              </Box>
+            </Grid.Col>
+          </Grid>
+        </Container>
+        {/* Modal  */}
+        {opened && <ContactModal opened={opened} close={close} />}
+      </Box>
+
+      {/* Product Description Section Additional information, Reviews  */}
+      <Box component="section" pt={5}>
+        <Container size="lg" px={8}>
+          <Card padding="lg" radius={0} withBorder pb={40}>
+            <Tabs defaultValue="description">
+              <Tabs.List>
+                <Tabs.Tab value="description" >Description</Tabs.Tab>
+                {/* <Tabs.Tab value="additional information" >Additional information</Tabs.Tab> */}
+                <Tabs.Tab value="riviews" >Riviews</Tabs.Tab>
+              </Tabs.List>
+
+              <Tabs.Panel value="description" pt="xs">
+                <Title order={3}>
+                  Quick Facts
+                </Title>
+                <Text>
+                  Lorem ipsum dolor sit amet, cons ectetur adipi scingeliras sodales tristique laoreet. Vivamus iaculis sollicitudin viverra. Morbi dapibus nunc tellus, ut iaculis dui congue lacinia. Mauris dignissim euismod tortor non pharetra. Suspendisse justo augue, mollis ut enim eu, pharetra feugiat ex. In porttitor purus elit, feugiat viverra nisi condimentum nec. Nunc ac mi ante. Nulla fringilla hendrerit elit.
+                </Text>
+              </Tabs.Panel>
+
+              {/* <Tabs.Panel value="additional information" pt="xs">
+                Messages tab content
+              </Tabs.Panel> */}
+
+              <Tabs.Panel value="riviews" pt="xs">
+                <Grid align="center">
+                  <Grid.Col span={12} md={5}>
+                    <Title size="3rem" ta={"center"}>
+                      4.9
+                    </Title>
+                    <Rating defaultValue={4.9} size="xl" mx="auto" />
+                    <Title order={3} ta={"center"}>
+                      Rated 5 out of 1 Rating
+                    </Title>
+                  </Grid.Col>
+                  <Grid.Col span={12} md={7}>
+
+                    {/* rating progress start  */}
+                    <Flex
+                      mih={50}
+                      gap="md"
+                      justify="space-between"
+                      align="center"
+                      direction="row"
+                      wrap="wrap"
+                    >
+                      <Text>
+                        5 STARS
+                      </Text>
+                      <Text>
+                        60%
+                      </Text>
+                    </Flex>
+                    <Progress color="yellow" size="sm" value={60} animate />
+
+                    <Flex
+                      mih={50}
+                      gap="md"
+                      justify="space-between"
+                      align="center"
+                      direction="row"
+                      wrap="wrap"
+                    >
+                      <Text>
+                        4 STARS
+                      </Text>
+                      <Text>
+                        40%
+                      </Text>
+                    </Flex>
+                    <Progress color="yellow" size="sm" value={40} animate />
+
+                    <Flex
+                      mih={50}
+                      gap="md"
+                      justify="space-between"
+                      align="center"
+                      direction="row"
+                      wrap="wrap"
+                    >
+                      <Text>
+                        3 STARS
+                      </Text>
+                      <Text>
+                        10%
+                      </Text>
+                    </Flex>
+                    <Progress color="yellow" size="sm" value={10} animate />
+
+                    <Flex
+                      mih={50}
+                      gap="md"
+                      justify="space-between"
+                      align="center"
+                      direction="row"
+                      wrap="wrap"
+                    >
+                      <Text>
+                        2 STARS
+                      </Text>
+                      <Text>
+                        5%
+                      </Text>
+                    </Flex>
+                    <Progress color="yellow" size="sm" value={5} animate />
+
+                    <Flex
+                      mih={50}
+                      gap="md"
+                      justify="space-between"
+                      align="center"
+                      direction="row"
+                      wrap="wrap"
+                    >
+                      <Text>
+                        1 STARS
+                      </Text>
+                      <Text>
+                        0%
+                      </Text>
+                    </Flex>
+                    <Progress color="yellow" size="sm" value={0} animate />
+                    {/* rating progress end  */}
+
+                  </Grid.Col>
+                </Grid>
+
+                <Divider my="sm" variant="dotted" />
+                <Text>
+                  Product Reviews
+                </Text>
+
+                {/* Product Reviews start */}
+                <Divider my="sm" variant="dashed" />
+                <Flex justify={"space-between"}>
+                  <Rating defaultValue={4.9} size="sm" />
+                  <Text>
+                    10 Mar 2022
+                  </Text>
+                </Flex>
+                <Text size={"xs"} mb={5}>
+                  by Dr.Shamsuzzoha S
+                </Text>
+                <Text>
+                  ইনফ্রারেড ডিটেকটর টি ভালোই কাজ করে। তবে সার্কিট টি অনেক হালকা মানের, তাই এর স্থায়িত্ব নিয়ে আমি সন্দিহান।আশা করছি দারাজ সামনে ইনফ্রারেড সিকিউরিটি র উপর আরও উন্নত এবং স্থায়িত্ব সম্পন্ন ভালো ডিভাইস এর পসার নিয়ে আসবে।
+                </Text>
+                <Divider my="sm" variant="dashed" />
+
+                <Divider my="sm" variant="dashed" />
+                <Flex justify={"space-between"}>
+                  <Rating defaultValue={4.9} size="sm" />
+                  <Text>
+                    10 Mar 2022
+                  </Text>
+                </Flex>
+                <Text size={"xs"} mb={5}>
+                  by Dr.Shamsuzzoha S
+                </Text>
+                <Text>
+                  ইনফ্রারেড ডিটেকটর টি ভালোই কাজ করে। তবে সার্কিট টি অনেক হালকা মানের, তাই এর স্থায়িত্ব নিয়ে আমি সন্দিহান।আশা করছি দারাজ সামনে ইনফ্রারেড সিকিউরিটি র উপর আরও উন্নত এবং স্থায়িত্ব সম্পন্ন ভালো ডিভাইস এর পসার নিয়ে আসবে।
+                </Text>
+                <Divider my="sm" variant="dashed" />
+                <Flex justify={"end"} mb={10}>
+                  <Pagination mr={0} total={5} />
+                </Flex>
+                {/* Product Reviews end */}
+
+
+              </Tabs.Panel>
+            </Tabs>
+          </Card>
+        </Container>
+      </Box>
+    </>
   );
 };
 
