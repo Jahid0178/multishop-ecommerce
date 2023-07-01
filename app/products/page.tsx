@@ -1,10 +1,13 @@
-"use client";
-
 import { products } from "@/libs/Data";
 import ProductsCard from "@/ui/Cards";
 import Sidebar from "@/ui/SideBar";
-import { Box, Container, Grid, Pagination } from "@mantine/core";
+import { Box, Container, Grid, Pagination, PaginationProps } from "@mantine/core";
 import { useState } from "react";
+
+interface CustomPaginationProps extends PaginationProps {
+  currentPage: number;
+  onClick: (page: number) => void;
+}
 
 const ProductsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,12 +18,13 @@ const ProductsPage = () => {
     setCurrentPage(page);
   };
 
-  const indexOfLastProduct = currentPage * productPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productPerPage;
+  const indexOfLastProduct: number = currentPage * productPerPage;
+  const indexOfFirstProduct: number = indexOfLastProduct - productPerPage;
   const currentProducts = products.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
+
   return (
     <Box component="section">
       <Container size="lg">
@@ -38,7 +42,7 @@ const ProductsPage = () => {
               <Box mt={20}>
                 <Pagination
                   total={totalPages}
-                  currentpage={currentPage}
+                  currentPage={currentPage}
                   limit={5}
                   onChange={handlePageChange}
                   radius="xs"
