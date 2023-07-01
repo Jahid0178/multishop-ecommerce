@@ -334,3 +334,56 @@ export const sellPreviewData = [
     totalSellProduct: 1080,
   },
 ]
+
+export const dropdownMenus: { id: number, label: string, icon: string }[] = [
+  {
+    id: 1,
+    label: "Computer and Laptops",
+    icon: "#",
+  },
+  {
+    id: 2,
+    label: "Cosmetics and Body Care",
+    icon: "#",
+  },
+  {
+    id: 3,
+    label: "Accesories",
+    icon: "#",
+  },
+  {
+    id: 4,
+    label: "Cloths",
+    icon: "#",
+  },
+  {
+    id: 5,
+    label: "Shoes",
+    icon: "#",
+  },
+  {
+    id: 6,
+    label: "Gifts",
+    icon: "#",
+  },
+  {
+    id: 7,
+    label: "Pet Care",
+    icon: "#",
+  },
+  {
+    id: 8,
+    label: "Mobile and Tablets",
+    icon: "#",
+  },
+  {
+    id: 9,
+    label: "Music and Gaming",
+    icon: "#",
+  },
+  {
+    id: 10,
+    label: "Others",
+    icon: "#",
+  },
+]

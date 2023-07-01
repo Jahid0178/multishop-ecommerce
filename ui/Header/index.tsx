@@ -1,17 +1,20 @@
-import { useState } from "react";
+import routes from "@/routes/routes";
 import {
-  createStyles,
-  Header as MantineHeader,
+  Burger,
   Container,
   Group,
-  Burger,
+  Header as MantineHeader,
+  Menu,
   Paper,
   Transition,
+  UnstyledButton,
+  createStyles,
   rem,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
-import routes from "@/routes/routes";
+import { useState } from "react";
+import { dropdownMenus } from "../../data/data";
 import TopNavbar from "./TopNavbar";
 
 const HEADER_HEIGHT = rem(60);
@@ -103,12 +106,24 @@ const Header = () => {
     </Link>
   ));
 
+  const dropdowns = dropdownMenus.map((menus) => (<Menu.Item key={menus.id}>{menus.icon} {menus.label}</Menu.Item>))
+
   return (
     <>
       <TopNavbar />
       <MantineHeader height={HEADER_HEIGHT} className={classes.root}>
         <Container className={classes.header} size="lg">
           <Group spacing={5} className={classes.links}>
+            <UnstyledButton>
+              <Menu trigger="click" transitionProps={{ exitDuration: 0 }} withinPortal>
+                <Menu.Target>
+                  <Link className={classes.link} href="#">All</Link>
+                </Menu.Target>
+                <Menu.Dropdown>
+                  {dropdowns}
+                </Menu.Dropdown>
+              </Menu>
+            </UnstyledButton>
             {items}
           </Group>
           <Burger
