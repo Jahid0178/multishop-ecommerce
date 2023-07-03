@@ -1,26 +1,23 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
-import { animated, useSpring } from "@react-spring/web";
-import Paginate from "./Paginate";
-import Pagination from "./Paginate";
-import { ProductType } from "@/libs/types/types";
-import { IconTrash } from "@tabler/icons-react";
+import {
+  decreaseById,
+  increaseById,
+  removeByID
+} from "@/redux/shoppingCartSlice";
+import { RootState } from "@/redux/store";
 import {
   ActionIcon,
   Grid,
+  Image,
   NumberInput,
   Paper,
   rem,
-  Image,
 } from "@mantine/core";
+import { animated, useSpring } from "@react-spring/web";
+import { IconTrash } from "@tabler/icons-react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addItem,
-  removeByID,
-  increaseById,
-  decreaseById,
-} from "@/redux/shoppingCartSlice";
-import { RootState } from "@/redux/store";
+import Pagination from "./Paginate";
 interface CartBoxProps {
   isOpen: boolean;
 }
