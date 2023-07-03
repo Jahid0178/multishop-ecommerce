@@ -1,7 +1,7 @@
 "use client";
 
 import Auth from "@/ui/Auth";
-import { Box, Container, Grid, Text, MediaQuery } from "@mantine/core";
+import { Box, Container, Grid, MediaQuery, Text } from "@mantine/core";
 
 const SignUpPage = () => {
   return (
@@ -10,6 +10,7 @@ const SignUpPage = () => {
         <Grid>
           <Grid.Col span={12} md={4}>
             <Auth />
+
           </Grid.Col>
           <Grid.Col span={12} md={8}>
             <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
