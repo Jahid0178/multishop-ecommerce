@@ -1,6 +1,7 @@
 import { Card, Grid, Input, Select, Textarea, Title } from "@mantine/core";
 const { getCode, getName } = require('country-list');
-const countryList = require('country-list');
+// const countryList = require('country-list');
+import countryList from 'country-list';
 
 type IProps = {
     title: string,
