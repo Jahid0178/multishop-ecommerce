@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useForm } from "@mantine/form";
-import { useSpring, animated, useTransition, config } from "@react-spring/web";
+'use client'
+import { animated, config, useTransition } from "@react-spring/web";
+import { useState } from "react";
 
-import SignUp from "./SignUp";
-import SignIn from "./SignIn";
 import ForgotPassword from "./ForgotPassword";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
   const [forgotPassword, setForgotPassword] = useState<boolean>(false);
