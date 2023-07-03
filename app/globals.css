@@ -1,9 +1,9 @@
 .cart-box {
   position: fixed;
-  top: 17%;
+  top: 3.7rem;
   right: 0;
   width: 390px;
-  height: 70vh;
+  height: 100vh;
   background-color: #c2ddf7;
   padding: 16px;
   z-index: 1;
@@ -11,4 +11,5 @@
   /* position: relative; */
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 6px;
+  z-index: 1000;
 }
