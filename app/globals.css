@@ -31,3 +31,11 @@
   z-index: 1000;
   padding: 10px 0px;
 }
+
+/* .swiper-wrapper{
+  padding-left: 80px;
+} */
+
+.swiper-slide{
+text-align: center;
+}

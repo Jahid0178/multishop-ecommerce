@@ -66,7 +66,7 @@ const Sidebar = () => {
         rightSectionWidth={30}
         styles={{ rightSection: { pointerEvents: "none" } }}
         data={categories.map((category) => {
-          return category.categori;
+          return category.category;
         })}
       />
 

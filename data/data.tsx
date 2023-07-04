@@ -301,19 +301,37 @@ export const brandsData = [
 export const categories = [
   {
     id: 1,
-    categori: "All",
+    category: "All",
   },
   {
     id: 2,
-    categori: "Apple inc.",
+    category: "Smartwatches",
+    img: "https://static-01.daraz.com.bd/p/f9ac4d4221f555f557a13b63c4b0b3db.jpg"
   },
   {
     id: 3,
-    categori: "React",
+    category: "Wireless Earbuds",
+    img: "https://static-01.daraz.com.bd/p/69791360ed2b73930e90c79105121d0f.jpg"
   },
   {
     id: 4,
-    categori: "vue",
+    category: "Jerseys",
+    img: "https://static-01.daraz.com.bd/p/ab0f581e922da064796c44707951d2ac.jpg"
+  },
+  {
+    id: 5,
+    category: "Polo Shirts",
+    img: "https://static-01.daraz.com.bd/p/aae2b1501e1bbfd3a30d19395068b95b.jpg"
+  },
+  {
+    id: 6,
+    category: "Trunks & Boxers",
+    img: "https://static-01.daraz.com.bd/p/42ce4adbd9578bb779d25b33c03c9389.jpg"
+  },
+  {
+    id: 7,
+    category: "Fashion Wallets",
+    img: "https://static-01.daraz.com.bd/p/dbe1ee077056faacb68ee8fe46b2ff62.jpg"
   },
 ];
 
