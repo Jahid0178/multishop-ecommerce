@@ -421,3 +421,31 @@ export const Addresses = [
     contry: "Thailand"
   },
 ]
+
+// Related Searches 
+export const relatedSearches = [
+  {
+    id: 1,
+    searchedKeyWord: "laptop"
+  },
+  {
+    id: 2,
+    searchedKeyWord: "computer desk"
+  },
+  {
+    id: 3,
+    searchedKeyWord: "computers laptops"
+  },
+  {
+    id: 4,
+    searchedKeyWord: "pc"
+  },
+  {
+    id: 5,
+    searchedKeyWord: "computer monitor"
+  },
+  {
+    id: 6,
+    searchedKeyWord: "gaming computer"
+  },
+]

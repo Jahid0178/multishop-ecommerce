@@ -52,7 +52,7 @@ const ProductCategories = () => {
 
     return (
         <>
-            <Card mb={10}>
+            <Card mb={10} shadow="xl" >
                 <Title order={3} mb={5}>
                     Categories
                 </Title>
