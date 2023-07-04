@@ -16,6 +16,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { dropdownMenus } from "../../data/data";
 import TopNavbar from "./TopNavbar";
+import { MdArrowRight } from "react-icons/md";
+import Dropdown from "react-multilevel-dropdown";
 
 const HEADER_HEIGHT = rem(60);
 
@@ -106,7 +108,16 @@ const Header = () => {
     </Link>
   ));
 
-  const dropdowns = dropdownMenus.map((menus) => (<Menu.Item key={menus.id}>{menus.icon} {menus.label}</Menu.Item>))
+  const dropdowns = dropdownMenus.map((menus) => (
+    <Dropdown.Item key={menus.id}>
+      {menus.icon} {menus.label}
+      <Dropdown.Submenu position="right">
+        {menus.subItems?.map((items, ind) => (
+          <Dropdown.Item key={ind}>{items.label}</Dropdown.Item>
+        ))}
+      </Dropdown.Submenu>
+    </Dropdown.Item>
+  ));
 
   return (
     <>
@@ -114,16 +125,18 @@ const Header = () => {
       <MantineHeader height={HEADER_HEIGHT} className={classes.root}>
         <Container className={classes.header} size="lg">
           <Group spacing={5} className={classes.links}>
-            <UnstyledButton>
-              <Menu trigger="click" transitionProps={{ exitDuration: 0 }} withinPortal>
-                <Menu.Target>
-                  <Link className={classes.link} href="#">All</Link>
-                </Menu.Target>
-                <Menu.Dropdown>
-                  {dropdowns}
-                </Menu.Dropdown>
-              </Menu>
-            </UnstyledButton>
+            <Dropdown
+              title="All"
+              position="right"
+              style={{
+                background: "transparent",
+                color: "#fff",
+                boxShadow: "none",
+              }}
+            >
+              {dropdowns}
+            </Dropdown>
+
             {items}
           </Group>
           <Burger

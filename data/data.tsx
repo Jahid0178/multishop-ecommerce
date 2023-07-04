@@ -333,57 +333,204 @@ export const sellPreviewData = [
     totalProduct: 1200,
     totalSellProduct: 1080,
   },
-]
+];
 
-export const dropdownMenus: { id: number, label: string, icon: string }[] = [
+export const dropdownMenus: {
+  id: number;
+  label: string;
+  icon: string;
+  subItems?: {
+    label: string;
+  }[];
+}[] = [
   {
     id: 1,
     label: "Computer and Laptops",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 2,
     label: "Cosmetics and Body Care",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 3,
     label: "Accesories",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 4,
     label: "Cloths",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 5,
     label: "Shoes",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 6,
     label: "Gifts",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 7,
     label: "Pet Care",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 8,
     label: "Mobile and Tablets",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 9,
     label: "Music and Gaming",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
   {
     id: 10,
     label: "Others",
     icon: "#",
+    subItems: [
+      {
+        label: "Pc",
+      },
+      {
+        label: "Macbook",
+      },
+      {
+        label: "Mobile",
+      },
+      {
+        label: "iPhone",
+      },
+    ],
   },
-]
+];
