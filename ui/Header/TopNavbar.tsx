@@ -20,6 +20,8 @@ import { BsCart, BsFillArrowRightCircleFill, BsHeart } from "react-icons/bs";
 import { MdOutlineMessage } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import CartBox from "../CartBox";
+import Auth from "../Auth";
+import React from "react";
 
 const useStyles = createStyles((theme) => ({
   topNavContainer: {
@@ -37,9 +39,12 @@ const useStyles = createStyles((theme) => ({
 
 const TopNavbar = () => {
   const { classes } = useStyles();
+  const [auth, setAuth] = React.useState(false);
   const { isCartOpen } = useSelector((state: RootState) => state.shoppingCart);
   const dispatch = useDispatch<AppDispatch>();
-
+  const handleOpen = () => {
+    setAuth((prev) => !prev);
+  };
   return (
     <Header height={rem(60)} className={classes.topNavContainer}>
       <Container fluid={true}>
@@ -107,14 +112,13 @@ const TopNavbar = () => {
                 cursor="pointer"
               />
             </Indicator>
-            <Link href="/auth" style={{ color: "#000" }}>
-              <BiUserCircle size={25} cursor="pointer" />
-            </Link>
+
+            <BiUserCircle onClick={handleOpen} size={25} cursor="pointer" />
           </Flex>
         </Box>
       </Container>
       {/* Display the products on the current page */}
-
+      <Auth isOpen={auth} />
       <CartBox isOpen={isCartOpen} />
     </Header>
   );
