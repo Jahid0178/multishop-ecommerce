@@ -13,3 +13,11 @@
   border-radius: 6px;
   z-index: 1000;
 }
+
+/* .swiper-wrapper{
+  padding-left: 80px;
+} */
+
+.swiper-slide{
+text-align: center;
+}
