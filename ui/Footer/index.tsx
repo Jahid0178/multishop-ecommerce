@@ -10,12 +10,15 @@ import {
   Grid,
   Title,
   List,
+  Flex,
+  Divider,
 } from "@mantine/core";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import FooterPaymentImage from "../../public/assets/footer-payment.jpg";
 import Link from "next/link";
 import Image from "next/image";
+import Address from "./Address";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -23,9 +26,8 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor: theme.colors.dark[8],
     color: "#fff",
-    borderTop: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
-    }`,
+    borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
+      }`,
   },
 
   logo: {
@@ -84,6 +86,7 @@ const Footer = () => {
               <Text component="p">
                 The home and elements needeed to create beatiful products.
               </Text>
+              <Address />
             </Grid.Col>
             <Grid.Col span={12} md={6} lg={3}>
               <Title order={4}>Comapny</Title>
