@@ -39,7 +39,7 @@ const useStyles = createStyles((theme) => ({
 
 const TopNavbar = () => {
   const { classes } = useStyles();
-  const [auth, setAuth] = React.useState(false);
+  const [auth, setAuth] = React.useState(true);
   const { isCartOpen } = useSelector((state: RootState) => state.shoppingCart);
   const dispatch = useDispatch<AppDispatch>();
   const handleOpen = () => {

@@ -10,7 +10,7 @@ const Auth = ({ isOpen }: { isOpen: boolean }) => {
   const [forgotPassword, setForgotPassword] = useState<boolean>(false);
 
   const cartAnimation = useSpring({
-    transform: isOpen ? "translateX(-220%)" : "translateX(230%)",
+    transform: isOpen ? "translateX(-220%)" : "translateX(237%)",
   });
   // Toggle between sign-up and sign-in forms
   const toggleForm = () => {
