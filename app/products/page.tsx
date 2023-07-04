@@ -2,6 +2,7 @@
 import { products } from "@/libs/Data";
 import usePaginate from "@/libs/hooks/usePaginate";
 import ProductsCard from "@/ui/Cards";
+import ProductCategories from "@/ui/ProductCategory";
 import Sidebar from "@/ui/SideBar";
 import { Box, Container, Grid, Pagination } from "@mantine/core";
 
@@ -22,6 +23,7 @@ const ProductsPage = () => {
             <Sidebar />
           </Grid.Col>
           <Grid.Col span={12} md={9}>
+            <ProductCategories />
             <Grid justify="center">
               {paginateData.map((product, index) => (
                 <Grid.Col span={12} md={4} key={index}>
