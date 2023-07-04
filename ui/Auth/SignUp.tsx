@@ -3,7 +3,6 @@ import React from "react";
 
 import { SignUpProps } from "@/libs/types/types";
 import handleAuth from "@/libs/utils/handleAuth";
-import { useSession, signIn, signOut } from "next-auth/react";
 import {
   Box,
   Button,
@@ -15,20 +14,6 @@ import {
 import { useForm } from "@mantine/form";
 
 const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
-  const { data: session, status } = useSession();
-
-  console.log("session", session);
-
-  React.useEffect(() => {
-    if (session) {
-      const user = session;
-      console.log(user);
-      // You can access specific properties like user email or name
-      console.log(user.email);
-      console.log(user.name);
-    }
-    console.log("session", session);
-  }, [session]);
   const form = useForm({
     initialValues: {
       name: "",
@@ -56,6 +41,7 @@ const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
             fontWeight: "800",
             color: "#2D385E",
             textAlign: "center",
+            marginTop: "-20px",
           }}
         >
           MultyShop
@@ -70,18 +56,6 @@ const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
         >
           Sign up
         </Text>
-
-        <Button
-          onClick={() =>
-            signIn("google", {
-              redirect: true,
-              callbackUrl: "/home",
-            })
-          }
-          size="xl"
-        >
-          Google login
-        </Button>
       </Box>
       <Box mx="auto">
         <form
