@@ -24,6 +24,7 @@
     "country-list": "^2.3.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.3.1",
     "next": "13.4.7",
     "next-auth": "^4.22.1",
