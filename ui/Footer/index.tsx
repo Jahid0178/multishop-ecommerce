@@ -13,7 +13,9 @@ import {
 } from "@mantine/core";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
+import FooterPaymentImage from "../../public/assets/footer-payment.jpg";
 import Link from "next/link";
+import Image from "next/image";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -49,12 +51,6 @@ const useStyles = createStyles((theme) => ({
     width: rem(160),
   },
 
-  social: {
-    [theme.fn.smallerThan("sm")]: {
-      marginTop: theme.spacing.xs,
-    },
-  },
-
   footerLink: {
     color: theme.colors.gray[6],
     textDecoration: "none",
@@ -66,6 +62,7 @@ const useStyles = createStyles((theme) => ({
   footerBottom: {
     display: "flex",
     justifyContent: "space-between",
+    gap: rem(16),
     alignItems: "center",
     marginTop: rem(10),
     [theme.fn.smallerThan("lg")]: {
@@ -176,12 +173,19 @@ const Footer = () => {
           </Grid>
         </div>
       </Container>
-      <Container size="lg" className={classes.footerBottom}>
+      <Container size="lg" className={classes.footerBottom} mt={50}>
         <Text color="dimmed" size="sm">
           © {new Date().getFullYear()} mantine.dev. All rights reserved.
         </Text>
 
-        <Group spacing={0} className={classes.social} position="right" noWrap>
+        <Image
+          src={FooterPaymentImage}
+          alt="Payment Methods"
+          width={250}
+          height={20}
+        />
+
+        <Group spacing={0} position="right" noWrap>
           <ActionIcon variant="transparent" size="lg">
             <BsTwitter size={20} />
           </ActionIcon>
