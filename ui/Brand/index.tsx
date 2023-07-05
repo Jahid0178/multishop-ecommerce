@@ -55,6 +55,7 @@ const Brand = () => {
           modules={[Autoplay, Pagination, ]}
           className="mySwiper"
           breakpoints={breakpoints}
+          loop={true}
         >
           {/* slides  */}
           {brandsData.map((slide) => (
