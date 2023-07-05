@@ -50,9 +50,3 @@
   font-size: 16px !important;
   font-weight: bolder !important;
 }
-
-.shortDataSection :hover {
-  background-color: #3498DA;
-  color: white !important;
-  cursor: pointer;
-}

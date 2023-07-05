@@ -94,6 +94,7 @@ const useStyles = createStyles((theme) => ({
     padding: theme.spacing.lg,
     borderRadius: theme.radius.sm,
   },
+
 }));
 console.log('process.env.GOOGLE_CLIENT_ID', process.env.GOOGLE_CLIENT_ID)
 console.log('clientSecret', process.env.GOOGLE_ClIENT_SECRET)
@@ -251,8 +252,8 @@ const HomePage = () => {
             {sellPreviewData.map((sellPreview) => {
               const { title } = sellPreview;
               return (
-                <Grid.Col className="shortDataSection" key={title} span={12} md={4}>
-                  <SellPreviewCard data={sellPreview} />
+                <Grid.Col  key={title} span={12} md={4}>
+                  <SellPreviewCard data={sellPreview}  />
                 </Grid.Col>
               )
             })}
