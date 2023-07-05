@@ -53,7 +53,7 @@ const ProductCategories = () => {
     return (
         <>
             <Card mb={10} shadow="xl" >
-                <Title order={3} mb={15}>
+                <Title order={3} mb={15} >
                     Categories
                 </Title>
                 <Swiper navigation={true} modules={[Navigation]} breakpoints={breakpoints} className={` ${classes.relative}`}>

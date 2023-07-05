@@ -245,13 +245,13 @@ const HomePage = () => {
       </Box> */}
       <Brand />
       {/* Sell Preview Section */}
-      <Box component="section">
+      <Box component="section" >
         <Container size="lg">
           <Grid>
             {sellPreviewData.map((sellPreview) => {
               const { title } = sellPreview;
               return (
-                <Grid.Col key={title} span={12} md={4}>
+                <Grid.Col className="shortDataSection" key={title} span={12} md={4}>
                   <SellPreviewCard data={sellPreview} />
                 </Grid.Col>
               )

@@ -7,7 +7,7 @@ const ProductsCard = ({ data }: { data: ProductProps }): JSX.Element => {
   const { category, price, rating, sold, title, src, id } = data;
   return (
     <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
-      <Card withBorder>
+      <Card withBorder shadow="lg">
         <Card.Section>
           <Image
             src={
