@@ -26,8 +26,9 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor: theme.colors.dark[8],
     color: "#fff",
-    borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
-      }`,
+    borderTop: `${rem(1)} solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
+    }`,
   },
 
   logo: {
@@ -78,7 +79,7 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <Container size="lg">
+      <Container size="xl">
         <div>
           <Grid>
             <Grid.Col span={12} md={6} lg={3}>
@@ -176,7 +177,7 @@ const Footer = () => {
           </Grid>
         </div>
       </Container>
-      <Container size="lg" className={classes.footerBottom} mt={50}>
+      <Container size="xl" className={classes.footerBottom} mt={50}>
         <Text color="dimmed" size="sm">
           © {new Date().getFullYear()} mantine.dev. All rights reserved.
         </Text>
