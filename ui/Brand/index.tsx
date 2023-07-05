@@ -1,6 +1,5 @@
 // import Swiper core and required modules
-import { Autoplay, Navigation, Pagination } from "swiper";
-// import { , Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles

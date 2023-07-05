@@ -30,7 +30,6 @@
   border-radius: 6px;
   z-index: 1000;
   padding: 10px 0px;
-  display: none;
 }
 
 .swiper-slide {
@@ -50,4 +49,10 @@
 .swiper-button-prev:after {
   font-size: 16px !important;
   font-weight: bolder !important;
+}
+
+.shortDataSection :hover {
+  background-color: #3498DA;
+  color: white !important;
+  cursor: pointer;
 }
