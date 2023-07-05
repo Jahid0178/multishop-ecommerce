@@ -20,11 +20,11 @@
   top: 3.7rem;
   left: 0;
   width: 400px;
-  height: 100vh;
+  height: 90vh;
   background-color: #c2ddf7;
-  padding: 16px;
+  padding: 16px 7px;
   z-index: 1;
-  overflow-y: scroll;
+  overflow: hidden;
   /* position: relative; */
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 6px;
@@ -36,6 +36,6 @@
   padding-left: 80px;
 } */
 
-.swiper-slide{
-text-align: center;
+.swiper-slide {
+  text-align: center;
 }

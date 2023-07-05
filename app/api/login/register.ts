@@ -1,5 +1,5 @@
 import { connectDB } from "@/libs/db";
-import { UserModel } from "@/libs/models";
+import { UserModel } from "@/libs/models/user.models";
 import bcrypt from "bcrypt";
 import { NextApiRequest, NextApiResponse } from "next";
 export default async function handler(

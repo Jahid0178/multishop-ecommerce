@@ -45,13 +45,11 @@ export default function RootLayout({
         }}
       >
         <body className={nunito.className} suppressHydrationWarning={true}>
-          <AuthProviders>
           <Provider store={store}>
             <Header />
             <main>{children}</main>
             <Footer />
           </Provider>
-          </AuthProviders>
         </body>
       </MantineProvider>
     </html>
