@@ -6,10 +6,10 @@ const RelatedSearches = () => {
     return (
         <Box component="section">
             <Card p={20}>
-                <Title order={2} mb={10}>
+                <Title order={2} mb={20}>
                     Related Searches
                 </Title>
-                <Grid>
+                <Grid mb={10}>
                     {
                         relatedSearches.map(search => (
                             <Grid.Col span={12} md={6} lg={4} key={search.id}>
@@ -25,7 +25,6 @@ const RelatedSearches = () => {
                         ))
                     }
                 </Grid>
-                <Pagination position="right" my={20} total={10} color="dark" radius="xs" withControls={false} withEdges />
             </Card>
         </Box>
     )
