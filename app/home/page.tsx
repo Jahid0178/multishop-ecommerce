@@ -15,7 +15,7 @@ import {
   Text,
   Title,
   createStyles,
-  rem
+  rem,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
@@ -94,10 +94,9 @@ const useStyles = createStyles((theme) => ({
     padding: theme.spacing.lg,
     borderRadius: theme.radius.sm,
   },
-
 }));
-console.log('process.env.GOOGLE_CLIENT_ID', process.env.GOOGLE_CLIENT_ID)
-console.log('clientSecret', process.env.GOOGLE_ClIENT_SECRET)
+console.log("process.env.GOOGLE_CLIENT_ID", process.env.GOOGLE_CLIENT_ID);
+console.log("clientSecret", process.env.GOOGLE_ClIENT_SECRET);
 const HomePage = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const { classes } = useStyles();
@@ -244,18 +243,22 @@ const HomePage = () => {
           </Box>
         </Container>
       </Box> */}
-      <Brand />
+      <Box component="section">
+        <Container size="xl">
+          <Brand />
+        </Container>
+      </Box>
       {/* Sell Preview Section */}
-      <Box component="section" >
-        <Container size="lg">
+      <Box component="section">
+        <Container size="xl">
           <Grid>
             {sellPreviewData.map((sellPreview) => {
               const { title } = sellPreview;
               return (
-                <Grid.Col  key={title} span={12} md={4}>
-                  <SellPreviewCard data={sellPreview}  />
+                <Grid.Col key={title} span={12} md={4}>
+                  <SellPreviewCard data={sellPreview} />
                 </Grid.Col>
-              )
+              );
             })}
           </Grid>
         </Container>
