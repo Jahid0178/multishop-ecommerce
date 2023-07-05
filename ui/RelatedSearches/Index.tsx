@@ -6,7 +6,7 @@ const RelatedSearches = () => {
     return (
         <Box component="section">
             <Card p={20}>
-                <Title order={2} mb={20}>
+                <Title fw={400} order={2} mb={20}>
                     Related Searches
                 </Title>
                 <Grid mb={10}>
