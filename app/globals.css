@@ -33,10 +33,21 @@
   display: none;
 }
 
-/* .swiper-wrapper{
-  padding-left: 80px;
-} */
-
 .swiper-slide {
   text-align: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: black;
+  color: white !important;
+  height: 30px !important;
+  width: 30px !important ;
+  border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px !important;
+  font-weight: bolder !important;
 }
