@@ -51,7 +51,6 @@ const Brand = () => {
           pagination={{
             clickable: true,
           }}
-          navigation={true}
           modules={[Autoplay, Pagination, ]}
           className="mySwiper"
           breakpoints={breakpoints}
