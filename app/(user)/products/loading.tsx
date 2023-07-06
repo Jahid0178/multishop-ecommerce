@@ -18,7 +18,12 @@ const loading = () => {
       />
       ; */}
       <>
-        <Skeleton height={100} circle mb="xl" />
+        <Skeleton height={150} radius="xl" />
+        <Skeleton height={150} mt={6} radius="xl" />
+        <Skeleton height={150} mt={6} width="70%" radius="xl" />
+        <Skeleton height={150} radius="xl" />
+        <Skeleton height={150} mt={6} radius="xl" />
+        <Skeleton height={150} mt={6} width="70%" radius="xl" />
         <Skeleton height={150} radius="xl" />
         <Skeleton height={150} mt={6} radius="xl" />
         <Skeleton height={150} mt={6} width="70%" radius="xl" />
