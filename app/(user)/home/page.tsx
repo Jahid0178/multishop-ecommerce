@@ -19,8 +19,8 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
-import { sellPreviewData } from "../../data/data";
-import SellPreviewCard from "../../ui/SellPreviewCard/SellPreviewCard";
+import { sellPreviewData } from "../../../data/data";
+import SellPreviewCard from "../../../ui/SellPreviewCard/SellPreviewCard";
 
 const useStyles = createStyles((theme) => ({
   root: {
