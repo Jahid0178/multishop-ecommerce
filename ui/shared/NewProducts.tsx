@@ -1,6 +1,6 @@
 import React from "react";
 import ProductsCard from "../Cards";
-import { Box, Grid, Pagination } from "@mantine/core";
+import { Box, Grid, Pagination, Title } from "@mantine/core";
 import usePaginate from "@/libs/hooks/usePaginate";
 import { CompanyProductTypes } from "@/libs/interface/interface";
 interface Iprops {
@@ -15,7 +15,7 @@ const NewompanyProducts: React.FC<Iprops> = ({ data, title }) => {
   const { paginateData, handlePageChange, totalPage } = pagination;
   return (
     <div>
-      <h1 style={{ textAlign: "center", margin: "2px 0px" }}>{title}</h1>
+      <Title order={3} ta={"center"} mb={30}>{title}</Title>
       <Grid>
         {paginateData?.map(
           (product: {
@@ -36,7 +36,7 @@ const NewompanyProducts: React.FC<Iprops> = ({ data, title }) => {
       <Box
         style={{ display: "flex", justifyContent: "center", margin: "10px" }}
       >
-        <Pagination total={totalPage} onChange={handlePageChange} />
+        <Pagination my={50} total={totalPage} onChange={handlePageChange} />
       </Box>
     </div>
   );

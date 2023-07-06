@@ -1,6 +1,6 @@
 import { CompanyProductTypes } from "@/libs/interface/interface";
 import { getNewAndOldCompanyProducts } from "@/libs/utils";
-import { Box, Container, Grid, Pagination } from "@mantine/core";
+import { Box, Container, Grid, Pagination, Title } from "@mantine/core";
 import React from "react";
 
 import NewProducts from "../shared/NewProducts";
@@ -21,16 +21,14 @@ const CompanyProducts: React.FC<CompanyProductsProps> = ({ products }) => {
   }, [products]);
   return (
     <Container size="xl">
-      <h1
-        style={{
-          textAlign: "center",
-          fontWeight: "700",
-          fontSize: "50px",
-          margin: "2px 0px",
-        }}
+      <Title
+        order={1}
+        ta={"center"}
+        mt={50}
+        mb={10}
       >
         Company product
-      </h1>
+      </Title>
       <NewProducts title="New Company product" data={newProducts} />
       <OldProducts title="Old Company product" data={oldProducts} />
     </Container>
