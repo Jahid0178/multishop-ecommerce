@@ -10,16 +10,9 @@ type SellPreviewCardProps = {
 
 const useStyles = createStyles((theme) => ({
   SellPreviewCard: {
-    background: "#EDF2FD",
-    boxShadow:
-      "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+    background: "#3498DA",
+    color: "white",
     cursor: "pointer",
-    transition: "ease-in-out",
-    // Use pseudo-classes
-    "&:hover": {
-      background: "white",
-      // boxShadow: "rgba(0, 0, 0, 0.2) 0px 60px 40px -7px",
-    },
   },
 }));
 

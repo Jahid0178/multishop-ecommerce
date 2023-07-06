@@ -21,9 +21,7 @@ const useStyles = createStyles((theme) => ({
     // border: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
     //   }`,
   },
-  mantineAccordionLabel: {
-    color: "white",
-  },
+
 }));
 const Faq: React.FC<FaqTpes> = ({ title, data }) => {
   const { classes } = useStyles();
