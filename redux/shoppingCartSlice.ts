@@ -1,6 +1,8 @@
 import { ProductType } from "@/libs/types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
+import { Notification } from "@mantine/core";
+import { IconCheck, IconX } from "@tabler/icons-react";
+import { toast } from "react-toastify";
 interface CartItem extends ProductType {
   quantity: number;
 }
@@ -27,8 +29,28 @@ const shoppingCartSlice = createSlice({
       const existingItem = state.items.find((item) => item.id === id);
       if (existingItem) {
         existingItem.quantity += 1;
+        toast.success("🦄 increase quantity!", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
+        toast.success("🦄 add item success!", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     },
     removeByID: (state, action: PayloadAction<number>) => {
