@@ -15,7 +15,7 @@ const useStyles = createStyles((theme) => ({
 
   item: {
     color: "white",
-    background: "linear-gradient(to right, #22076F , #7C46AE)",
+    background: "linear-gradient(to right, #4a00e0 , #8e2de2)",
     borderRadius: theme.radius.md,
     marginBottom: theme.spacing.lg,
     // border: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
