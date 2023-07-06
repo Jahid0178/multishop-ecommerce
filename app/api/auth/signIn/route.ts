@@ -1,32 +1,45 @@
-import User from "@/libs/models";
-import { NextApiRequest, NextApiResponse } from "next";
+import User from "@/libs/models/user.models";
+import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 const secretKey = "your-secret-key"; // Change this to a secure secret key
 
-export default async function login(req: NextApiRequest, res: NextApiResponse) {
+export default async function POST(req: NextRequest, res: NextResponse) {
   try {
-    const { username, password } = req.body;
+    const body = await req.json();
+
+    const { email, password } = body;
 
     // Find the user in the database
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
+    const { _id: id } = user;
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return new NextResponse(JSON.stringify({ message: "User not found" }), {
+        status: 404,
+      });
     }
 
     // Verify the password
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(401).json({ message: "Invalid credentials" });
+      return new NextResponse(
+        JSON.stringify({ message: "Invalid credentials" }),
+        { status: 410 }
+      );
     }
 
     // Generate access token
-    const accessToken = jwt.sign({ username, role: user.role }, secretKey, {
-      expiresIn: "15m",
-    });
+    const accessToken = jwt.sign(
+      { id, role: user.role },
+      process.env.AUTH_SECRET ?? "",
+      {
+        expiresIn: "15m",
+      }
+    );
 
     // Generate refresh token
-    const refreshToken = jwt.sign({ username }, secretKey, {
+    const refreshToken = jwt.sign({ id }, process.env.AUTH_SECRET ?? "", {
       expiresIn: "7d",
     });
 
@@ -35,12 +48,21 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
     await user.save();
 
     // Set the access token as a cookie
-    res.setHeader("Set-Cookie", `accessToken=${accessToken}; HttpOnly; Path=/`);
-
+    cookies().set({
+      name: "accessToken",
+      value: accessToken,
+      httpOnly: true,
+      path: "/",
+    });
     // Return the access token as the response
-    res.status(200).json({ accessToken });
+    return new NextResponse(JSON.stringify({ message: "login success" }), {
+      status: 200,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal server error" });
+    return new NextResponse(
+      JSON.stringify({ message: "Invalid credentials" }),
+      { status: 500 }
+    );
   }
 }

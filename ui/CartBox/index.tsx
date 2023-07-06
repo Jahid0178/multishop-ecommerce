@@ -2,17 +2,12 @@
 import {
   decreaseById,
   increaseById,
-  removeByID
+  removeByID,
 } from "@/redux/shoppingCartSlice";
 import { RootState } from "@/redux/store";
-import {
-  ActionIcon,
-  Grid,
-  Image,
-  NumberInput,
-  Paper,
-  rem,
-} from "@mantine/core";
+import { ActionIcon, Grid, NumberInput, Paper, rem } from "@mantine/core";
+import Image from "next/image";
+
 import { animated, useSpring } from "@react-spring/web";
 import { IconTrash } from "@tabler/icons-react";
 import React from "react";
@@ -38,8 +33,14 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
   return (
     <animated.div className="cart-box" style={cartAnimation}>
       {items?.length === 0 ? (
-        <div>
-          <h1>Cart is empty</h1>
+        <div style={{}}>
+          {/* <h1 style={{}}>Cart is empty</h1> */}
+          <Image
+            src={require("@/public/assets/empty_cart_co35.png")}
+            width={400}
+            height={300}
+            alt="jjjjjjj"
+          />
         </div>
       ) : (
         <>

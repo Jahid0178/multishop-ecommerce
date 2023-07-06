@@ -25,6 +25,7 @@ export type FaqTpes = {
   data: { faqTitle: string; faqDescription: string; value: string }[];
 };
 export type SignUpProps = {
+  state: React.Dispatch<React.SetStateAction<boolean>>;
   onClick?: MouseEventHandler<HTMLDivElement>;
 };
 

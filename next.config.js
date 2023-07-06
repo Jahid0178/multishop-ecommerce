@@ -10,6 +10,8 @@ const nextConfig = {
     AUTH_SECRET: "multy_shop_dev_junaid_super_secret!",
     NEXTAUTH_URL: "http://localhost:3000",
     GOOGLE_CLIENT_SECRET: "hello_multyShop_google_client",
+    APP_PUBLIC_API:
+      process.env.NODE_ENV === "production" ? "" : "http://localhost:3000/",
   },
   images: {
     remotePatterns: [
