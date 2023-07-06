@@ -18,6 +18,8 @@ import { dropdownMenus } from "../../data/data";
 import TopNavbar from "./TopNavbar";
 import { MdArrowRight } from "react-icons/md";
 import Dropdown from "react-multilevel-dropdown";
+import Image from "next/image";
+
 const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
@@ -107,16 +109,25 @@ const Header = () => {
     </Link>
   ));
 
-  const dropdowns = dropdownMenus.map((menus) => (
-    <Dropdown.Item key={menus.id}>
-      {menus.icon} {menus.label}
-      <Dropdown.Submenu position="right">
-        {menus.subItems?.map((items, ind) => (
-          <Dropdown.Item key={ind}>{items.label}</Dropdown.Item>
-        ))}
-      </Dropdown.Submenu>
-    </Dropdown.Item>
-  ));
+  const dropdowns = dropdownMenus.map((menus) => {
+    return (
+      <Dropdown.Item key={menus.id}>
+        <Image
+          src={menus.icon}
+          alt={menus.label}
+          width={20}
+          height={20}
+          style={{ marginRight: "1rem" }}
+        />
+        {menus.label}
+        <Dropdown.Submenu position="right">
+          {menus.subItems?.map((items, ind) => (
+            <Dropdown.Item key={ind}>{items.label}</Dropdown.Item>
+          ))}
+        </Dropdown.Submenu>
+      </Dropdown.Item>
+    );
+  });
 
   return (
     <>
