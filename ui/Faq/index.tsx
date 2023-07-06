@@ -10,38 +10,46 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
+    color: "white",
   },
 
   item: {
+    color: "white",
+    background: "linear-gradient(to right, #22076F , #7C46AE)",
     borderRadius: theme.radius.md,
     marginBottom: theme.spacing.lg,
-    border: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
-      }`,
+    // border: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+    //   }`,
+  },
+  mantineAccordionLabel: {
+    color: "white",
   },
 }));
 const Faq: React.FC<FaqTpes> = ({ title, data }) => {
   const { classes } = useStyles();
 
   return (
-    <Container size="lg" className={classes.wrapper}>
-      <Title align="center" className={classes.title}>
-        {title}
-      </Title>
-      <Accordion variant="separated">
-        <Grid>
-          {data.map((data, index) => {
-            return (
-              <Grid.Col span={12} md={6} key={index}>
-                <Accordion.Item className={classes.item} value={data.value}>
-                  <Accordion.Control>{data.faqTitle}</Accordion.Control>
-                  <Accordion.Panel>{data.faqDescription}</Accordion.Panel>
-                </Accordion.Item>
-              </Grid.Col>
-            );
-          })}
-        </Grid>
-      </Accordion>
-    </Container>
+    <Box bg={"#03031F"}>
+      <Container size="lg" className={classes.wrapper} >
+        <Title align="center" className={classes.title}>
+          {title}
+        </Title>
+        <Accordion variant="separated">
+          <Grid>
+            {data.map((data, index) => {
+              return (
+                <Grid.Col span={12} md={6} key={index}>
+                  <Accordion.Item className={classes.item} value={data.value} >
+                    <Accordion.Control>{data.faqTitle}</Accordion.Control>
+                    <Accordion.Panel>{data.faqDescription}</Accordion.Panel>
+                  </Accordion.Item>
+                </Grid.Col>
+              );
+            })}
+          </Grid>
+        </Accordion>
+      </Container>
+    </Box>
   );
 };
 
