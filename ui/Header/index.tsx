@@ -18,7 +18,6 @@ import { dropdownMenus } from "../../data/data";
 import TopNavbar from "./TopNavbar";
 import { MdArrowRight } from "react-icons/md";
 import Dropdown from "react-multilevel-dropdown";
-
 const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({

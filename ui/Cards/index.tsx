@@ -1,23 +1,33 @@
-import { ProductProps } from "@/libs/types/types";
+import { ProductProps, ProductType } from "@/libs/types/types";
+import { openProductModal } from "@/redux/showModal";
+import { RootState } from "@/redux/store";
 import { Badge, Box, Card, Group, Rating, Text, Title } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
+import { FaCartShopping, FaEye, FaHeart } from "react-icons/fa6";
+import { useSelector, useDispatch } from "react-redux";
 
-const ProductsCard = ({ data }: { data: ProductProps }): JSX.Element => {
+const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
+  const dispatch = useDispatch();
   const { category, price, rating, sold, title, src, id } = data;
+  const handleOpenModal = () => {
+    dispatch(openProductModal(data));
+  };
   return (
-    <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
+    <Box style={{ position: "relative" }}>
       <Card withBorder shadow="lg">
         <Card.Section>
-          <Image
-            src={
-              "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
-            }
-            alt={title}
-            width={550}
-            height={480}
-            style={{ width: "100%", height: "250px" }}
-          />
+          <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
+            <Image
+              src={
+                "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
+              }
+              alt={title}
+              width={550}
+              height={480}
+              style={{ width: "100%", height: "250px" }}
+            />
+          </Link>
         </Card.Section>
         <Badge>{category}</Badge>
         <Title order={4} my={10}>
@@ -39,7 +49,29 @@ const ProductsCard = ({ data }: { data: ProductProps }): JSX.Element => {
           </Text>
         </Box>
       </Card>
-    </Link>
+      <Box
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "4px",
+        }}
+      >
+        <Text>
+          <FaHeart cursor="pointer" color="gray" size={26} />
+        </Text>
+        <Text>
+          <FaEye
+            cursor="pointer"
+            color="gray"
+            size={26}
+            onClick={handleOpenModal}
+          />
+        </Text>
+        <Text>
+          <FaCartShopping cursor="pointer" color="gray" size={26} />
+        </Text>
+      </Box>
+    </Box>
   );
 };
 export default ProductsCard;

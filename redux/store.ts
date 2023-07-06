@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import shoppingCartSlice from "./shoppingCartSlice";
-
+import showModalSlice from "./showModal";
 const store = configureStore({
   reducer: {
     shoppingCart: shoppingCartSlice,
+    modal: showModalSlice,
   },
 });
 

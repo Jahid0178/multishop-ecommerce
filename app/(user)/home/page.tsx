@@ -21,6 +21,7 @@ import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { sellPreviewData } from "../../../data/data";
 import SellPreviewCard from "../../../ui/SellPreviewCard/SellPreviewCard";
+import ProductModal from "@/ui/Modals/product";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -100,6 +101,7 @@ console.log("clientSecret", process.env.GOOGLE_ClIENT_SECRET);
 const HomePage = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const { classes } = useStyles();
+
   return (
     <>
       <Box component="section" py={0}>
@@ -171,6 +173,7 @@ const HomePage = () => {
       </Box>
       <SubscribeUs />
       {opened && <ContactModal opened={opened} close={close} />}
+      <ProductModal />
     </>
   );
 };
