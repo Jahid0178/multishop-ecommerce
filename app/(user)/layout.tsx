@@ -8,7 +8,6 @@ import { useSpring } from "@react-spring/web";
 import { Nunito } from "next/font/google";
 import { useState } from "react";
 import { Provider } from "react-redux";
-import AuthProviders from "../libs/providers/AuthProviders";
 import "./globals.css";
 const nunito = Nunito({ subsets: ["latin"] });
 

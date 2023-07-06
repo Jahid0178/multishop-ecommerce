@@ -16,28 +16,24 @@ import {
   Tabs,
   Text,
   Title,
-  createStyles
+  createStyles,
 } from "@mantine/core";
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure } from "@mantine/hooks";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { BsBagFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import ContactModal from "../../../ui/Modals/ContactModal";
 import ReviewsTab from "./ReviewsTab";
+import ContactModal from "@/ui/Modals/ContactModal";
 
-// custom style 
+// custom style
 const useStyles = createStyles((theme) => ({
   relative: {
     position: "relative",
   },
 }));
 
-
-
 const ProductDetailsPage = ({ params }: any) => {
-
-
   const [opened, { open, close }] = useDisclosure(false);
 
   const { classes } = useStyles();
@@ -99,16 +95,16 @@ const ProductDetailsPage = ({ params }: any) => {
               </Title>
               <Text mb={10}>
                 Product details are a crucial part of any eCommerce website or
-                online marketplace. These details help the potential customers to
-                make an informed decision about the product they are interested in
-                buying. A well-written product description can also be a powerful
-                marketing tool that can help to increase sales.Product details
-                typically include information about the product&apos;s features,
-                specifications, dimensions, weight, materials, and other relevant
-                information that can help customers to understand the product
-                better. The product details section should also include
-                high-quality images and videos of the product, as well as customer
-                reviews and ratings.
+                online marketplace. These details help the potential customers
+                to make an informed decision about the product they are
+                interested in buying. A well-written product description can
+                also be a powerful marketing tool that can help to increase
+                sales.Product details typically include information about the
+                product&apos;s features, specifications, dimensions, weight,
+                materials, and other relevant information that can help
+                customers to understand the product better. The product details
+                section should also include high-quality images and videos of
+                the product, as well as customer reviews and ratings.
               </Text>
               <Group mb={10}>
                 <Text component="span" fw="bold">
@@ -119,7 +115,11 @@ const ProductDetailsPage = ({ params }: any) => {
                 </Text>
               </Group>
               <Group align="middle" spacing={5}>
-                <ActionIcon size={42} variant="default" onClick={handleDecrease}>
+                <ActionIcon
+                  size={42}
+                  variant="default"
+                  onClick={handleDecrease}
+                >
                   –
                 </ActionIcon>
 
@@ -133,7 +133,11 @@ const ProductDetailsPage = ({ params }: any) => {
                   style={{ width: 100, textAlign: "center" }}
                 />
 
-                <ActionIcon size={42} variant="default" onClick={handleIncrease}>
+                <ActionIcon
+                  size={42}
+                  variant="default"
+                  onClick={handleIncrease}
+                >
                   +
                 </ActionIcon>
               </Group>
@@ -145,9 +149,7 @@ const ProductDetailsPage = ({ params }: any) => {
                 >
                   Add To Cart
                 </Button>
-                <Button onClick={open}>
-                  Send Message
-                </Button>
+                <Button onClick={open}>Send Message</Button>
               </Box>
             </Grid.Col>
           </Grid>
@@ -162,17 +164,21 @@ const ProductDetailsPage = ({ params }: any) => {
           <Card padding="lg" radius={0} withBorder pb={40}>
             <Tabs defaultValue="description">
               <Tabs.List>
-                <Tabs.Tab value="description" >Description</Tabs.Tab>
+                <Tabs.Tab value="description">Description</Tabs.Tab>
                 {/* <Tabs.Tab value="additional information" >Additional information</Tabs.Tab> */}
-                <Tabs.Tab value="riviews" >Riviews</Tabs.Tab>
+                <Tabs.Tab value="riviews">Riviews</Tabs.Tab>
               </Tabs.List>
 
               <Tabs.Panel value="description" pt="xs">
-                <Title order={3}>
-                  Quick Facts
-                </Title>
+                <Title order={3}>Quick Facts</Title>
                 <Text>
-                  Lorem ipsum dolor sit amet, cons ectetur adipi scingeliras sodales tristique laoreet. Vivamus iaculis sollicitudin viverra. Morbi dapibus nunc tellus, ut iaculis dui congue lacinia. Mauris dignissim euismod tortor non pharetra. Suspendisse justo augue, mollis ut enim eu, pharetra feugiat ex. In porttitor purus elit, feugiat viverra nisi condimentum nec. Nunc ac mi ante. Nulla fringilla hendrerit elit.
+                  Lorem ipsum dolor sit amet, cons ectetur adipi scingeliras
+                  sodales tristique laoreet. Vivamus iaculis sollicitudin
+                  viverra. Morbi dapibus nunc tellus, ut iaculis dui congue
+                  lacinia. Mauris dignissim euismod tortor non pharetra.
+                  Suspendisse justo augue, mollis ut enim eu, pharetra feugiat
+                  ex. In porttitor purus elit, feugiat viverra nisi condimentum
+                  nec. Nunc ac mi ante. Nulla fringilla hendrerit elit.
                 </Text>
               </Tabs.Panel>
 
