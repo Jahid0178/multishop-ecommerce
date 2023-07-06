@@ -7,6 +7,7 @@ import {
   Divider,
   Flex,
   Input,
+  NumberInput,
   RangeSlider,
   Select,
   Text,
@@ -100,14 +101,19 @@ const Sidebar = () => {
       </Title>
       <Text mb={5}>Price : $527-$736</Text>
       <>
-        <RangeSlider
-          min={0}
-          max={2000}
-          defaultChecked
-          value={rangeValue}
-          onChange={setRangeValue}
-          mt={10}
-        />
+        <Flex>
+          <NumberInput
+            mt="sm"
+            mr={"md"}
+            // label="NumberInput with custom layout"
+            placeholder="Min"
+          />
+          <NumberInput
+            mt="sm"
+            // label="NumberInput with custom layout"
+            placeholder="Max"
+          />
+        </Flex>
       </>
 
       {/* reset and apply button  */}

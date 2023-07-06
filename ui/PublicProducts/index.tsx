@@ -3,7 +3,7 @@ import { getNewAndOldPublicProducts } from "@/libs/utils";
 import React from "react";
 import NewProducts from "../shared/NewProducts";
 import OldProducts from "../shared/OldProducts";
-import { Container } from "@mantine/core";
+import { Container, Title } from "@mantine/core";
 interface CompanyProductsProps {
   products: CompanyProductTypes[];
 }
@@ -20,16 +20,13 @@ const PublicProducts: React.FC<CompanyProductsProps> = ({ products }) => {
   }, [products]);
   return (
     <Container size="xl">
-      <h1
-        style={{
-          textAlign: "center",
-          fontWeight: "700",
-          fontSize: "50px",
-          margin: "2px 0px",
-        }}
+      <Title
+        order={1}
+        ta={"center"}
+        mb={10}
       >
         Public product
-      </h1>
+      </Title>
       <NewProducts title="New Public product" data={newProducts} />
       <OldProducts title="Old Public product" data={oldProducts} />
     </Container>
