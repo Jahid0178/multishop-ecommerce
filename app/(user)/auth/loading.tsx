@@ -1,11 +1,17 @@
-import React from "react";
+"use client";
+import { Loader } from "@mantine/core";
 
-const Loader = () => {
+const loading = () => {
   return (
-    <div>
-      <h1>loading..................</h1>
+    <div style={{ textAlign: "center" }}>
+      <Loader
+        style={{ fontSize: "150px", height: "200px", textAlign: "center" }}
+        size="xl"
+        variant="bars"
+      />
+      ;
     </div>
   );
 };
 
-export default Loader;
+export default loading;

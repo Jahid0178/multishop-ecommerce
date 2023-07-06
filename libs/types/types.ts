@@ -30,10 +30,11 @@ export type SignUpProps = {
 };
 
 export type AuthData = {
-  name?: any;
-  email: any;
-  password?: any;
+  name?: string;
+  email: string;
+  password?: string;
   endPoint: string;
+  role?: string;
 };
 
 export type FilterDataProps = {

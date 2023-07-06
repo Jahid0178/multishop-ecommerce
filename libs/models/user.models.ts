@@ -6,6 +6,7 @@ export interface UserDocument extends Document {
   password: string;
   role: "user" | "admin" | "merchant";
   picture: string;
+  isVerified: boolean;
 }
 
 const UserSchema = new Schema<UserDocument>(
@@ -17,6 +18,10 @@ const UserSchema = new Schema<UserDocument>(
       type: String,
       enum: ["user", "admin", "merchant"],
       default: "user",
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
     },
     picture: String,
   },
