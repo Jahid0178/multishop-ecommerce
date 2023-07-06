@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CartBox from "../CartBox";
 import Auth from "../Auth";
 import React from "react";
+import { IconSearch } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   topNavContainer: {
@@ -89,7 +90,7 @@ const TopNavbar = () => {
                 placeholder="Search Product..."
                 sx={{ maxWidth: "400px", width: "100%" }}
                 rightSection={
-                  <BsFillArrowRightCircleFill
+                  <IconSearch
                     size={25}
                     color="#221ECD"
                     cursor="pointer"
