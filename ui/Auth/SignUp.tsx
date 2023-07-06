@@ -10,6 +10,8 @@ import {
   PasswordInput,
   TextInput,
   Text,
+  Radio,
+  Group,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { UserDocument } from "@/libs/models/user.models";
@@ -22,6 +24,8 @@ interface User extends UserDocument {
 
 const SignUp: React.FC<SignUpProps> = ({ onClick, state }) => {
   const [user, setUser] = React.useState<User | undefined>();
+  const [role, setRole] = React.useState("user");
+
   const form = useForm({
     initialValues: {
       name: "",
@@ -76,11 +80,13 @@ const SignUp: React.FC<SignUpProps> = ({ onClick, state }) => {
       <Box mx="auto">
         <form
           onSubmit={form.onSubmit(async ({ name, email, password }) => {
+            console.log("rrrrrrrr", role);
             const response = handleAuth({
               name,
               email,
               password,
               endPoint: "signUp",
+              role,
             });
             const data = await response;
             setUser(data.user);
@@ -128,10 +134,31 @@ const SignUp: React.FC<SignUpProps> = ({ onClick, state }) => {
             </a>
             .
           </Text>
+          <Radio.Group
+            style={{ textAlign: "center", marginTop: "4px" }}
+            value={role}
+            onChange={setRole}
+            name="favoriteFramework"
+            label="Select your role"
+            withAsterisk
+          >
+            <Group
+              mt="xs"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Radio value="user" label="user" />
+              <Radio value="merchant" label="merchant" />
+            </Group>
+          </Radio.Group>
           <Button size="lg" fullWidth type="submit" mt="sm">
             Sign up{" "}
           </Button>
         </form>
+
         <Text
           onClick={onClick}
           style={{

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { products } from "@/libs/Data";
 import usePaginate from "@/libs/hooks/usePaginate";
 import ProductsCard from "@/ui/Cards";
@@ -6,8 +6,6 @@ import ProductCategories from "@/ui/ProductCategory";
 import RelatedSearches from "@/ui/RelatedSearches/Index";
 import Sidebar from "@/ui/SideBar";
 import { Box, Container, Grid, Pagination } from "@mantine/core";
-
-
 
 const ProductsPage = () => {
   const pagination = usePaginate({
@@ -40,9 +38,9 @@ const ProductsPage = () => {
                 />
               </Box>
             </Grid>
-            <RelatedSearches />
           </Grid.Col>
         </Grid>
+        <RelatedSearches />
       </Container>
     </Box>
   );

@@ -5,7 +5,13 @@ import { AuthData } from "@/libs/types/types";
  * request to an API endpoint with the provided user data.
  * @param {AuthData}  - - `name`: The name of the user (optional)
  */
-const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
+const handleAuth = async ({
+  name,
+  email,
+  password,
+  endPoint,
+  role,
+}: AuthData) => {
   let data: any = {};
   if (name === undefined) {
     if (password === undefined) {
@@ -21,7 +27,9 @@ const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
     data.name = name;
     data.email = email;
     data.password = password;
+    data.role = role;
   }
+  console.log("role", role);
 
   try {
     const response = await fetch(`http://localhost:3000/api/auth/${endPoint}`, {
