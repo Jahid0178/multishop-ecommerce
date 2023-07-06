@@ -10,11 +10,16 @@ import "swiper/css/navigation";
 import { Card, Image, Text, Title, createStyles } from "@mantine/core";
 import { Navigation } from "swiper";
 import { brandsData, categories } from "@/data/data";
+import Link from "next/link";
 
 // custom style 
 const useStyles = createStyles((theme) => ({
     relative: {
         paddingLeft: "100px"
+    },
+    categoryText: {
+        textDecoration:"none",
+        color: "black"
     },
 }));
 
@@ -60,25 +65,29 @@ const ProductCategories = () => {
                     {/* slides  */}
                     {
                         categories.map((category) => {
-                            if(category.category === "All"){
+                            if (category.category === "All") {
                                 return;
                             }
-                            return(
+                            return (
+                                // <Link href="/">
                                 <SwiperSlide key={category.id}>
-                                    <Image
-                                        src={category.img}
-                                        alt={category.category}
-                                        maw={240}
-                                        mx="auto"
-                                        height={40}
-                                        width={40}
-                                    />
-                                    <Text>
-                                        {category.category}
-                                    </Text>
+                                    <Link href={"/"} className={classes.categoryText}>
+                                        <Image
+                                            src={category.img}
+                                            alt={category.category}
+                                            maw={240}
+                                            mx="auto"
+                                            height={40}
+                                            width={40}
+                                        />
+                                        <Text>
+                                            {category.category}
+                                        </Text>
+                                    </Link>
                                 </SwiperSlide>
+                                // {/* </Link> */ }
                             )
-                        })
+                    })
                     }
                 </Swiper>
             </Card>
