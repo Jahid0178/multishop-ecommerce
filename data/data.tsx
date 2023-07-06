@@ -1,3 +1,15 @@
+import { StaticImageData } from "next/image";
+import Image1 from "/public/assets/category-icon/1.png";
+import Image2 from "/public/assets/category-icon/2.png";
+import Image3 from "/public/assets/category-icon/3.png";
+import Image4 from "/public/assets/category-icon/4.png";
+import Image5 from "/public/assets/category-icon/5.png";
+import Image6 from "/public/assets/category-icon/6.png";
+import Image7 from "/public/assets/category-icon/7.png";
+import Image8 from "/public/assets/category-icon/8.png";
+import Image9 from "/public/assets/category-icon/9.png";
+import Image10 from "/public/assets/category-icon/10.png";
+
 export const paginateData = [
   {
     id: 1,
@@ -365,7 +377,7 @@ export const sellPreviewData = [
 export const dropdownMenus: {
   id: number;
   label: string;
-  icon: string;
+  icon: StaticImageData | undefined;
   subItems?: {
     label: string;
   }[];
@@ -373,7 +385,7 @@ export const dropdownMenus: {
   {
     id: 1,
     label: "Computer and Laptops",
-    icon: "#",
+    icon: Image1,
     subItems: [
       {
         label: "Pc",
@@ -392,7 +404,7 @@ export const dropdownMenus: {
   {
     id: 2,
     label: "Cosmetics and Body Care",
-    icon: "#",
+    icon: Image2,
     subItems: [
       {
         label: "Pc",
@@ -411,7 +423,7 @@ export const dropdownMenus: {
   {
     id: 3,
     label: "Accesories",
-    icon: "#",
+    icon: Image3,
     subItems: [
       {
         label: "Pc",
@@ -430,7 +442,7 @@ export const dropdownMenus: {
   {
     id: 4,
     label: "Cloths",
-    icon: "#",
+    icon: Image4,
     subItems: [
       {
         label: "Pc",
@@ -449,7 +461,7 @@ export const dropdownMenus: {
   {
     id: 5,
     label: "Shoes",
-    icon: "#",
+    icon: Image5,
     subItems: [
       {
         label: "Pc",
@@ -468,7 +480,7 @@ export const dropdownMenus: {
   {
     id: 6,
     label: "Gifts",
-    icon: "#",
+    icon: Image6,
     subItems: [
       {
         label: "Pc",
@@ -487,7 +499,7 @@ export const dropdownMenus: {
   {
     id: 7,
     label: "Pet Care",
-    icon: "#",
+    icon: Image7,
     subItems: [
       {
         label: "Pc",
@@ -506,7 +518,7 @@ export const dropdownMenus: {
   {
     id: 8,
     label: "Mobile and Tablets",
-    icon: "#",
+    icon: Image8,
     subItems: [
       {
         label: "Pc",
@@ -525,7 +537,7 @@ export const dropdownMenus: {
   {
     id: 9,
     label: "Music and Gaming",
-    icon: "#",
+    icon: Image9,
     subItems: [
       {
         label: "Pc",
@@ -544,7 +556,7 @@ export const dropdownMenus: {
   {
     id: 10,
     label: "Others",
-    icon: "#",
+    icon: Image10,
     subItems: [
       {
         label: "Pc",
