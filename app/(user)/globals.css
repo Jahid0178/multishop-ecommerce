@@ -41,7 +41,7 @@
   background-color: black;
   color: white !important;
   height: 30px !important;
-  width: 30px !important ;
+  width: 30px !important;
   border-radius: 50%;
 }
 
@@ -49,4 +49,14 @@
 .swiper-button-prev:after {
   font-size: 16px !important;
   font-weight: bolder !important;
+}
+
+.mantine-Accordion-label {
+  color: white;
+}
+
+.mantine-Accordion-chevron>svg {
+  color: white;
+  background: #ffffff33;
+  border-radius: 50%;
 }
