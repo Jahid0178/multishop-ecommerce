@@ -1,12 +1,32 @@
 import { CompanyProductTypes } from "../interface/interface";
+/**
+ * The function `getExpiredProducts` takes an array of `CompanyProductTypes` and returns an array of
+ * expired products based on the current date.
+ * @param {CompanyProductTypes[]} products - An array of objects representing company products. Each
+ * object has the following properties:
+ * @returns an array of CompanyProductTypes that are expired.
+ */
 export const getExpiredProducts = (
   products: CompanyProductTypes[]
 ): CompanyProductTypes[] => {
+  /* The line `const currentDate: Date = new Date();` is creating a new Date object and assigning it to
+ the variable `currentDate`. This Date object represents the current date and time. */
   const currentDate: Date = new Date();
+  /* The line `const currentMonth: number = currentDate.getMonth() + 1;` is getting the current month
+ from the `currentDate` object and assigning it to the variable `currentMonth`. */
   const currentMonth: number = currentDate.getMonth() + 1; // Months are zero-based, so we add 1.
+  /* The line `const currentYear: number = currentDate.getFullYear();` is getting the current year from
+  the `currentDate` object and assigning it to the variable `currentYear`. This allows us to compare
+  the year of each product with the current year to determine if it is expired or not. */
+  /* The line `const currentYear: number = currentDate.getFullYear();` is getting the current year from
+ the `currentDate` object and assigning it to the variable `currentYear`. This allows us to compare
+ the year of each product with the current year to determine if it is expired or not. */
   const currentYear: number = currentDate.getFullYear();
   const expiredProducts: CompanyProductTypes[] = [];
 
+  /* The code block is iterating over each product in the `products` array. For each product, it is
+ extracting the year and month from the `date` property by splitting the string on the "-" character
+ and converting the resulting strings to numbers using the `map(Number)` function. */
   for (const product of products) {
     const [productYear, productMonth] = product.date.split("-").map(Number);
 
@@ -23,6 +43,15 @@ export const getExpiredProducts = (
   return expiredProducts;
 };
 
+/**
+ * The function `getNewAndOldCompanyProducts` takes an array of `CompanyProductTypes` and returns an
+ * object containing two arrays - `newCompanyProducts` and `oldCompanyProducts` - based on the date of
+ * each product.
+ * @param {CompanyProductTypes[]} products - An array of objects representing company products. Each
+ * object should have the following properties:
+ * @returns an object with two properties: "newCompanyProducts" and "oldCompanyProducts". The values of
+ * these properties are arrays of CompanyProductTypes.
+ */
 export const getNewAndOldCompanyProducts = (
   products: CompanyProductTypes[]
 ): {
@@ -50,6 +79,15 @@ export const getNewAndOldCompanyProducts = (
   return { newCompanyProducts, oldCompanyProducts };
 };
 
+/**
+ * The function `getNewAndOldPublicProducts` takes an array of `CompanyProductTypes` and returns an
+ * object containing two arrays - `newPublicProducts` and `oldPublicProducts` - based on the date of
+ * each product.
+ * @param {CompanyProductTypes[]} products - An array of objects representing company products. Each
+ * object has the following properties:
+ * @returns an object with two properties: "newPublicProducts" and "oldPublicProducts". Both properties
+ * are arrays of CompanyProductTypes.
+ */
 export const getNewAndOldPublicProducts = (
   products: CompanyProductTypes[]
 ): {

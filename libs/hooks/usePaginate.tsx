@@ -12,6 +12,12 @@ interface PaginateReturnType {
   totalPage: number;
 }
 
+/**
+ * The `usePaginate` function is a custom React hook that helps with pagination by slicing the data
+ * array based on the current page and items per page.
+ * @param {PaginatePropsTypes}  - - `data`: An array of data that needs to be paginated.
+ * @returns The function `usePaginate` returns an object with three properties:
+ */
 const usePaginate = ({
   data,
   itemsPerPage,

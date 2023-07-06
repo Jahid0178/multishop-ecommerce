@@ -1,5 +1,10 @@
 import { AuthData } from "@/libs/types/types";
 
+/**
+ * The function `handleAuth` is an asynchronous function that handles authentication by sending a POST
+ * request to an API endpoint with the provided user data.
+ * @param {AuthData}  - - `name`: The name of the user (optional)
+ */
 const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
   let data: any = {};
   if (name === undefined) {
@@ -18,7 +23,6 @@ const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
     data.password = password;
   }
 
-  console.log(data);
   try {
     const response = await fetch(`http://localhost:3000/api/auth/${endPoint}`, {
       method: "POST",
@@ -33,6 +37,7 @@ const handleAuth = async ({ name, email, password, endPoint }: AuthData) => {
     // Handle the response as needed
     const responseData = await response.json();
     console.log(responseData);
+    return responseData;
   } catch (error) {
     console.error("Error:", error);
   }

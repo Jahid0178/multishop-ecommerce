@@ -9,9 +9,9 @@ const Auth = ({ isOpen }: { isOpen: boolean }) => {
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
   const [forgotPassword, setForgotPassword] = useState<boolean>(false);
 
-  const cartAnimation = useSpring({
-    transform: isOpen ? "translateX(-220%)" : "translateX(237%)",
-  });
+  // const cartAnimation = useSpring({
+  //   transform: isSignUp ? "translateX(-220%)" : "translateX(230%)",
+  // });
   // Toggle between sign-up and sign-in forms
   const toggleForm = () => {
     setForgotPassword(false);
@@ -23,9 +23,9 @@ const Auth = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <>
       <div style={{ position: "relative", width: "100%" }}>
-        <animated.div className="auth" style={cartAnimation}>
+        <animated.div className="cart-bolx">
           {isSignUp && forgotPassword === false ? (
-            <SignUp onClick={toggleForm} />
+            <SignUp state={setIsSignUp} onClick={toggleForm} />
           ) : forgotPassword === true ? (
             <ForgotPassword
               haveAccount={toggleForm}

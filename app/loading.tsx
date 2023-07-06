@@ -1,10 +1,15 @@
-'use client'
-import { Loader } from '@mantine/core';
+"use client";
+import { Loader } from "@mantine/core";
 
 const loading = () => {
   return (
     <div>
-      <Loader size="xl" variant="bars" />;
+      <Loader
+        style={{ fontSize: "150px", height: "200px", textAlign: "center" }}
+        size="xl"
+        variant="bars"
+      />
+      ;
     </div>
   );
 };

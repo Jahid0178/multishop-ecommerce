@@ -10,6 +10,12 @@ export interface SearchQuery {
   brand: string;
 }
 
+/**
+ * The `useSetQueryParams` function is a TypeScript hook that allows you to update and set query
+ * parameters in the URL using the Next.js router.
+ * @returns The function `useSetQueryParams` returns an object with two properties: `query` and
+ * `setQuery`.
+ */
 const useSetQueryParams = <T extends SearchQuery>() => {
   const router = useRouter();
   const query = (router as any)?.query;

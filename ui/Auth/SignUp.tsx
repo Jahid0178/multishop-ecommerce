@@ -12,8 +12,16 @@ import {
   Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { UserDocument } from "@/libs/models/user.models";
+interface User extends UserDocument {
+  createdAt: string;
+  updatedAt: string;
+  _v: number;
+  _id: string;
+}
 
-const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
+const SignUp: React.FC<SignUpProps> = ({ onClick, state }) => {
+  const [user, setUser] = React.useState<User | undefined>();
   const form = useForm({
     initialValues: {
       name: "",
@@ -31,7 +39,15 @@ const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
         value !== values.password ? "Passwords did not match" : null,
     },
   });
-
+  const redirect = React.useCallback(() => {
+    if (user?.email) {
+      state(false);
+    }
+  }, [state, user?.email]);
+  React.useEffect(() => {
+    redirect();
+    console.log(user?.email);
+  }, [redirect, user]);
   return (
     <Card>
       <Box mx="auto">
@@ -59,8 +75,15 @@ const SignUp: React.FC<SignUpProps> = ({ onClick }) => {
       </Box>
       <Box mx="auto">
         <form
-          onSubmit={form.onSubmit(({ name, email, password }) => {
-            handleAuth({ name, email, password, endPoint: "signUp" });
+          onSubmit={form.onSubmit(async ({ name, email, password }) => {
+            const response = handleAuth({
+              name,
+              email,
+              password,
+              endPoint: "signUp",
+            });
+            const data = await response;
+            setUser(data.user);
           })}
         >
           <TextInput

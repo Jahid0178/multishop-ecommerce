@@ -9,8 +9,7 @@ const SignUpPage = () => {
       <Container size="xl">
         <Grid>
           <Grid.Col span={12} md={4}>
-            <Auth />
-
+            <Auth isOpen />
           </Grid.Col>
           <Grid.Col span={12} md={8}>
             <MediaQuery smallerThan="sm" styles={{ display: "none" }}>

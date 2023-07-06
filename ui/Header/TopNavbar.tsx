@@ -112,13 +112,14 @@ const TopNavbar = () => {
                 cursor="pointer"
               />
             </Indicator>
-
-            <BiUserCircle onClick={handleOpen} size={25} cursor="pointer" />
+            <Link style={{ color: "unset" }} href="/auth">
+              <BiUserCircle onClick={handleOpen} size={25} cursor="pointer" />
+            </Link>
           </Flex>
         </Box>
       </Container>
       {/* Display the products on the current page */}
-      <Auth isOpen={auth} />
+
       <CartBox isOpen={isCartOpen} />
     </Header>
   );
