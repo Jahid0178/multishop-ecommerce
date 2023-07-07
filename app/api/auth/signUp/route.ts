@@ -1,15 +1,13 @@
-import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 import User, { UserDocument } from "@/libs/models/user.models";
 import bcrypt from "bcrypt";
 import { connectDB } from "@/libs/db";
+import { sendVerificationEmail } from "@/libs/email";
+import { v4 as uuidv4 } from "uuid";
 
-export const GET = async (req: NextRequest, res: NextResponse) => {
-  //   redirect(process.env.APP_PUBLIC_API ?? "");
-  return new NextResponse(JSON.stringify({ mm: "signUp" }));
-};
 export const POST = async (req: NextRequest, res: NextResponse) => {
   connectDB();
+
   const body: UserDocument = await req.json();
 
   const { name, email, password, role } = body;
@@ -23,6 +21,9 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
       );
     }
 
+    // Generate a verification token
+    const verificationToken = uuidv4();
+
     // Create a new user
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({
@@ -30,11 +31,14 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
       email,
       password: hashedPassword,
       role,
+      verificationToken,
     });
     const user = await newUser.save();
     if (user) {
+      sendVerificationEmail(user.email, user.verificationToken);
+
       return new NextResponse(
-        JSON.stringify({ message: "Registration successful", user: user }),
+        JSON.stringify({ message: "Registration successful", user }),
         {
           status: 200,
         }

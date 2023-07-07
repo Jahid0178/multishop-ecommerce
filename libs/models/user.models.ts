@@ -7,6 +7,7 @@ export interface UserDocument extends Document {
   role: "user" | "admin" | "merchant";
   picture: string;
   isVerified: boolean;
+  verificationToken?: string;
 }
 
 const UserSchema = new Schema<UserDocument>(
@@ -23,6 +24,7 @@ const UserSchema = new Schema<UserDocument>(
       type: Boolean,
       default: false,
     },
+    verificationToken: String,
     picture: String,
   },
   { timestamps: true }

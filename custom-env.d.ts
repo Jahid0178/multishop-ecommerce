@@ -5,9 +5,13 @@ declare namespace NodeJS {
     GOOGLE_ClIENT_SECRET: string;
     MONGODB_URI: string;
     AUTH_SECRET: string;
-    NEXTAUTH_URL: string;
+    BASE_URL: string;
     GOOGLE_CLIENT_SECRET: string;
     APP_PUBLIC_API: string;
+
+    //email send env
+    HOST_EMAIL: string;
+    HOST_PASSWORD: string;
     // Add more variables as needed
   }
 }
