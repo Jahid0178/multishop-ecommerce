@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { ProductProps, ProductType } from "@/libs/types/types";
 import { addItem } from "@/redux/shoppingCartSlice";
 import { openProductModal } from "@/redux/showModal";
@@ -10,27 +11,29 @@ import { useDispatch } from "react-redux";
 
 const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
   const dispatch = useDispatch();
+  const router = useRouter();
+
   const { category, price, rating, sold, title, src, id } = data;
   const handleOpenModal = () => {
-    alert("jknjnkj");
     dispatch(openProductModal(data));
   };
+  const handleRouteChane = () => {
+    router.push(`/products/${id}`);
+  };
   return (
-    <Box style={{ position: "relative", zIndex: "-1" }}>
+    <Box style={{ position: "relative" }}>
       <Card style={{ backgroundColor: "#E1E8F0" }} withBorder shadow="lg">
-        <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
-          <Card.Section>
-            <Image
-              src={
-                "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
-              }
-              alt={"title"}
-              width={550}
-              height={480}
-              style={{ width: "100%", height: "250px", cursor: "pointer" }}
-            />
-          </Card.Section>
-        </Link>
+        <Card.Section onClick={handleRouteChane}>
+          <Image
+            src={
+              "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
+            }
+            alt={"title"}
+            width={550}
+            height={480}
+            style={{ width: "100%", height: "250px", cursor: "pointer" }}
+          />
+        </Card.Section>
 
         <Badge>{category}</Badge>
         <Title order={4} my={10}>
@@ -57,15 +60,11 @@ const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
           position: "absolute",
           top: "20px",
           right: "4px",
+          zIndex: "999",
         }}
       >
         <Text>
-          <FaHeart
-            onClick={() => alert("hbhjbhj")}
-            cursor="pointer"
-            color="gray"
-            size={26}
-          />
+          <FaHeart cursor="pointer" color="gray" size={26} />
         </Text>
         <Text>
           <FaEye
