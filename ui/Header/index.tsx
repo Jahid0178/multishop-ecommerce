@@ -142,7 +142,6 @@ const Header = () => {
             <Dropdown
               title="All"
               position="right"
-
               // style={{
               //   background: "transparent",
               //   color: "#fff",

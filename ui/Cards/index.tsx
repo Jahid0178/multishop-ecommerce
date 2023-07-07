@@ -12,13 +12,14 @@ const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
   const dispatch = useDispatch();
   const { category, price, rating, sold, title, src, id } = data;
   const handleOpenModal = () => {
+    alert("jknjnkj");
     dispatch(openProductModal(data));
   };
   return (
     <Box style={{ position: "relative", zIndex: "-1" }}>
       <Card style={{ backgroundColor: "#E1E8F0" }} withBorder shadow="lg">
-        <Card.Section>
-          <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
+        <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
+          <Card.Section>
             <Image
               src={
                 "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
@@ -26,10 +27,11 @@ const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
               alt={"title"}
               width={550}
               height={480}
-              style={{ width: "100%", height: "250px" }}
+              style={{ width: "100%", height: "250px", cursor: "pointer" }}
             />
-          </Link>
-        </Card.Section>
+          </Card.Section>
+        </Link>
+
         <Badge>{category}</Badge>
         <Title order={4} my={10}>
           {title}
@@ -58,7 +60,12 @@ const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
         }}
       >
         <Text>
-          <FaHeart cursor="pointer" color="gray" size={26} />
+          <FaHeart
+            onClick={() => alert("hbhjbhj")}
+            cursor="pointer"
+            color="gray"
+            size={26}
+          />
         </Text>
         <Text>
           <FaEye
