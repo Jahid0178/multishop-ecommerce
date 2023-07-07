@@ -112,6 +112,7 @@
   -ms-transform: translateY(-0%);
   -o-transform: translateY(-0%);
   cursor: pointer;
+  z-index: 9999;
 }
 .quick_veiw_container {
   display: flex;

@@ -41,6 +41,7 @@ const NewCompanyProducts: React.FC<Iprops> = ({ data, title, identify }) => {
                   marginBottom: "-26px",
                   marginLeft: "-8px",
                   zIndex: "9",
+                  position: "absolute",
                 }}
               >
                 {identify}
