@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 const secretKey = "your-secret-key"; // Change this to a secure secret key
 
-export default async function POST(req: NextRequest, res: NextResponse) {
+export const POST = async (req: NextRequest, res: NextResponse) => {
   try {
     const body = await req.json();
 
@@ -65,4 +65,4 @@ export default async function POST(req: NextRequest, res: NextResponse) {
       { status: 500 }
     );
   }
-}
+};
