@@ -1,21 +1,26 @@
 import React from "react";
 import ProductsCard from "../Cards";
-import { Box, Grid, Pagination, Title } from "@mantine/core";
+import { Box, Grid, Pagination, Title, Text } from "@mantine/core";
 import usePaginate from "@/libs/hooks/usePaginate";
 import { CompanyProductTypes } from "@/libs/interface/interface";
+import { StaticImageData } from "next/image";
 interface Iprops {
   data: CompanyProductTypes[] | undefined;
   title: string;
+  identify: string;
 }
-const NewompanyProducts: React.FC<Iprops> = ({ data, title }) => {
+const NewCompanyProducts: React.FC<Iprops> = ({ data, title, identify }) => {
   const pagination = usePaginate({
     data: data,
     itemsPerPage: 5,
   });
   const { paginateData, handlePageChange, totalPage } = pagination;
   return (
-    <div>
-      <Title order={3} ta={"center"} mb={30}>{title}</Title>
+    <Box style={{ position: "relative" }}>
+      <Title order={3} ta={"center"} mb={30}>
+        {title}
+      </Title>
+
       <Grid>
         {paginateData?.map(
           (product: {
@@ -25,10 +30,22 @@ const NewompanyProducts: React.FC<Iprops> = ({ data, title }) => {
             rating: number;
             price: number;
             sold: number;
-            src: string;
+            src: string | StaticImageData;
           }) => (
             <Grid.Col span={12} md={3} key={product.id}>
-              <ProductsCard data={product} />
+              <Text
+                style={{
+                  color: "red",
+                  fontSize: "25px",
+                  fontWeight: "800",
+                  marginBottom: "-26px",
+                  marginLeft: "-8px",
+                  zIndex: "9",
+                }}
+              >
+                {identify}
+              </Text>
+              <ProductsCard data={{ ...product, quantity: 1 }} />
             </Grid.Col>
           )
         )}
@@ -38,8 +55,8 @@ const NewompanyProducts: React.FC<Iprops> = ({ data, title }) => {
       >
         <Pagination my={50} total={totalPage} onChange={handlePageChange} />
       </Box>
-    </div>
+    </Box>
   );
 };
 
-export default NewompanyProducts;
+export default NewCompanyProducts;
