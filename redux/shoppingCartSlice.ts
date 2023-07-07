@@ -1,7 +1,6 @@
 import { ProductType } from "@/libs/types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Notification } from "@mantine/core";
-import { IconCheck, IconX } from "@tabler/icons-react";
+
 import { toast } from "react-toastify";
 interface CartItem extends ProductType {
   quantity: number;

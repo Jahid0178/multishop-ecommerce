@@ -6,13 +6,15 @@ import {
 } from "@/redux/shoppingCartSlice";
 import { RootState } from "@/redux/store";
 import { ActionIcon, Grid, NumberInput, Paper, rem } from "@mantine/core";
-import Image from "next/image";
 
 import { animated, useSpring } from "@react-spring/web";
 import { IconTrash } from "@tabler/icons-react";
 import React from "react";
+import { Image } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "./Paginate";
+import { StaticImageData } from "next/image";
+import emptyCartImg from "@/public/assets/empty_cart_co35.png";
 interface CartBoxProps {
   isOpen: boolean;
 }
@@ -27,19 +29,19 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
   const handleDelete = (id: number) => {
     dispatch(removeByID(id));
   };
-  React.useEffect(() => {
-    console.log(items);
-  }, [items]);
+  // React.useEffect(() => {
+  //   console.log(items);
+  // }, [items]);
   return (
     <animated.div className="cart-box" style={cartAnimation}>
       {items?.length === 0 ? (
         <div style={{}}>
           {/* <h1 style={{}}>Cart is empty</h1> */}
           <Image
-            src={require("@/public/assets/empty_cart_co35.png")}
+            src={emptyCartImg.src}
             width={400}
             height={300}
-            alt="jjjjjjj"
+            alt="empty cart image"
           />
         </div>
       ) : (
@@ -49,7 +51,7 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
               (
                 data: {
                   quantity: number;
-                  src: string | null | undefined;
+                  src: string | StaticImageData;
                   id: number;
                 },
                 index: React.Key
@@ -98,6 +100,7 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
                         height={50}
                         fit="contain"
                         src={data.src}
+                        alt="llll"
                       />
                       <IconTrash
                         onClick={() => handleDelete(data.id)}

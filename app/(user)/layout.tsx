@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import ".././globals.css";
 import NextTopLoader from "nextjs-toploader";
+import { ToastContainer } from "react-toastify";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -50,6 +51,8 @@ export default function RootLayout({
         <body className={nunito.className} suppressHydrationWarning={true}>
           <NextTopLoader height={3} showSpinner={false} />
           <Provider store={store}>
+            <ToastContainer />
+
             <Header />
             <main>{children}</main>
             <Footer />

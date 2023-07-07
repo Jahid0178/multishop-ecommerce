@@ -5,7 +5,7 @@ import { Badge, Box, Card, Group, Rating, Text, Title } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCartShopping, FaEye, FaHeart } from "react-icons/fa6";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
               src={
                 "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
               }
-              alt={title}
+              alt={"title"}
               width={550}
               height={480}
               style={{ width: "100%", height: "250px" }}

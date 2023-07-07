@@ -17,9 +17,9 @@ import {
   Text,
   Title,
   createStyles,
+  Image,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { BsBagFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
@@ -69,6 +69,9 @@ const ProductDetailsPage = ({ params }: any) => {
     dispatch(decreaseById(id));
   };
   const handleAddTocart = () => {
+    //REMOVE WHEN READY TO PRODUCTION
+    filteredData.src =
+      "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png";
     dispatch(addItem(filteredData));
   };
 
@@ -83,10 +86,9 @@ const ProductDetailsPage = ({ params }: any) => {
                 src={
                   "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png"
                 }
-                alt={title}
+                alt={"title"}
                 // width={550}
                 // height={480}
-                fill={true}
               />
             </Grid.Col>
             <Grid.Col span={12} md={6}>
