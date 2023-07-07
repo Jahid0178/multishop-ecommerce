@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import React, { InputHTMLAttributes, MouseEventHandler } from "react";
 
 export type ProductProps = {
@@ -17,7 +18,7 @@ export type ProductType = {
   rating: number;
   price: number;
   sold: number;
-  src: string;
+  src: string | StaticImageData;
 };
 
 export type FaqTpes = {
