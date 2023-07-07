@@ -99,7 +99,9 @@ const CartBox: React.FC<CartBoxProps> = ({ isOpen }) => {
                         width={50}
                         height={50}
                         fit="contain"
-                        src={data.src}
+                        src={
+                          "https://www.startech.com.bd/image/cache/catalog/laptop/toshiba/satellite-pro-c40-g-109/satellite-pro-c40-g-109-01-228x228.webp"
+                        }
                         alt="llll"
                       />
                       <IconTrash

@@ -11,7 +11,7 @@ const BestSellingPage = () => {
         <Grid>
           {productsData.map((product) => (
             <Grid.Col key={product.id} span={12} md={3}>
-              <ProductsCard data={product} />
+              <ProductsCard data={{ ...product, quantity: 1 }} />
             </Grid.Col>
           ))}
         </Grid>

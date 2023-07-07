@@ -377,7 +377,7 @@ export const sellPreviewData = [
 export const dropdownMenus: {
   id: number;
   label: string;
-  icon: StaticImageData | undefined;
+  icon: string | StaticImageData;
   subItems?: {
     label: string;
   }[];

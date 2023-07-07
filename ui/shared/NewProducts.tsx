@@ -30,7 +30,7 @@ const NewCompanyProducts: React.FC<Iprops> = ({ data, title, identify }) => {
             rating: number;
             price: number;
             sold: number;
-            src: string | StaticImageData;
+            src: any;
           }) => (
             <Grid.Col span={12} md={3} key={product.id}>
               <Text
