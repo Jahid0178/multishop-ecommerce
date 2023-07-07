@@ -37,7 +37,7 @@ const Faq: React.FC<FaqTpes> = ({ title, data }) => {
         </Title>
         <Grid>
           {/* Right side's accordion (in lg screen) */}
-          <Grid.Col span={12} lg={6}>
+          <Grid.Col span={12} md={6}>
             <AccordionCompo
               accordionData={leftAccordionData}
               styles={classes.item}
@@ -45,7 +45,7 @@ const Faq: React.FC<FaqTpes> = ({ title, data }) => {
           </Grid.Col>
 
           {/* Left side's accordion (in lg screen) */}
-          <Grid.Col span={12} lg={6}>
+          <Grid.Col span={12} md={6}>
             <AccordionCompo
               accordionData={rightAccordionData}
               styles={classes.item}
