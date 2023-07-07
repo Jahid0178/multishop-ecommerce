@@ -5,7 +5,7 @@ const loading = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <Loader
-        style={{ fontSize: "250px", height: "400px", textAlign: "center" }}
+        style={{ fontSize: "150px", height: "200px", textAlign: "center" }}
         size="xl"
         variant="bars"
       />
