@@ -8,10 +8,19 @@ const nextConfig = {
     MONGODB_URI:
       "mongodb+srv://abbas:Fkoi3CIZxbDxKJWw@cluster0.whoksax.mongodb.net/multy_shop?retryWrites=true&w=majority",
     AUTH_SECRET: "multy_shop_dev_junaid_super_secret!",
-    NEXTAUTH_URL: "http://localhost:3000",
+    BASE_URL:
+      process.env.NODE_ENV === "production"
+        ? "https://multishop-ecommerce-pduj.vercel.app/"
+        : "http://localhost:3000",
     GOOGLE_CLIENT_SECRET: "hello_multyShop_google_client",
     APP_PUBLIC_API:
-      process.env.NODE_ENV === "production" ? "" : "http://localhost:3000/",
+      process.env.NODE_ENV === "production"
+        ? "https://multishop-ecommerce-pduj.vercel.app/"
+        : "http://localhost:3000/",
+
+    //EMAIL_PROVIDER_ENV
+    HOST_EMAIL: "hire.developerjunaid@gmail.com",
+    HOST_PASSWORD: "cumjnnvdemixhdan",
   },
   images: {
     remotePatterns: [

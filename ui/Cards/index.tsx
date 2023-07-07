@@ -1,4 +1,5 @@
 import { ProductProps, ProductType } from "@/libs/types/types";
+import { addItem } from "@/redux/shoppingCartSlice";
 import { openProductModal } from "@/redux/showModal";
 import { RootState } from "@/redux/store";
 import { Badge, Box, Card, Group, Rating, Text, Title } from "@mantine/core";
@@ -68,7 +69,12 @@ const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
           />
         </Text>
         <Text>
-          <FaCartShopping cursor="pointer" color="gray" size={26} />
+          <FaCartShopping
+            onClick={() => dispatch(addItem(data))}
+            cursor="pointer"
+            color="gray"
+            size={26}
+          />
         </Text>
       </Box>
     </Box>
