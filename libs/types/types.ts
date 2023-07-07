@@ -18,7 +18,7 @@ export type ProductType = {
   rating: number;
   price: number;
   sold: number;
-  src: string | StaticImageData;
+  src: string;
 };
 
 export type FaqTpes = {

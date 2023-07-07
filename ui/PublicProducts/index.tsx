@@ -20,14 +20,14 @@ const PublicProducts: React.FC<CompanyProductsProps> = ({ products }) => {
   }, [products]);
   return (
     <Container size="xl">
-      <Title
-        order={1}
-        ta={"center"}
-        mb={10}
-      >
+      <Title order={1} ta={"center"} mb={10}>
         Public product
       </Title>
-      <NewProducts title="New Public product" data={newProducts} />
+      <NewProducts
+        identify="PB"
+        title="New Public product"
+        data={newProducts}
+      />
       <OldProducts title="Old Public product" data={oldProducts} />
     </Container>
   );

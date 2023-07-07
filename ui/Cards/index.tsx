@@ -15,8 +15,8 @@ const ProductsCard = ({ data }: { data: ProductType }): JSX.Element => {
     dispatch(openProductModal(data));
   };
   return (
-    <Box style={{ position: "relative" }}>
-      <Card withBorder shadow="lg">
+    <Box style={{ position: "relative", zIndex: "-1" }}>
+      <Card style={{ backgroundColor: "#E1E8F0" }} withBorder shadow="lg">
         <Card.Section>
           <Link href={`/products/${id}`} style={{ textDecoration: "none" }}>
             <Image

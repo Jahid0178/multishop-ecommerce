@@ -22,7 +22,7 @@ const SellPreviewCard = ({ data }: SellPreviewCardProps) => {
 
   return (
     <Card ta="center" withBorder className={classes.SellPreviewCard}>
-      <Title order={2} color="#40C057">
+      <Title order={2} color="white">
         {title}
       </Title>
       <Text component="p" fw="bold" size={20}>

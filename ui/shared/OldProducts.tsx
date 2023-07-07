@@ -16,7 +16,9 @@ const OldProducts: React.FC<Iprops> = ({ data, title }) => {
   return (
     <div>
       <div>
-        <Title order={3} ta={"center"} mb={30}>{title}</Title>
+        <Title order={3} ta={"center"} mb={30}>
+          {title}
+        </Title>
         <Grid>
           {paginateData?.map(
             (product: {
@@ -29,7 +31,7 @@ const OldProducts: React.FC<Iprops> = ({ data, title }) => {
               src: string;
             }) => (
               <Grid.Col span={12} md={3} key={product.id}>
-                <ProductsCard data={product} />
+                <ProductsCard data={{ ...product, quantity: 1 }} />
               </Grid.Col>
             )
           )}

@@ -80,7 +80,7 @@ const SignIn: React.FC<{
       <Box mx="auto">
         <form
           onSubmit={form.onSubmit(({ email, password }) => {
-            handleAuth({ email, name, endPoint: "signIn" });
+            handleAuth({ email, password, endPoint: "signIn" });
           })}
         >
           <TextInput
