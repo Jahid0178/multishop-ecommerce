@@ -1,6 +1,7 @@
 import { FaqTpes } from "@/libs/types/types";
 import React from "react";
 import { Container, Title, Accordion, createStyles, rem, Box, Grid, Flex } from "@mantine/core";
+import AccordionCompo from "./Accordion";
 const useStyles = createStyles((theme) => ({
   wrapper: {
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
@@ -24,7 +25,7 @@ const useStyles = createStyles((theme) => ({
 const Faq: React.FC<FaqTpes> = ({ title, data }) => {
   const { classes } = useStyles();
 
-  // deviding data in to tow arrays 
+  // deviding data into tow arrays (for using in tow accordions)
   const leftAccordionData = data?.slice(0, Math.ceil((data?.length / 2)));
   const rightAccordionData = data?.slice(leftAccordionData?.length);
 
@@ -35,29 +36,20 @@ const Faq: React.FC<FaqTpes> = ({ title, data }) => {
           {title}
         </Title>
         <Grid>
-          <Grid.Col span={12} lg={6}>
-            <Accordion variant="separated">
-              {leftAccordionData?.map((data, index) => {
-                return (
-                  <Accordion.Item key={index} className={classes.item} value={data.value} >
-                    <Accordion.Control>{data.faqTitle}</Accordion.Control>
-                    <Accordion.Panel>{data.faqDescription}</Accordion.Panel>
-                  </Accordion.Item>
-                );
-              })}
-            </Accordion>
+          {/* Right side's accordion (in lg screen) */}
+          <Grid.Col span={12} md={6}>
+            <AccordionCompo
+              accordionData={leftAccordionData}
+              styles={classes.item}
+            />
           </Grid.Col>
-          <Grid.Col span={12} lg={6}>
-            <Accordion variant="separated">
-              {rightAccordionData?.map((data, index) => {
-                return (
-                  <Accordion.Item key={index} className={classes.item} value={data.value} >
-                    <Accordion.Control>{data.faqTitle}</Accordion.Control>
-                    <Accordion.Panel>{data.faqDescription}</Accordion.Panel>
-                  </Accordion.Item>
-                );
-              })}
-            </Accordion>
+
+          {/* Left side's accordion (in lg screen) */}
+          <Grid.Col span={12} md={6}>
+            <AccordionCompo
+              accordionData={rightAccordionData}
+              styles={classes.item}
+            />
           </Grid.Col>
         </Grid>
       </Container>

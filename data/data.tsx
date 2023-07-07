@@ -380,9 +380,6 @@ export const dropdownMenus: {
   icon: StaticImageData | undefined;
   subItems?: {
     label: string;
-    subProducts?: {
-      label: string;
-    }[];
   }[];
 }[] = [
   {
@@ -391,84 +388,16 @@ export const dropdownMenus: {
     icon: Image1,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Data Storage",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "External Components",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Monitors",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Keyboard",
       },
     ],
   },
@@ -478,84 +407,16 @@ export const dropdownMenus: {
     icon: Image2,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Eye Shade",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Lipstick",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Jewellery",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Necklaces",
       },
     ],
   },
@@ -565,84 +426,16 @@ export const dropdownMenus: {
     icon: Image3,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Caddy",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Vehicle Sit Cover",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Sticker Decel",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Wipe Blade",
       },
     ],
   },
@@ -652,84 +445,13 @@ export const dropdownMenus: {
     icon: Image4,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "T-Shirt",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Jeans",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
-      },
-      {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Clothing",
       },
     ],
   },
@@ -739,84 +461,13 @@ export const dropdownMenus: {
     icon: Image5,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Nike",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Adidas",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
-      },
-      {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Jordan",
       },
     ],
   },
@@ -826,84 +477,16 @@ export const dropdownMenus: {
     icon: Image6,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Toys",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Home Items",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Chocolates",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Electric Items",
       },
     ],
   },
@@ -913,84 +496,16 @@ export const dropdownMenus: {
     icon: Image7,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Dogs",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Cats",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Fish & Aquatic Pets",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Birds",
       },
     ],
   },
@@ -1000,84 +515,16 @@ export const dropdownMenus: {
     icon: Image8,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Mobile Cover",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Mobile Accessories",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Tablet Cover",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Tablet Accessories",
       },
     ],
   },
@@ -1087,84 +534,16 @@ export const dropdownMenus: {
     icon: Image9,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Guitar",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Gaming Chair",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Xbox One",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Play Station",
       },
     ],
   },
@@ -1174,84 +553,16 @@ export const dropdownMenus: {
     icon: Image10,
     subItems: [
       {
-        label: "Pc",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Fitness",
       },
       {
-        label: "Macbook",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Arts & Crafts",
       },
       {
-        label: "Mobile",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Automotive",
       },
       {
-        label: "iPhone",
-        subProducts: [
-          {
-            label: "Product 1",
-          },
-          {
-            label: "Product 2",
-          },
-          {
-            label: "Product 3",
-          },
-          {
-            label: "Product 4",
-          },
-          {
-            label: "Product 5",
-          },
-        ],
+        label: "Tools and Home",
       },
     ],
   },

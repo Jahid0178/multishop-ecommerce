@@ -126,18 +126,6 @@ const Header = () => {
               <Link href="#" style={{ textDecoration: "none", color: "#000" }}>
                 {items.label}
               </Link>
-              <Dropdown.Submenu position="right">
-                {items.subProducts?.map((subProduct, ind) => (
-                  <Dropdown.Item key={ind}>
-                    <Link
-                      href="#"
-                      style={{ textDecoration: "none", color: "#000" }}
-                    >
-                      {subProduct.label}
-                    </Link>
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Submenu>
             </Dropdown.Item>
           ))}
         </Dropdown.Submenu>
