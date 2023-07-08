@@ -12,7 +12,7 @@ import {
 } from "@mantine/core";
 import DashboardNavbar from "../dashboardNavbar";
 import DashboardHeader from "../dashBoardHeader";
-
+//
 const DashBoardLayout = () => {
   const theme = useMantineTheme();
   const [opened, setOpened] = React.useState<boolean>(false);
