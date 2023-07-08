@@ -1,5 +1,7 @@
 "use client";
 
+import './footer.css';
+
 import {
   createStyles,
   Text,
@@ -12,6 +14,11 @@ import {
   List,
   Flex,
   Divider,
+  Box,
+  Input,
+  Select,
+  TextInput,
+  Button,
 } from "@mantine/core";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
@@ -19,6 +26,8 @@ import FooterPaymentImage from "../../public/assets/footer-payment.jpg";
 import Link from "next/link";
 import Image from "next/image";
 import Address from "./Address";
+import { IconCurrencyDollar, IconWorld } from "@tabler/icons-react";
+import FooterColOne from './FooterColOne';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -26,9 +35,8 @@ const useStyles = createStyles((theme) => ({
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     backgroundColor: theme.colors.dark[8],
     color: "#fff",
-    borderTop: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
-    }`,
+    borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
+      }`,
   },
 
   logo: {
@@ -82,97 +90,148 @@ const Footer = () => {
       <Container size="xl">
         <div>
           <Grid>
-            <Grid.Col span={12} md={6} lg={3}>
-              Logo
-              <Text component="p">
-                The home and elements needeed to create beatiful products.
-              </Text>
-              <Address />
+            <Grid.Col span={12} md={6} lg={5}>
+              {/* Firt Col Of Footer (Head office of the company) */}
+              <FooterColOne />
             </Grid.Col>
-            <Grid.Col span={12} md={6} lg={3}>
-              <Title order={4}>Comapny</Title>
-              <List listStyleType="none" mt={20}>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    About Us
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Career
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Store Location
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Our Blog
-                  </Link>
-                </List.Item>
-                <List.Item>
-                  <Link href="#" className={classes.footerLink}>
-                    Reviews
-                  </Link>
-                </List.Item>
-              </List>
-            </Grid.Col>
-            <Grid.Col span={12} md={6} lg={3}>
-              <Title order={4}>Shop</Title>
-              <List listStyleType="none" mt={20}>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Games & Video
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Phone & Tablet
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Computer & Laptop
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Sport Watch
-                  </Link>
-                </List.Item>
-                <List.Item>
-                  <Link href="#" className={classes.footerLink}>
-                    Events
-                  </Link>
-                </List.Item>
-              </List>
-            </Grid.Col>
-            <Grid.Col span={12} md={6} lg={3}>
-              <Title order={4}>Support</Title>
-              <List listStyleType="none" mt={20}>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    FAQ
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Reviews
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Contact Us
-                  </Link>
-                </List.Item>
-                <List.Item mb={5}>
-                  <Link href="#" className={classes.footerLink}>
-                    Shopping
-                  </Link>
-                </List.Item>
-              </List>
+            <Grid.Col span={12} md={6} lg={7}>
+              {/* Nested Grid  */}
+              <Grid justify={"space-between"}>
+                {/* Cole: 1 */}
+                <Grid.Col span={12} md={6} lg={4}>
+                  <Title order={4}>Comapny</Title>
+                  <List listStyleType="none" mt={20}>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        About Us
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Career
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Store Location
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Our Blog
+                      </Link>
+                    </List.Item>
+                    <List.Item>
+                      <Link href="#" className={classes.footerLink}>
+                        Reviews
+                      </Link>
+                    </List.Item>
+                  </List>
+                </Grid.Col>
+                {/* Cole: 2 */}
+                <Grid.Col span={12} md={6} lg={4}>
+                  <Title order={4}>Public Business</Title>
+                  <List listStyleType="none" mt={20}>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Customer Bill of Rights
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Gift Sards
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Track Orders
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Recalls
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Team Member Services
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Delivery
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Product Service
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        How to Buy
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Food Delivery
+                      </Link>
+                    </List.Item>
+                    <List.Item>
+                      <Link href="#" className={classes.footerLink}>
+                        Donates
+                      </Link>
+                    </List.Item>
+                  </List>
+                </Grid.Col>
+                {/* Cole: 3 */}
+                <Grid.Col span={12} md={6} lg={4}>
+                  <Title order={4}>Public</Title>
+                  <List listStyleType="none" mt={20}>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Tract Orders
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Recalls
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Accessibility
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Team Mamber Services
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Seller Centre
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        International Selling
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Seller Centre
+                      </Link>
+                    </List.Item>
+                    <List.Item mb={5}>
+                      <Link href="#" className={classes.footerLink}>
+                        Blog
+                      </Link>
+                    </List.Item>
+                  </List>
+                </Grid.Col>
+              </Grid>
+
             </Grid.Col>
           </Grid>
         </div>
