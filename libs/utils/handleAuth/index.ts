@@ -12,6 +12,10 @@ const handleAuth = async ({
   endPoint,
   role,
 }: AuthData) => {
+  const BASEURL =
+    process.env.NODE_ENV === "production"
+      ? "https://multishop-ecommerce.vercel.app"
+      : "http://localhost:3000";
   let data: any = {};
   if (name === undefined) {
     if (password === undefined) {
@@ -29,10 +33,9 @@ const handleAuth = async ({
     data.password = password;
     data.role = role;
   }
-  console.log("role", role);
 
   try {
-    const response = await fetch(`http://localhost:3000/api/auth/${endPoint}`, {
+    const response = await fetch(`${BASEURL}/api/auth/${endPoint}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,9 +45,9 @@ const handleAuth = async ({
     if (!response.ok) {
       throw new Error("Sign up failed");
     }
-    // Handle the response as needed
+
     const responseData = await response.json();
-    console.log(responseData);
+
     return responseData;
   } catch (error) {
     console.error("Error:", error);

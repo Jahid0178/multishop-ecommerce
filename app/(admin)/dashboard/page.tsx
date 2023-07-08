@@ -1,9 +1,11 @@
+"use client";
+import { DashBoardLayout } from "@/ui/Dashboard";
 import React from "react";
 
 const pageH = () => {
   return (
     <div>
-      <h1>Dashboard</h1>
+      <DashBoardLayout />
     </div>
   );
 };

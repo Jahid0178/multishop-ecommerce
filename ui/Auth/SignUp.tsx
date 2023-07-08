@@ -80,7 +80,6 @@ const SignUp: React.FC<SignUpProps> = ({ onClick, state }) => {
       <Box mx="auto">
         <form
           onSubmit={form.onSubmit(async ({ name, email, password }) => {
-            console.log("rrrrrrrr", role);
             const response = handleAuth({
               name,
               email,
