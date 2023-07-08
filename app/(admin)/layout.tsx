@@ -1,3 +1,7 @@
+"use client";
+
+import { DashboardFooter } from "@/ui/Dashboard";
+
 export default function RootLayout({
   children,
 }: {
@@ -6,8 +10,9 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body>
+      <body suppressHydrationWarning={true}>
         <div style={{ backgroundColor: "#FFFFFF" }}>{children}</div>
+        <DashboardFooter />
       </body>
     </html>
   );

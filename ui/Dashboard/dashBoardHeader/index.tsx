@@ -1,4 +1,11 @@
-import { Box, Text, TextInput, Avatar, Indicator } from "@mantine/core";
+import {
+  Box,
+  Text,
+  TextInput,
+  Avatar,
+  Indicator,
+  MediaQuery,
+} from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 
 import { AiOutlineBell, AiOutlineMail } from "react-icons/ai";
@@ -22,38 +29,40 @@ const DashboardHeader = () => {
             <IconSearch size={25} color="#221ECD" cursor="pointer" />
           }
         />
-        <Box style={{ alignItems: "flex-end" }}>
-          <Box style={{ display: "flex", gap: "50px" }}>
-            <Box
-              style={{
-                width: "45px",
-                height: "45px",
-                borderRadius: "50%",
-                backgroundColor: "#d7d0e542",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <AiOutlineBell />
-            </Box>
-            <Box
-              style={{
-                width: "45px",
-                height: "45px",
-                borderRadius: "50%",
-                backgroundColor: "#d7d0e542",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Indicator inline label="New" size={15}>
-                <AiOutlineMail size={25} />
-              </Indicator>
+        <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+          <Box style={{ alignItems: "flex-end" }}>
+            <Box style={{ display: "flex", gap: "50px" }}>
+              <Box
+                style={{
+                  width: "45px",
+                  height: "45px",
+                  borderRadius: "50%",
+                  backgroundColor: "#d7d0e542",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <AiOutlineBell />
+              </Box>
+              <Box
+                style={{
+                  width: "45px",
+                  height: "45px",
+                  borderRadius: "50%",
+                  backgroundColor: "#d7d0e542",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Indicator inline label="New" size={15}>
+                  <AiOutlineMail size={25} />
+                </Indicator>
+              </Box>
             </Box>
           </Box>
-        </Box>
+        </MediaQuery>
       </Box>
     </Box>
   );

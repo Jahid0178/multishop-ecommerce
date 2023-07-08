@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AppShell,
-  Navbar,
   Header,
   Footer,
   Aside,
@@ -9,6 +8,8 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
+  RingProgress,
+  Group,
 } from "@mantine/core";
 import DashboardNavbar from "../dashboardNavbar";
 import DashboardHeader from "../dashBoardHeader";
@@ -33,14 +34,29 @@ const DashBoardLayout = () => {
         aside={
           <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
             <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-              <Text>Application sidebar</Text>
+              <Group position="center">
+                <RingProgress
+                  size={170}
+                  thickness={16}
+                  label={
+                    <Text
+                      size="xs"
+                      align="center"
+                      px="xs"
+                      sx={{ pointerEvents: "none" }}
+                    >
+                      see your sell
+                    </Text>
+                  }
+                  sections={[
+                    { value: 40, color: "cyan", tooltip: "Documents – 40 Gb" },
+                    { value: 25, color: "orange", tooltip: "Apps – 25 Gb" },
+                    { value: 15, color: "grape", tooltip: "Other – 15 Gb" },
+                  ]}
+                />
+              </Group>
             </Aside>
           </MediaQuery>
-        }
-        footer={
-          <Footer height={60} p="md">
-            Application footer
-          </Footer>
         }
         header={
           <Header height={{ base: 50, md: 70 }} p="md">
