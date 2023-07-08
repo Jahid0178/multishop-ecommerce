@@ -3,15 +3,23 @@ declare namespace NodeJS {
     // Add type definitions for your environment variables here
     GOOGLE_CLIENT_ID: string;
     GOOGLE_ClIENT_SECRET: string;
+
     MONGODB_URI: string;
     AUTH_SECRET: string;
     BASE_URL: string;
-    GOOGLE_CLIENT_SECRET: string;
-    APP_PUBLIC_API: string;
+
+    //google env
+    // APP_PUBLIC_API: string;
 
     //email send env
     HOST_EMAIL: string;
     HOST_PASSWORD: string;
+
+    //CLOUD ENV
+    CLOUD_NAME: string;
+    CLOUD_API_KEY: string;
+    CLOUD_API_SECRET: string;
+
     // Add more variables as needed
   }
 }

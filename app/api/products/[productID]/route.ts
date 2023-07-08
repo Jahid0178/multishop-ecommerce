@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { limiter } from "@/app/api/config/limiter";
+import { limiter } from "@/app/api/limiter";
 export const GET = async (req: NextRequest, res: NextResponse) => {
   //   redirect(process.env.APP_PUBLIC_API ?? "");
   req.headers.append("origin", req.nextUrl.pathname);
