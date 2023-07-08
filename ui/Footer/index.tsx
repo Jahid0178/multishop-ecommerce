@@ -22,12 +22,15 @@ import {
 } from "@mantine/core";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
-import FooterPaymentImage from "../../public/assets/footer-payment.jpg";
+
 import Link from "next/link";
 import Image from "next/image";
 import Address from "./Address";
 import { IconCurrencyDollar, IconWorld } from "@tabler/icons-react";
 import FooterColOne from './FooterColOne';
+import SocialMedia from './SocialMedia';
+import PaymentMathods from './PaymentMathods';
+import FooterLinks from './FooterLinks';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -236,32 +239,15 @@ const Footer = () => {
           </Grid>
         </div>
       </Container>
+      <Container size="lg">
+        <PaymentMathods />
+      </Container>
       <Container size="xl" className={classes.footerBottom} mt={50}>
-        <Text color="dimmed" size="sm">
-          © {new Date().getFullYear()} mantine.dev. All rights reserved.
-        </Text>
+        <SocialMedia />
+      </Container>
 
-        <Image
-          src={FooterPaymentImage}
-          alt="Payment Methods"
-          width={250}
-          height={20}
-        />
-
-        <Group spacing={0} position="right" noWrap>
-          <ActionIcon variant="transparent" size="lg">
-            <BsTwitter size={20} />
-          </ActionIcon>
-          <ActionIcon variant="transparent" size="lg">
-            <BsYoutube size={20} />
-          </ActionIcon>
-          <ActionIcon variant="transparent" size="lg">
-            <BiLogoInstagramAlt size={20} />
-          </ActionIcon>
-          <ActionIcon variant="transparent" size="lg">
-            <BsFacebook size={20} />
-          </ActionIcon>
-        </Group>
+      <Container size="xl"  mt={50}>
+        <FooterLinks />
       </Container>
     </footer>
   );
