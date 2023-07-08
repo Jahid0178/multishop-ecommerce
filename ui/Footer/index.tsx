@@ -31,6 +31,9 @@ import FooterColOne from './FooterColOne';
 import SocialMedia from './SocialMedia';
 import PaymentMathods from './PaymentMathods';
 import FooterLinks from './FooterLinks';
+import FooterColTow from './FooterColTow';
+import FooterColThree from './FooterColThree';
+import FooterColFor from './FooterColFor';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -93,145 +96,27 @@ const Footer = () => {
       <Container size="xl">
         <div>
           <Grid>
-            <Grid.Col span={12} md={6} lg={5}>
+            <Grid.Col span={12} lg={5}>
               {/* Firt Col Of Footer (Head office of the company) */}
               <FooterColOne />
             </Grid.Col>
-            <Grid.Col span={12} md={6} lg={7}>
+            <Grid.Col span={12} lg={7}>
               {/* Nested Grid  */}
               <Grid justify={"space-between"}>
-                {/* Cole: 1 */}
+                {/* Col: 1 */}
                 <Grid.Col span={12} md={6} lg={4}>
-                  <Title order={4}>Comapny</Title>
-                  <List listStyleType="none" mt={20}>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        About Us
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Career
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Store Location
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Our Blog
-                      </Link>
-                    </List.Item>
-                    <List.Item>
-                      <Link href="#" className={classes.footerLink}>
-                        Reviews
-                      </Link>
-                    </List.Item>
-                  </List>
+                  {/* Second Col Of Footer (Comapny) */}
+                  <FooterColTow />
                 </Grid.Col>
-                {/* Cole: 2 */}
+                {/* Col: 2 */}
                 <Grid.Col span={12} md={6} lg={4}>
-                  <Title order={4}>Public Business</Title>
-                  <List listStyleType="none" mt={20}>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Customer Bill of Rights
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Gift Sards
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Track Orders
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Recalls
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Team Member Services
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Delivery
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Product Service
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        How to Buy
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Food Delivery
-                      </Link>
-                    </List.Item>
-                    <List.Item>
-                      <Link href="#" className={classes.footerLink}>
-                        Donates
-                      </Link>
-                    </List.Item>
-                  </List>
+                  {/* Third Col Of Footer (Public Business) */}
+                  <FooterColThree />
                 </Grid.Col>
                 {/* Cole: 3 */}
                 <Grid.Col span={12} md={6} lg={4}>
-                  <Title order={4}>Public</Title>
-                  <List listStyleType="none" mt={20}>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Tract Orders
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Recalls
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Accessibility
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Team Mamber Services
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Seller Centre
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        International Selling
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Seller Centre
-                      </Link>
-                    </List.Item>
-                    <List.Item mb={5}>
-                      <Link href="#" className={classes.footerLink}>
-                        Blog
-                      </Link>
-                    </List.Item>
-                  </List>
+                  {/* Forth Col Of Footer (Public) */}
+                  <FooterColFor />
                 </Grid.Col>
               </Grid>
 
@@ -239,14 +124,19 @@ const Footer = () => {
           </Grid>
         </div>
       </Container>
+      
+      {/* Payment Mathods Container  */}
       <Container size="lg">
         <PaymentMathods />
       </Container>
-      <Container size="xl" className={classes.footerBottom} mt={50}>
+
+      {/* Social Media Container  */}
+      <Container size="xl" className={classes.footerBottom} mt={10}>
         <SocialMedia />
       </Container>
 
-      <Container size="xl"  mt={50}>
+      {/* Footer Bottom Links Container  */}
+      <Container size="xl" mt={10}>
         <FooterLinks />
       </Container>
     </footer>
