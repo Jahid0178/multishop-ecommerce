@@ -1,5 +1,5 @@
 import { useRouter } from "next/navigation";
-import { ProductProps, ProductType } from "@/libs/types/types";
+import { ProductProps, ProductType } from "@/libs/types";
 import { addItem } from "@/redux/shoppingCartSlice";
 import { openProductModal } from "@/redux/showModal";
 import { RootState } from "@/redux/store";

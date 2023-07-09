@@ -1,4 +1,4 @@
-import { ProductType } from "@/libs/types/types";
+import { ProductType } from "@/libs/types";
 import { addItem } from "@/redux/shoppingCartSlice";
 import { closeProductModal, openProductModal } from "@/redux/showModal";
 import { RootState } from "@/redux/store";

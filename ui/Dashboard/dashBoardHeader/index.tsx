@@ -1,69 +1,77 @@
 import {
-  Box,
-  Text,
-  TextInput,
   Avatar,
+  Box,
+  Button,
+  Divider,
+  Image,
   Indicator,
   MediaQuery,
+  Menu,
+  Text,
+  TextInput,
 } from "@mantine/core";
-import { IconSearch } from "@tabler/icons-react";
-
-import { AiOutlineBell, AiOutlineMail } from "react-icons/ai";
+import {
+  IconArrowsLeftRight,
+  IconMessageCircle,
+  IconPhoto,
+  IconSearch,
+  IconSettings,
+  IconTrash,
+  IconBell,
+} from "@tabler/icons-react";
+import { AiOutlineBell } from "react-icons/ai";
 import React from "react";
-
+import HeaderMenu from "./HeaderMenu";
+let avatarUrl =
+  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=70&q=70";
 const DashboardHeader = () => {
   return (
-    <Box style={{ width: "100%" }}>
-      <Box
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <TextInput
-          radius="xl"
-          size="md"
-          placeholder="Search Product..."
-          sx={{ maxWidth: "280px", width: "100%" }}
-          rightSection={
-            <IconSearch size={25} color="#221ECD" cursor="pointer" />
-          }
-        />
-        <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-          <Box style={{ alignItems: "flex-end" }}>
-            <Box style={{ display: "flex", gap: "50px" }}>
-              <Box
-                style={{
-                  width: "45px",
-                  height: "45px",
-                  borderRadius: "50%",
-                  backgroundColor: "#d7d0e542",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <AiOutlineBell />
-              </Box>
-              <Box
-                style={{
-                  width: "45px",
-                  height: "45px",
-                  borderRadius: "50%",
-                  backgroundColor: "#d7d0e542",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Indicator inline label="New" size={15}>
-                  <AiOutlineMail size={25} />
-                </Indicator>
-              </Box>
-            </Box>
+    <Box style={{ margin: "10px", textAlign: "center" }}>
+      <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+        <Box
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Image
+            radius="lg"
+            style={{ width: "70px", height: "70px" }}
+            src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/business-logo-design-template-78655edda18bc1196ab28760f1535baa_screen.jpg?ts=1617645324"
+            alt="logo"
+          />
+          <TextInput
+            radius="xl"
+            size="md"
+            placeholder="Search ....."
+            sx={{ maxWidth: "400px", width: "100%" }}
+            rightSection={
+              <IconSearch size={25} color="gray" cursor="pointer" />
+            }
+          />
+
+          <Box style={{ display: "flex", gap: "50px", alignItems: "center" }}>
+            <HeaderMenu
+              isAvatar={false}
+              menuTrigger={<IconBell size={30} cursor="pointer" />}
+              menuLabel="Notification"
+              menuItem={[{ Icon: IconPhoto, label: "Profile" }]}
+              menuLabelDanger="See all Notification"
+              dangerLabelColor="#476574"
+            />
+            <HeaderMenu
+              isAvatar={true}
+              menuLabel="Profile"
+              menuItem={[{ Icon: IconPhoto, label: "Profile" }]}
+              menuLabelDanger="Delete my account"
+              dangerLabelColor="red"
+              avatarUrl={avatarUrl}
+            />
           </Box>
-        </MediaQuery>
-      </Box>
+        </Box>
+      </MediaQuery>
+      <Divider my="sm" />
     </Box>
   );
 };

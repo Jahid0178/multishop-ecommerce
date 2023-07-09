@@ -1,7 +1,8 @@
 "use client";
 
-import { DashboardFooter } from "@/ui/Dashboard";
-
+import { DashboardFooter, DashboardHeader } from "@/ui/Dashboard";
+import NextTopLoader from "nextjs-toploader";
+import "./global.css";
 export default function RootLayout({
   children,
 }: {
@@ -11,6 +12,10 @@ export default function RootLayout({
     <html>
       <head />
       <body suppressHydrationWarning={true}>
+        <NextTopLoader height={3} showSpinner={false} />
+
+        <DashboardHeader />
+
         <div style={{ backgroundColor: "#FFFFFF" }}>{children}</div>
         <DashboardFooter />
       </body>

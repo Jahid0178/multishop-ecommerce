@@ -1,7 +1,7 @@
 "use client";
 
 import { products } from "@/libs/Data";
-import { ProductType } from "@/libs/types/types";
+import { ProductType } from "@/libs/types";
 import { addItem, decreaseById, increaseById } from "@/redux/shoppingCartSlice";
 import { AppDispatch, RootState } from "@/redux/store";
 import {

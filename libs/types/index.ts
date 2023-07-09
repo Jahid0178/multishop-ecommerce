@@ -47,3 +47,21 @@ export type FilterDataProps = {
   sold: number;
   src: string;
 }[];
+
+//DASHBOARD TYPES
+
+export type NavLinkPropsType =
+  | {
+      href: string;
+      children: React.ReactNode;
+      isNested: true;
+      nestedData: {
+        href: string;
+        children: React.ReactNode;
+      };
+    }
+  | {
+      href: string;
+      children: React.ReactNode;
+      isNested: false;
+    };

@@ -5,7 +5,7 @@ import { useState } from "react";
 import ForgotPassword from "./ForgotPassword";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-const Auth = ({ isOpen }: { isOpen: boolean }) => {
+const Auth: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
   const [isSignUp, setIsSignUp] = useState<boolean>(true);
   const [forgotPassword, setForgotPassword] = useState<boolean>(false);
 

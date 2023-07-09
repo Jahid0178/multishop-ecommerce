@@ -1,4 +1,4 @@
-import { ProductType } from "./../libs/types/types";
+import { ProductType } from "../libs/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface ShowModal {
   isModalOpen: boolean;

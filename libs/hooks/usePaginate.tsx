@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductType } from "../types/types";
+import { ProductType } from "../types";
 
 interface PaginatePropsTypes {
   data: ProductType[] | undefined;

@@ -1,4 +1,4 @@
-import { AuthData } from "@/libs/types/types";
+import { AuthData } from "@/libs/types";
 
 /**
  * The function `handleAuth` is an asynchronous function that handles authentication by sending a POST
