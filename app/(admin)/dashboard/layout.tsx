@@ -17,14 +17,7 @@ export default function DashboardLayoute({
           <Grid>
             <Grid.Col span={12} md={2.4}>
               <nav>
-                <DashboardNavbar
-                  navData={[
-                    { path: "/react", routeName: "Public" },
-                    { path: "/js", routeName: "Public" },
-                    { path: "/public", routeName: "Public" },
-                    { path: "/public", routeName: "Public" },
-                  ]}
-                />
+                <DashboardNavbar />
               </nav>
             </Grid.Col>
             <Grid.Col span={12} md={8}>

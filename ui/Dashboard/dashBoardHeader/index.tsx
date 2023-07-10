@@ -19,15 +19,18 @@ import {
   IconTrash,
   IconBell,
 } from "@tabler/icons-react";
-import { AiOutlineBell } from "react-icons/ai";
 import React from "react";
+import { useMediaQuery } from "@mantine/hooks";
+
 import HeaderMenu from "./HeaderMenu";
 let avatarUrl =
   "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=70&q=70";
 const DashboardHeader = () => {
+  const matches = useMediaQuery("(min-width: 768px)");
+
   return (
     <Box style={{ margin: "10px", textAlign: "center" }}>
-      <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+      {matches ? (
         <Box
           style={{
             display: "flex",
@@ -70,7 +73,12 @@ const DashboardHeader = () => {
             />
           </Box>
         </Box>
-      </MediaQuery>
+      ) : (
+        <>
+          <h1>hello</h1>
+        </>
+      )}
+
       <Divider my="sm" />
     </Box>
   );
