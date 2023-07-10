@@ -1,5 +1,5 @@
 import { CSSProperties, ChangeEvent } from "react";
-import { ProductType } from "../types/types";
+import { ProductType } from "../types";
 
 export interface routesInterface {
   id: number | string;

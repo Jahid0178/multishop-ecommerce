@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { SignUpProps } from "@/libs/types/types";
+import { SignUpProps } from "@/libs/types";
 import handleAuth from "@/libs/utils/handleAuth";
 import {
   Box,

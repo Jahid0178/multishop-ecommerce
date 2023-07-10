@@ -1,6 +1,15 @@
-import { FaqTpes } from "@/libs/types/types";
+import { FaqTpes } from "@/libs/types";
 import React from "react";
-import { Container, Title, Accordion, createStyles, rem, Box, Grid, Flex } from "@mantine/core";
+import {
+  Container,
+  Title,
+  Accordion,
+  createStyles,
+  rem,
+  Box,
+  Grid,
+  Flex,
+} from "@mantine/core";
 import AccordionCompo from "./Accordion";
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -20,18 +29,17 @@ const useStyles = createStyles((theme) => ({
     borderRadius: theme.radius.md,
     marginBottom: theme.spacing.lg,
   },
-
 }));
 const Faq: React.FC<FaqTpes> = ({ title, data }) => {
   const { classes } = useStyles();
 
   // deviding data into tow arrays (for using in tow accordions)
-  const leftAccordionData = data?.slice(0, Math.ceil((data?.length / 2)));
+  const leftAccordionData = data?.slice(0, Math.ceil(data?.length / 2));
   const rightAccordionData = data?.slice(leftAccordionData?.length);
 
   return (
     <Box bg={"#03031F"}>
-      <Container size="lg" className={classes.wrapper} >
+      <Container size="lg" className={classes.wrapper}>
         <Title align="center" className={classes.title}>
           {title}
         </Title>

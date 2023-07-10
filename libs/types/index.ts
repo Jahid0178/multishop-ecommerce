@@ -47,3 +47,10 @@ export type FilterDataProps = {
   sold: number;
   src: string;
 }[];
+
+//DASHBOARD TYPES
+
+export type NavLinkPropsType = {
+  href: string;
+  children: React.ReactNode;
+};
